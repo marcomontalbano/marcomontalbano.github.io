@@ -1,0 +1,47 @@
+{
+  viewer {
+    login
+    avatarUrl
+    location
+    name
+    websiteUrl
+    url
+    resourcePath
+    repositories(first: 100, affiliations: OWNER, privacy: PUBLIC) {
+      totalCount
+      edges {
+        node {
+          name
+          description
+          url
+          homepageUrl
+          createdAt
+          updatedAt
+          pushedAt
+          isFork
+          isLocked
+          isMirror
+          isPrivate
+          isArchived
+          isDisabled
+          isTemplate
+          usesCustomOpenGraphImage
+          openGraphImageUrl
+          stargazers {
+            totalCount
+          }
+          forkCount
+          repositoryTopics(first: 100) {
+            edges {
+              node {
+                topic {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

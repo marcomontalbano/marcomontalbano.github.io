@@ -1,0 +1,32 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ./src/",
+    "build:db": "node src/build-db"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcomontalbano/portfolio.git"
+  },
+  "author": "Marco Montalbano <me@marcomontalbano.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcomontalbano/portfolio/issues"
+  },
+  "homepage": "https://marcomontalbano.github.io/portfolio",
+  "devDependencies": {
+    "eslint": "~6.3.0",
+    "eslint-config-airbnb-base": "~14.0.0",
+    "eslint-plugin-import": "~2.18.2",
+    "eslint-plugin-jest": "~22.17.0",
+    "jest": "~24.9.0",
+    "nock": "~11.3.3"
+  },
+  "dependencies": {
+    "dotenv": "~8.1.0",
+    "node-fetch": "~2.6.0"
+  }
+}
