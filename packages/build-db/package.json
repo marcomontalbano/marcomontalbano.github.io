@@ -1,0 +1,37 @@
+{
+  "name": "build-db",
+  "version": "0.0.1-alpha.0",
+  "description": "Fetch GitHub repository and export as db.json",
+  "author": "Marco Montalbano <marcomontalbano.work@gmail.com>",
+  "homepage": "https://marcomontalbano.github.io/portfolio/tree/master/packages/build-db#readme",
+  "license": "MIT",
+  "main": "lib/build-db.js",
+  "bin": {
+    "build-db": "bin/build-db"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcomontalbano/portfolio.git"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "./bin/build-db"
+  },
+  "bugs": {
+    "url": "https://github.com/marcomontalbano/portfolio/issues"
+  },
+  "devDependencies": {
+    "jest": "~24.9.0",
+    "nock": "~11.3.3"
+  },
+  "dependencies": {
+    "node-fetch": "~2.6.0"
+  }
+}
