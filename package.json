@@ -8,7 +8,7 @@
     "lerna:bootstrap": "lerna bootstrap",
     "build": "dotenv lerna run build --stream",
     "test": "dotenv lerna run test --stream",
-    "lint": "eslint ./packages/**/lib"
+    "lint": "eslint ./packages"
   },
   "repository": {
     "type": "git",

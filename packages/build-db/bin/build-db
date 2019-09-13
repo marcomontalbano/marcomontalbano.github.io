@@ -1,8 +1,3 @@
 #!/usr/bin/env node
 
-const buildDb = require('../lib/build-db');
-
-buildDb(`${__dirname}/../db.json`).catch((error) => {
-    // eslint-disable-next-line no-console
-    console.error(error);
-});
+require('../lib/build-db').exportDb();

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 const utilities = require('./utilities');
 
@@ -6,7 +7,8 @@ const { NODE_ENV } = process.env;
 const isProduction = NODE_ENV === 'production';
 const encoding = 'utf8';
 
-async function buildDb(outputPath) {
+async function buildDb(outputPath = 'db.json') {
+    const resolvedOutputPath = path.resolve(outputPath);
     const json = await utilities.ghRunQuery(fs.readFileSync(`${__dirname}/db.graphql`, encoding));
 
     if (json.message) {
@@ -20,7 +22,19 @@ async function buildDb(outputPath) {
     const db = await utilities.sanitize(json);
     const dbAsString = JSON.stringify(db, undefined, isProduction ? undefined : 2);
 
-    fs.writeFileSync(outputPath, dbAsString, encoding);
+    fs.writeFileSync(resolvedOutputPath, dbAsString, encoding);
+
+    // eslint-disable-next-line no-console
+    console.log(`Built database in ${resolvedOutputPath}`);
 }
 
-module.exports = buildDb;
+function exportDb(outputPath) {
+    buildDb(outputPath).catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+    });
+}
+
+module.exports = {
+    exportDb,
+};
