@@ -12,11 +12,10 @@
     "react-scripts": "3.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "start-storybook -p 9009 -s public",
+    "build": "build-storybook -s public",
     "test": "react-scripts test",
-    "lint": "eslint .",
-    "eject": "react-scripts eject"
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,5 +31,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "~5.2.0",
+    "@storybook/addon-links": "~5.2.0",
+    "@storybook/addons": "~5.2.0",
+    "@storybook/react": "~5.2.0"
   }
 }
