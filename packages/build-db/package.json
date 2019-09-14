@@ -1,9 +1,10 @@
 {
   "name": "build-db",
   "version": "0.0.1-alpha.0",
+  "private": true,
   "description": "Fetch GitHub repository and export as db.json",
   "author": "Marco Montalbano <marcomontalbano.work@gmail.com>",
-  "homepage": "https://marcomontalbano.github.io/portfolio/tree/master/packages/build-db#readme",
+  "homepage": "https://github.com/marcomontalbano/portfolio/tree/master/packages/build-db#readme",
   "license": "MIT",
   "main": "lib/build-db.js",
   "bin": {
@@ -22,12 +23,17 @@
   },
   "scripts": {
     "test": "jest",
+    "lint": "eslint .",
     "build": "./bin/build-db"
   },
   "bugs": {
     "url": "https://github.com/marcomontalbano/portfolio/issues"
   },
   "devDependencies": {
+    "eslint": "~6.3.0",
+    "eslint-config-airbnb-base": "~14.0.0",
+    "eslint-plugin-import": "~2.18.2",
+    "eslint-plugin-jest": "~22.17.0",
     "jest": "~24.9.0",
     "nock": "~11.3.3"
   },

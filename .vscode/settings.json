@@ -1,0 +1,5 @@
+{
+    "eslint.workingDirectories": [
+        "./packages/build-db"
+    ]
+}

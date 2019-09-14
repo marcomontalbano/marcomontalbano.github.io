@@ -8,7 +8,7 @@
     "lerna:bootstrap": "lerna bootstrap",
     "build": "dotenv lerna run build --stream",
     "test": "dotenv lerna run test --stream",
-    "lint": "eslint ./packages"
+    "lint": "dotenv lerna run lint --stream"
   },
   "repository": {
     "type": "git",
@@ -21,14 +21,11 @@
   "homepage": "https://marcomontalbano.github.io/portfolio",
   "devDependencies": {
     "dotenv": "~8.1.0",
-    "eslint": "~6.3.0",
-    "eslint-config-airbnb-base": "~14.0.0",
-    "eslint-plugin-import": "~2.18.2",
-    "eslint-plugin-jest": "~22.17.0",
     "lerna": "~3.16.4"
   },
   "engines": {
     "node": ">= 10.16.x <= 12.x",
     "npm": ">= 6.9.x < 7.x"
-  }
+  },
+  "dependencies": {}
 }
