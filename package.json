@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "My portfolio",
   "scripts": {
+    "start": "dotenv lerna run start --parallel",
     "lerna:create": "lerna create",
     "lerna:bootstrap": "lerna bootstrap",
     "build": "dotenv lerna run build --stream",
