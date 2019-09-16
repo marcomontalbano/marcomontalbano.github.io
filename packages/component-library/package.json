@@ -36,6 +36,7 @@
     "@storybook/addon-actions": "~5.2.0",
     "@storybook/addon-links": "~5.2.0",
     "@storybook/addons": "~5.2.0",
-    "@storybook/react": "~5.2.0"
+    "@storybook/react": "~5.2.0",
+    "node-sass": "~4.12.0"
   }
 }
