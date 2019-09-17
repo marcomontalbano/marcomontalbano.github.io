@@ -7,6 +7,7 @@
     "start": "dotenv lerna run start --parallel",
     "lerna:create": "lerna create",
     "lerna:bootstrap": "lerna bootstrap --force-local",
+    "watch": "dotenv lerna run watch --stream",
     "build": "dotenv lerna run build --stream",
     "test": "dotenv lerna run test --stream",
     "lint": "dotenv lerna run lint --stream"

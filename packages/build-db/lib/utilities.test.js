@@ -77,6 +77,7 @@ describe('Build DB - utilities', () => {
                         'content-type': 'text/plain',
                     },
                     source: 'README.md source :)',
+                    html: '<p>README.md source :)</p>',
                 },
                 'package.json': {
                     url: 'https://github.com/marcomontalbano/kata.js/raw/master/package.json',

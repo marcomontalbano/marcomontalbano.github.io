@@ -23,6 +23,7 @@
   },
   "scripts": {
     "test": "jest",
+    "watch": "jest --watch",
     "lint": "eslint .",
     "build": "./bin/build-db"
   },
@@ -38,6 +39,7 @@
     "nock": "~11.3.3"
   },
   "dependencies": {
-    "node-fetch": "~2.6.0"
+    "node-fetch": "~2.6.0",
+    "showdown": "~1.9.0"
   }
 }

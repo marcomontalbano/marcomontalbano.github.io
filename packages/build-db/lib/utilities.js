@@ -1,5 +1,9 @@
 const fetch = require('node-fetch');
 
+const showdown = require('showdown');
+
+const converter = new showdown.Converter();
+
 const { GITHUB_ACCESS_TOKEN } = process.env;
 
 const ghRunQuery = (query) => fetch('https://api.github.com/graphql', {
@@ -35,6 +39,19 @@ const createFile = async (url) => {
     };
 };
 
+const createMarkdown = async (url) => {
+    const markdown = await createFile(url);
+    const [markdownKey] = Object.keys(markdown);
+    const [markdownValues] = Object.values(markdown);
+
+    return {
+        [markdownKey]: {
+            ...markdownValues,
+            html: converter.makeHtml(markdownValues.source),
+        },
+    };
+};
+
 const createRepository = async ({ node }) => {
     const cover = await createFile(`${node.url}/raw/master/cover.png`);
     return {
@@ -44,7 +61,7 @@ const createRepository = async ({ node }) => {
         // forkCount: node.forks.totalCount,
         repositoryTopics: createRepositoryTopics(node.repositoryTopics),
         files: {
-            ...(await createFile(`${node.url}/raw/master/README.md`)),
+            ...(await createMarkdown(`${node.url}/raw/master/README.md`)),
             ...(await createFile(`${node.url}/raw/master/package.json`)),
             ...cover,
         },
