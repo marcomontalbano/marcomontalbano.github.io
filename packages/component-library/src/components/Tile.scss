@@ -23,8 +23,19 @@
     height: auto;
     box-sizing: border-box;
     color: white;
-    > * {
+    > h2 {
+      margin: 0;
+    }
+    > p {
+      $line-height: 1.2em;
+      $line-clamp: 3;
       margin: 10px 0 0;
+      line-height: $line-height;
+      max-height: $line-height * $line-clamp;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: $line-clamp;
+      -webkit-box-orient: vertical;
     }
   }
 
