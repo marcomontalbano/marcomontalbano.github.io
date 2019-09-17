@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs, object } from '@storybook/addon-knobs/react';
 
 import '../index.scss';
 
@@ -18,7 +19,8 @@ export const tileWithLongDescription = {
 };
 
 storiesOf('Tile', module)
+    .addDecorator(withKnobs)
     .addDecorator(storyFn => <div style={{ width: '50%' }}>{storyFn()}</div>)
-    .add('default', () => <Tile {...createTile()} />)
+    .add('default', () => <Tile {...object('tile', { ...createTile() })} />)
     .add('with long description', () => <Tile {...tileWithLongDescription} />)
 ;
