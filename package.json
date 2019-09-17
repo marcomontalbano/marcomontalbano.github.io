@@ -6,7 +6,7 @@
   "scripts": {
     "start": "dotenv lerna run start --parallel",
     "lerna:create": "lerna create",
-    "lerna:bootstrap": "lerna bootstrap",
+    "lerna:bootstrap": "lerna bootstrap --force-local",
     "build": "dotenv lerna run build --stream",
     "test": "dotenv lerna run test --stream",
     "lint": "dotenv lerna run lint --stream"
