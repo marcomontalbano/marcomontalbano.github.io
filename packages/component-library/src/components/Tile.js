@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Tile.scss';
 
@@ -14,5 +15,12 @@ const Tile = ({ src, href, title, description }) => {
         </a>
     );
 }
+
+Tile.propTypes = {
+    src: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+};
 
 export default Tile;
