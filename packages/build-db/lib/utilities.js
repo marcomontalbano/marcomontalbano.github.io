@@ -52,18 +52,28 @@ const createMarkdown = async (url) => {
     };
 };
 
+const getH1FromHtml = (html = '') => {
+    const [, h1] = html.match(/<h1 .*>(.*)<\/h1>/) || [];
+    return h1;
+};
+
 const createRepository = async ({ node }) => {
-    const cover = await createFile(`${node.url}/raw/master/cover.png`);
+    const coverFile = await createFile(`${node.url}/raw/master/cover.png`);
+    const readmeFile = await createMarkdown(`${node.url}/raw/master/README.md`);
+
+    const [cover] = Object.values(coverFile);
+    const [readme] = Object.values(readmeFile);
     return {
         ...node,
-        visible: Object.values(cover)[0].isPresent === true,
+        title: getH1FromHtml(readme.html) || node.name,
+        visible: cover.isPresent === true,
         starCount: node.stargazers.totalCount,
         // forkCount: node.forks.totalCount,
         repositoryTopics: createRepositoryTopics(node.repositoryTopics),
         files: {
-            ...(await createMarkdown(`${node.url}/raw/master/README.md`)),
+            ...readmeFile,
             ...(await createFile(`${node.url}/raw/master/package.json`)),
-            ...cover,
+            ...coverFile,
         },
     };
 };

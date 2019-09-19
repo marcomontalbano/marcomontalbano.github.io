@@ -47,8 +47,15 @@ describe('Build DB - utilities', () => {
     beforeEach(() => {
         nock('https://github.com/marcomontalbano/kata.js/raw/master')
             .persist()
-            .get(/README\.md|package\.json/)
-            .reply(200, (uri) => `${uri.substring(uri.lastIndexOf('/') + 1)} source :)`, {
+            .get(/README\.md/)
+            .reply(200, () => '# Kata JS\nREADME.md source :)', {
+                'content-type': 'text/plain',
+            });
+
+        nock('https://github.com/marcomontalbano/kata.js/raw/master')
+            .persist()
+            .get(/package\.json/)
+            .reply(200, () => 'package.json source :)', {
                 'content-type': 'text/plain',
             });
 
@@ -66,6 +73,7 @@ describe('Build DB - utilities', () => {
         const repositories = [...response.data.viewer.repositories.edges];
         expect(await createRepository(repositories[0])).toStrictEqual({
             ...repositories[0].node,
+            title: 'Kata JS',
             visible: false,
             starCount: 2,
             repositoryTopics: ['kata', 'tdd'],
@@ -76,8 +84,8 @@ describe('Build DB - utilities', () => {
                     headers: {
                         'content-type': 'text/plain',
                     },
-                    source: 'README.md source :)',
-                    html: '<p>README.md source :)</p>',
+                    source: '# Kata JS\nREADME.md source :)',
+                    html: '<h1 id="katajs">Kata JS</h1>\n<p>README.md source :)</p>',
                 },
                 'package.json': {
                     url: 'https://github.com/marcomontalbano/kata.js/raw/master/package.json',

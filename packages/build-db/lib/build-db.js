@@ -7,8 +7,7 @@ const { NODE_ENV } = process.env;
 const isProduction = NODE_ENV === 'production';
 const encoding = 'utf8';
 
-async function buildDb(outputPath = 'db.json') {
-    const resolvedOutputPath = path.resolve(outputPath);
+async function buildDb() {
     const json = await utilities.ghRunQuery(fs.readFileSync(`${__dirname}/db.graphql`, encoding));
 
     if (json.message) {
@@ -19,17 +18,19 @@ async function buildDb(outputPath = 'db.json') {
         throw new Error(json.errors[0].message);
     }
 
-    const db = await utilities.sanitize(json);
-    const dbAsString = JSON.stringify(db, undefined, isProduction ? undefined : 2);
-
-    fs.writeFileSync(resolvedOutputPath, dbAsString, encoding);
-
-    // eslint-disable-next-line no-console
-    console.log(`Built database in ${resolvedOutputPath}`);
+    return utilities.sanitize(json);
 }
 
-function exportDb(outputPath) {
-    buildDb(outputPath).catch((error) => {
+function exportDb(outputPath = 'db.json') {
+    buildDb().then((db) => {
+        const resolvedOutputPath = path.resolve(outputPath);
+        const dbAsString = JSON.stringify(db, undefined, isProduction ? undefined : 2);
+
+        fs.writeFileSync(resolvedOutputPath, dbAsString, encoding);
+
+        // eslint-disable-next-line no-console
+        console.log(`Built database in ${resolvedOutputPath}`);
+    }).catch((error) => {
         // eslint-disable-next-line no-console
         console.error(error);
     });
