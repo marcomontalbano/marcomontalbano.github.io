@@ -12,7 +12,7 @@
     "react-scripts": "3.1.1"
   },
   "scripts": {
-    "start": "start-storybook -p 9009 -s public",
+    "start": "start-storybook -p 9010 -s public",
     "build": "build-storybook -s public",
     "test": "react-scripts test",
     "lint": "eslint ."

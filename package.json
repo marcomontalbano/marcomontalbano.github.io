@@ -4,9 +4,8 @@
   "license": "MIT",
   "description": "My portfolio",
   "scripts": {
+    "postinstall": "lerna exec npm install --stream",
     "start": "dotenv lerna run start --parallel",
-    "lerna:create": "lerna create",
-    "lerna:bootstrap": "lerna bootstrap --force-local",
     "watch": "dotenv lerna run watch --stream",
     "build": "dotenv lerna run build --stream",
     "test": "dotenv lerna run test --stream",
