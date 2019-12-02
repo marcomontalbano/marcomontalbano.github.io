@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 
 import './Tile.scss';
 
-const Tile = ({ src, href, title, description }) => {
+type Props = {
+    src: string,
+    href: string,
+    title: string,
+    description: string,
+}
+
+const Tile = ({ src, href, title, description }: Props) => {
 
     return (
         <a className="tile" href={href}>

@@ -5,17 +5,12 @@
   "description": "My own component library",
   "author": "Marco Montalbano <marcomontalbano.work@gmail.com>",
   "homepage": "https://github.com/marcomontalbano/portfolio/tree/master/packages/component-library#readme",
-  "license": "MIT",
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
-  },
   "scripts": {
-    "start": "start-storybook -p 9010 -s public",
-    "build": "build-storybook -s public",
-    "test": "react-scripts test",
-    "lint": "eslint ."
+    "start": "start-storybook -p 9009 -s public",
+    "build:storybook": "build-storybook -s public",
+    "build:ts": "tsc",
+    "build": "npm-run-all build:*",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,12 +27,28 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "react-dom": "^16.12.0",
+    "react": "^16.12.0"
+  },
   "devDependencies": {
-    "@storybook/addon-actions": "~5.2.0",
-    "@storybook/addon-knobs": "~5.2.0",
-    "@storybook/addon-links": "~5.2.0",
-    "@storybook/addons": "~5.2.0",
-    "@storybook/react": "~5.2.0",
-    "node-sass": "~4.12.0"
+    "@storybook/addon-actions": "~5.2.8",
+    "@storybook/addon-knobs": "~5.2.8",
+    "@storybook/addon-links": "~5.2.8",
+    "@storybook/addons": "~5.2.8",
+    "@storybook/react": "~5.2.8",
+    "@types/jest": "24.0.23",
+    "@types/node": "12.12.14",
+    "@types/react": "16.9.13",
+    "@types/react-dom": "16.9.4",
+    "awesome-typescript-loader": "~5.2.1",
+    "npm-run-all": "~4.1.5",
+    "react": "^16.12.0",
+    "react-docgen-typescript-loader": "~3.6.0",
+    "react-docgen-typescript-webpack-plugin": "~1.1.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0",
+    "sass": "~1.23.7",
+    "typescript": "3.7.2"
   }
 }
