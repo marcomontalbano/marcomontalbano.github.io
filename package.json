@@ -24,7 +24,7 @@
   "homepage": "https://marcomontalbano.github.io/portfolio",
   "devDependencies": {
     "dotenv": "~8.1.0",
-    "lerna": "~3.16.4"
+    "lerna": "~3.16.5"
   },
   "engines": {
     "node": ">= 10.16.x <= 12.x",
