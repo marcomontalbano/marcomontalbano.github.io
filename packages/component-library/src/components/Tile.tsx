@@ -2,7 +2,8 @@ import React from 'react';
 
 import './Tile.scss';
 
-type Props = {
+export type Props = {
+    id: string,
     src: string,
     link: URL,
     title: string,

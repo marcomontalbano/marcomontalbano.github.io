@@ -13,17 +13,17 @@ exports[`Storyshots Tile default 1`] = `
     href="https://example.com/"
   >
     <img
-      alt="This is the title"
+      alt="This is the title 1"
       src="https://picsum.photos/seed/picsum/1200/580"
     />
     <div
       className="content"
     >
       <h2>
-        This is the title
+        This is the title 1
       </h2>
       <p>
-        This is the description for this tile
+        This is the description for this tile 1
       </p>
     </div>
   </a>
@@ -43,19 +43,239 @@ exports[`Storyshots Tile with long description 1`] = `
     href="https://example.com/"
   >
     <img
-      alt="This is the title"
+      alt="This is the title 1"
       src="https://picsum.photos/seed/tileWithLongDescription/1200/580"
     />
     <div
       className="content"
     >
       <h2>
-        This is the title
+        This is the title 1
       </h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non posuere justo, a imperdiet leo. Etiam non ipsum a felis lobortis convallis sit amet id odio. Aliquam interdum posuere enim. Donec sollicitudin interdum sodales. Pellentesque eget nibh ac massa tristique eleifend in vitae lorem. Donec semper lectus et fermentum vehicula. Ut elementum fermentum nulla. Ut eget cursus nisi. Aliquam nec faucibus dolor. Pellentesque felis velit, volutpat eget egestas nec, ultricies eget magna. Proin iaculis consequat ante.
       </p>
     </div>
   </a>
+</div>
+`;
+
+exports[`Storyshots TileList default 1`] = `
+<div
+  style={Object {}}
+>
+  <div
+    className="tile-list"
+  >
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 1"
+        src="https://picsum.photos/seed/tile-0/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 1
+        </h2>
+        <p>
+          This is the description for this tile 1
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 2"
+        src="https://picsum.photos/seed/tile-1/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 2
+        </h2>
+        <p>
+          This is the description for this tile 2
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 3"
+        src="https://picsum.photos/seed/tile-2/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 3
+        </h2>
+        <p>
+          This is the description for this tile 3
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 4"
+        src="https://picsum.photos/seed/tile-3/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 4
+        </h2>
+        <p>
+          This is the description for this tile 4
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 5"
+        src="https://picsum.photos/seed/tile-4/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 5
+        </h2>
+        <p>
+          This is the description for this tile 5
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 6"
+        src="https://picsum.photos/seed/tile-5/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 6
+        </h2>
+        <p>
+          This is the description for this tile 6
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 7"
+        src="https://picsum.photos/seed/tile-6/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 7
+        </h2>
+        <p>
+          This is the description for this tile 7
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 8"
+        src="https://picsum.photos/seed/tile-7/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 8
+        </h2>
+        <p>
+          This is the description for this tile 8
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 9"
+        src="https://picsum.photos/seed/tile-8/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 9
+        </h2>
+        <p>
+          This is the description for this tile 9
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 10"
+        src="https://picsum.photos/seed/tile-9/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 10
+        </h2>
+        <p>
+          This is the description for this tile 10
+        </p>
+      </div>
+    </a>
+    <a
+      className="tile"
+      href="https://example.com/"
+    >
+      <img
+        alt="This is the title 11"
+        src="https://picsum.photos/seed/tile-10/1200/580"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          This is the title 11
+        </h2>
+        <p>
+          This is the description for this tile 11
+        </p>
+      </div>
+    </a>
+  </div>
 </div>
 `;

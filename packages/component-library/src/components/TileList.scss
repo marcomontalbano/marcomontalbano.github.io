@@ -1,0 +1,14 @@
+.tile-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1px;
+
+    > .tile {
+        flex: 1 1 512px;
+        margin: 1px;
+
+        &:nth-child(6n+1) {
+            flex-basis: 768px;
+        }
+    }
+}
