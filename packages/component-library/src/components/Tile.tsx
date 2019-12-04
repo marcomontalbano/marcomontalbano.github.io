@@ -1,33 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './Tile.scss';
 
 type Props = {
     src: string,
-    href: string,
+    link: URL,
     title: string,
     description: string,
 }
 
-const Tile = ({ src, href, title, description }: Props) => {
-
-    return (
-        <a className="tile" href={href}>
-            <img src={src} alt={title} />
-            <div className="content">
-                <h2>{title}</h2>
-                <p>{description}</p>
-            </div>
-        </a>
-    );
-}
-
-Tile.propTypes = {
-    src: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
-};
+const Tile = ({ src, link, title, description }: Props) => (
+    <a className="tile" href={link.href}>
+        <img src={src} alt={title} />
+        <div className="content">
+            <h2>{title}</h2>
+            <p>{description}</p>
+        </div>
+    </a>
+);
 
 export default Tile;

@@ -10,7 +10,7 @@ export const createTile = (seed = 'picsum') => ({
     title: 'This is the title',
     description: 'This is the description for this tile',
     src: `https://picsum.photos/seed/${seed}/1200/580`,
-    href: `https://example.com`
+    link: new URL(`https://example.com`)
 });
 
 export const tileWithLongDescription = {
