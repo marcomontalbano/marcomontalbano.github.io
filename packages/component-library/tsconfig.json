@@ -4,9 +4,12 @@
     "allowSyntheticDefaultImports": true,
     "module": "esnext",
     "target": "esnext",
-    "lib": ["es6", "dom"],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "sourceMap": true,
-    "allowJs": true,
+    "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "./src",
@@ -15,14 +18,18 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "declaration": true,
-    "strict": true
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
   "include": [
-    "./src"
+    "./src/**/*.tsx"
   ],
   "exclude": [
-    "**/*.test.ts",
     "**/*.stories.tsx"
   ]
 }

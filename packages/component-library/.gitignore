@@ -25,3 +25,4 @@ yarn-error.log*
 # storybook
 /storybook-dist
 /storybook-static
+react-app-env.d.ts

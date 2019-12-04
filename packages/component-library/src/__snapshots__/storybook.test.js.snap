@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Tile default 1`] = `
+<div
+  style={
+    Object {
+      "width": "50%",
+    }
+  }
+>
+  <a
+    className="tile"
+    href="https://example.com/"
+  >
+    <img
+      alt="This is the title"
+      src="https://picsum.photos/seed/picsum/1200/580"
+    />
+    <div
+      className="content"
+    >
+      <h2>
+        This is the title
+      </h2>
+      <p>
+        This is the description for this tile
+      </p>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Storyshots Tile with long description 1`] = `
+<div
+  style={
+    Object {
+      "width": "50%",
+    }
+  }
+>
+  <a
+    className="tile"
+    href="https://example.com/"
+  >
+    <img
+      alt="This is the title"
+      src="https://picsum.photos/seed/tileWithLongDescription/1200/580"
+    />
+    <div
+      className="content"
+    >
+      <h2>
+        This is the title
+      </h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non posuere justo, a imperdiet leo. Etiam non ipsum a felis lobortis convallis sit amet id odio. Aliquam interdum posuere enim. Donec sollicitudin interdum sodales. Pellentesque eget nibh ac massa tristique eleifend in vitae lorem. Donec semper lectus et fermentum vehicula. Ut elementum fermentum nulla. Ut eget cursus nisi. Aliquam nec faucibus dolor. Pellentesque felis velit, volutpat eget egestas nec, ultricies eget magna. Proin iaculis consequat ante.
+      </p>
+    </div>
+  </a>
+</div>
+`;
