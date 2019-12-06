@@ -2,8 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, object } from '@storybook/addon-knobs';
 
-import '../storybook.scss';
-
 import Tile from './Tile';
 
 export const createTile = (index = 1, seed = 'picsum') => ({

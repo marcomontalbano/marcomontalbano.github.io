@@ -2,8 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, object } from '@storybook/addon-knobs';
 
-import '../storybook.scss';
-
 import { createTile } from './Tile.stories';
 
 import TileList from './TileList';
