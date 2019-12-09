@@ -20,6 +20,11 @@ const Tile = ({ className, src, link, title, description }: TileProps & StyledCo
     </a>
 );
 
+const cssVariables = {
+    lineHeight: 1.2,
+    lineClamp: 3
+}
+
 export default styled(Tile)`
     position: relative;
     display: block;
@@ -51,14 +56,12 @@ export default styled(Tile)`
         }
 
         > p {
-            $line-height: 1.2em;
-            $line-clamp: 3;
             margin: 10px 0 0;
-            line-height: $line-height;
-            max-height: $line-height * $line-clamp;
+            line-height: ${ cssVariables.lineHeight }em;
+            max-height: ${ (cssVariables.lineHeight * cssVariables.lineClamp).toFixed(2) }em;
             overflow: hidden;
             display: -webkit-box;
-            -webkit-line-clamp: $line-clamp;
+            -webkit-line-clamp: ${ cssVariables.lineClamp };
             -webkit-box-orient: vertical;
         }
     }
