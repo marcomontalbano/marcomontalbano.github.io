@@ -43,7 +43,7 @@ const response = {
     },
 };
 
-describe('Build DB - utilities', () => {
+describe('Dump GitHub - utilities', () => {
     beforeEach(() => {
         nock('https://github.com/marcomontalbano/kata.js/raw/master')
             .persist()

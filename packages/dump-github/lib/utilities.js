@@ -4,12 +4,12 @@ const showdown = require('showdown');
 
 const converter = new showdown.Converter();
 
-const { GITHUB_ACCESS_TOKEN } = process.env;
+const { GITHUB_TOKEN } = process.env;
 
 const ghRunQuery = (query) => fetch('https://api.github.com/graphql', {
     method: 'POST',
     headers: {
-        Authorization: `Bearer ${GITHUB_ACCESS_TOKEN}`,
+        Authorization: `Bearer ${GITHUB_TOKEN}`,
         'Content-Type': 'application/json',
         Accept: 'application/json',
     },

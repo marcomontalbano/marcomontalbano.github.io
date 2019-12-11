@@ -1,14 +1,14 @@
 {
-  "name": "build-db",
+  "name": "dump-github",
   "version": "0.0.1-alpha.0",
   "private": true,
   "description": "Fetch GitHub repository and export as db.json",
   "author": "Marco Montalbano <marcomontalbano.work@gmail.com>",
-  "homepage": "https://github.com/marcomontalbano/portfolio/tree/master/packages/build-db#readme",
+  "homepage": "https://github.com/marcomontalbano/portfolio/tree/master/packages/dump-github#readme",
   "license": "MIT",
-  "main": "lib/build-db.js",
+  "main": "lib/dump-github.js",
   "bin": {
-    "build-db": "bin/build-db"
+    "dump-github": "bin/dump-github"
   },
   "directories": {
     "lib": "lib"
@@ -25,21 +25,21 @@
     "test": "jest",
     "watch": "jest --watch",
     "lint": "eslint .",
-    "build": "./bin/build-db"
+    "build": "./bin/dump-github"
   },
   "bugs": {
     "url": "https://github.com/marcomontalbano/portfolio/issues"
   },
   "devDependencies": {
-    "eslint": "~6.3.0",
+    "eslint": "~6.7.2",
     "eslint-config-airbnb-base": "~14.0.0",
-    "eslint-plugin-import": "~2.18.2",
-    "eslint-plugin-jest": "~22.17.0",
+    "eslint-plugin-import": "~2.19.1",
+    "eslint-plugin-jest": "~23.1.1",
     "jest": "~24.9.0",
-    "nock": "~11.3.3"
+    "nock": "~11.7.0"
   },
   "dependencies": {
     "node-fetch": "~2.6.0",
-    "showdown": "~1.9.0"
+    "showdown": "~1.9.1"
   }
 }

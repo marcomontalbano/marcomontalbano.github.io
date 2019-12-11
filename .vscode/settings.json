@@ -1,6 +1,6 @@
 {
     "eslint.workingDirectories": [
-        "./packages/build-db",
+        "./packages/dump-github",
         "./packages/component-library"
     ]
 }
