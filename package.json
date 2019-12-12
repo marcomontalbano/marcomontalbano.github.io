@@ -5,6 +5,7 @@
   "description": "My website",
   "scripts": {
     "postinstall": "lerna bootstrap --force-local",
+    "lerna:version": "lerna version",
     "lerna:install": "lerna exec npm install --stream",
     "lerna:update": "lerna exec npm update --stream",
     "start": "dotenv lerna run start --parallel",
