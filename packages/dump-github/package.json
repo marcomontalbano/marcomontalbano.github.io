@@ -1,6 +1,5 @@
 {
   "name": "dump-github",
-  "version": "0.0.1-alpha.0",
   "private": true,
   "description": "Fetch GitHub repository and export as db.json",
   "author": "Marco Montalbano <marcomontalbano.work@gmail.com>",

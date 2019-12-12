@@ -1,12 +1,17 @@
 {
   "name": "component-library",
   "version": "0.0.1-alpha.0",
-  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "description": "My own component library",
-  "author": "Marco Montalbano <marcomontalbano.work@gmail.com>",
+  "author": "Marco Montalbano <me@marcomontalbano.com>",
   "homepage": "https://github.com/marcomontalbano/portfolio/tree/master/packages/component-library#readme",
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
     "build:storybook": "build-storybook -s public",
