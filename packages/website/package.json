@@ -5,16 +5,6 @@
   "author": "Marco Montalbano <me@marcomontalbano.com>",
   "dependencies": {
     "@marcomontalbano/component-library": "0.0.1-alpha.3",
-    "gatsby": "~2.18.11",
-    "gatsby-image": "~2.2.36",
-    "gatsby-plugin-manifest": "~2.2.33",
-    "gatsby-plugin-offline": "~3.0.29",
-    "gatsby-plugin-react-helmet": "~3.1.18",
-    "gatsby-plugin-sharp": "~2.3.7",
-    "gatsby-plugin-typescript": "~2.1.22",
-    "gatsby-plugin-typescript-checker": "~1.1.1",
-    "gatsby-source-filesystem": "~2.1.42",
-    "gatsby-transformer-sharp": "~2.3.9",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
@@ -26,8 +16,17 @@
     "@types/react-dom": "~16.9.4",
     "@types/react-helmet": "~5.0.14",
     "@types/styled-components": "~4.4.1",
-    "prettier": "^1.19.1",
-    "typescript": "~3.7.3"
+    "gatsby": "~2.18.11",
+    "gatsby-image": "~2.2.36",
+    "gatsby-plugin-manifest": "~2.2.33",
+    "gatsby-plugin-offline": "~3.0.29",
+    "gatsby-plugin-react-helmet": "~3.1.18",
+    "gatsby-plugin-sharp": "~2.3.7",
+    "gatsby-plugin-typescript": "~2.1.22",
+    "gatsby-plugin-typescript-checker": "~1.1.1",
+    "gatsby-source-filesystem": "~2.1.42",
+    "gatsby-transformer-sharp": "~2.3.9",
+    "prettier": "^1.19.1"
   },
   "keywords": [
     "gatsby"
