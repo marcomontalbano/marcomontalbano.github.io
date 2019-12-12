@@ -1,5 +1,5 @@
 {
-  "name": "@marcomontalbano-github-io/dump-github",
+  "name": "@marcomontalbano/dump-github",
   "private": true,
   "description": "Fetch GitHub repository and export as db.json",
   "author": "Marco Montalbano <marcomontalbano.work@gmail.com>",
