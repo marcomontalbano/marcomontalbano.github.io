@@ -12,6 +12,11 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcomontalbano/marcomontalbano.github.io.git",
+    "directory": "packages/component-library"
+  },
   "scripts": {
     "start": "start-storybook -p 9009 -s public",
     "build:storybook": "build-storybook -s public",
