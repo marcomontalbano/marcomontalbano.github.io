@@ -1,6 +1,6 @@
 {
   "name": "component-library",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -34,8 +34,8 @@
     ]
   },
   "peerDependencies": {
-    "react-dom": "^16.12.0",
     "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
