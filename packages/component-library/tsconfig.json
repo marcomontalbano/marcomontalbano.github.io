@@ -2,9 +2,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
-    "module": "CommonJS",
-    "target": "ES5",
-    "lib": ["es6", "dom"],
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "sourceMap": true,
     "allowJs": false,
     "jsx": "react",

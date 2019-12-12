@@ -9,7 +9,7 @@ exports[`Storyshots Tile default 1`] = `
   }
 >
   <a
-    className="tile"
+    className="sc-bdVaJa cdlpwm"
     href="https://example.com/"
   >
     <img
@@ -39,7 +39,7 @@ exports[`Storyshots Tile with long description 1`] = `
   }
 >
   <a
-    className="tile"
+    className="sc-bdVaJa cdlpwm"
     href="https://example.com/"
   >
     <img
@@ -65,10 +65,10 @@ exports[`Storyshots TileList default 1`] = `
   style={Object {}}
 >
   <div
-    className="tile-list"
+    className="sc-bwzfXH ijRoiM"
   >
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -87,7 +87,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -106,7 +106,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -125,7 +125,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -144,7 +144,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -163,7 +163,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -182,7 +182,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -201,7 +201,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -220,7 +220,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -239,7 +239,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
@@ -258,7 +258,7 @@ exports[`Storyshots TileList default 1`] = `
       </div>
     </a>
     <a
-      className="tile"
+      className="sc-bdVaJa cdlpwm"
       href="https://example.com/"
     >
       <img
