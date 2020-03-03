@@ -24,12 +24,13 @@
   },
   "homepage": "https://marcomontalbano.github.io/marcomontalbano.github.io",
   "devDependencies": {
-    "dotenv": "~8.1.0",
     "lerna": "~3.16.5"
   },
   "engines": {
     "node": ">= 10.16.x <= 12.x",
     "npm": ">= 6.9.x < 7.x"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "~8.1.0"
+  }
 }
