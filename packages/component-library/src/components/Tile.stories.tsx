@@ -1,25 +1,37 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, object } from '@storybook/addon-knobs';
+import React, { ReactNode } from 'react';
+import { withKnobs, text } from '@storybook/addon-knobs';
+import { StoryFn } from '@storybook/addons';
 
 import Tile from './Tile';
 
-export const createTile = (index = 1, seed = 'picsum') => ({
-    id: `this-is-the-title-${index}`,
-    title: `This is the title ${index}`,
-    description: `This is the description for this tile ${index}`,
-    src: `https://picsum.photos/seed/${seed}/1200/580`,
-    link: new URL(`https://example.com`)
-});
+import tiles from '../mocks/tiles';
 
-export const tileWithLongDescription = {
-    ...createTile(1, 'tileWithLongDescription'),
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non posuere justo, a imperdiet leo. Etiam non ipsum a felis lobortis convallis sit amet id odio. Aliquam interdum posuere enim. Donec sollicitudin interdum sodales. Pellentesque eget nibh ac massa tristique eleifend in vitae lorem. Donec semper lectus et fermentum vehicula. Ut elementum fermentum nulla. Ut eget cursus nisi. Aliquam nec faucibus dolor. Pellentesque felis velit, volutpat eget egestas nec, ultricies eget magna. Proin iaculis consequat ante.`,
-};
+export default {
+    title: 'Tile',
+    decorators: [
+        withKnobs,
+        (storyFn: StoryFn) => (
+            <div style={{ width: '50%' }}>{ (storyFn() as ReactNode) }</div>
+        )
+    ]
+}
 
-storiesOf('Tile', module)
-    .addDecorator(withKnobs)
-    .addDecorator(storyFn => <div style={{ width: '50%' }}>{storyFn()}</div>)
-    .add('default', () => <Tile {...object('tile', createTile())} />)
-    .add('with long description', () => <Tile {...object('tile', tileWithLongDescription)} />)
-;
+export const Basic = () => (
+    <Tile
+        id={ text('id', tiles[1].id) }
+        title={ text('title', tiles[1].title) }
+        description={ text('description', tiles[1].description) }
+        src={ text('src', tiles[1].src) }
+        link={ text('link', tiles[1].link) }
+    />
+)
+
+export const WithLongDescription = () => (
+    <Tile
+        id={ text('id', tiles[1].id) }
+        title={ text('title', tiles[1].title) }
+        description={ text('description', `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non posuere justo, a imperdiet leo. Etiam non ipsum a felis lobortis convallis sit amet id odio. Aliquam interdum posuere enim. Donec sollicitudin interdum sodales. Pellentesque eget nibh ac massa tristique eleifend in vitae lorem. Donec semper lectus et fermentum vehicula. Ut elementum fermentum nulla. Ut eget cursus nisi. Aliquam nec faucibus dolor. Pellentesque felis velit, volutpat eget egestas nec, ultricies eget magna. Proin iaculis consequat ante.`) }
+        src={ text('src', tiles[1].src) }
+        link={ text('link', tiles[1].link) }
+    />
+)

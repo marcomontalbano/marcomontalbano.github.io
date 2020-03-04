@@ -17,4 +17,4 @@ https://github.com/lerna/lerna
 
 `npm run build`
 
-`npm run build -- --scope build-db`
+`npm run build -- --scope @marcomontalbano/dump-github`

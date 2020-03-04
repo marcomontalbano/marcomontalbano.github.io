@@ -5,13 +5,13 @@ import StyledComponentsType from './StyledComponentsType';
 export type TileProps = {
     id: string,
     src: string,
-    link: URL,
+    link: string,
     title: string,
     description: string,
 };
 
 const Tile = ({ className, src, link, title, description }: TileProps & StyledComponentsType) => (
-    <a href={link.href} className={className}>
+    <a href={link} className={className}>
         <img src={src} alt={title} />
         <div className="content">
             <h2>{title}</h2>
