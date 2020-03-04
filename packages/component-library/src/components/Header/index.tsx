@@ -41,12 +41,12 @@ const Header = ({
   gradientEnd = initialGradientEnd
 }) => {
   const [solid, setSolid] = useState(forceSolid);
-  const backgroundRef = useRef<any>();
+  const intersectionObserverRef = useRef<HTMLElement>(document.createElement('span'));
 
-  const intersectionObserverRef = useIntersectionObserver({
+  useIntersectionObserver({
+    ref: intersectionObserverRef,
     threshold: 1,
     callback: ([entry]) => {
-      console.log(entry.intersectionRatio);
       if (forceSolid === false) {
         setSolid(entry.intersectionRatio < 1);
       }
@@ -61,11 +61,11 @@ const Header = ({
   return (
     <Container>
       <FixedContainer style={gradientProperties} >
-        <Background ref={backgroundRef} isSolid={solid} className="animate" />
+        <Background isSolid={solid} className="animate" />
         <BrandName href="/">Website Title</BrandName>
         <Menu>
-          <a>Home</a>
-          <a>Portfolio</a>
+          <a href="https://example.com">Home</a>
+          <a href="https://example.com">Portfolio</a>
         </Menu>
       </FixedContainer>
       <IntersectionRoot ref={intersectionObserverRef} />

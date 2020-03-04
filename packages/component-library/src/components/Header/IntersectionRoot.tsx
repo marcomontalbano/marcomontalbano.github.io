@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.a`
+export default styled.span`
   position: absolute;
   bottom: 0;
 `;

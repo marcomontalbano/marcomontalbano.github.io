@@ -1,16 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, MutableRefObject } from 'react';
 
 type UseIntersectionObserver = IntersectionObserverInit & {
-  callback: (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => void
+  ref: MutableRefObject<HTMLElement>;
+  callback: (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => void;
 }
 
 export default ({
+  ref,
   root,
   rootMargin,
   threshold = 0,
   callback = () => {}
 }: UseIntersectionObserver) => {
-  const [node, setNode] = useState();
 
   const observer = useRef(
     new window.IntersectionObserver(
@@ -23,12 +24,10 @@ export default ({
     const { current: currentObserver } = observer;
     currentObserver.disconnect();
 
-    if (node) {
-      currentObserver.observe(node);
+    if (ref.current) {
+      currentObserver.observe(ref.current);
     }
 
     return () => currentObserver.disconnect();
-  }, [node]);
-
-  return setNode;
+  }, [ref]);
 };

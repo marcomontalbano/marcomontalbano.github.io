@@ -32,6 +32,7 @@
   "exclude": [
     "**/*.stories.ts*",
     "**/*.test.ts*",
-    "**/*.spec.ts*"
+    "**/*.spec.ts*",
+    "src/mocks"
   ]
 }
