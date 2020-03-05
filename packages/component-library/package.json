@@ -50,6 +50,7 @@
     "@storybook/addon-links": "^5.3.14",
     "@storybook/addon-storyshots": "^5.3.14",
     "@storybook/addons": "^5.3.14",
+    "@storybook/preset-create-react-app": "~1.5.2",
     "@storybook/react": "^5.3.14",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.17",
@@ -64,7 +65,6 @@
     "react-dom": "^16.13.0",
     "react-scripts": "^3.4.0",
     "react-test-renderer": "^16.13.0",
-    "require-context.macro": "^1.2.2",
     "styled-components": "^4.4.1",
     "typescript": "^3.8.3"
   }
