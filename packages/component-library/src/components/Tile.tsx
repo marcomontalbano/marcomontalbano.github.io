@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import StyledComponentsType from './StyledComponentsType';
 
-export type TileProps = {
+import { StyledComponents } from '../types';
+
+export type Props = {
     id: string,
     src: string,
     link: string,
@@ -10,7 +11,7 @@ export type TileProps = {
     description: string,
 };
 
-const Tile = ({ className, src, link, title, description }: TileProps & StyledComponentsType) => (
+const Tile = ({ className, src, link, title, description }: Props & StyledComponents) => (
     <a href={link} className={className}>
         <img src={src} alt={title} />
         <div className="content">
@@ -31,8 +32,8 @@ export default styled(Tile)`
 
     &:before {
         content: "";
-        background: rgb(0,0,0);
-        background: linear-gradient(0deg, rgba(0,0,0,0.6825105042016807) 0%, rgba(0,212,255,0) 100%);
+        background: rgb(0, 0, 0);
+        background: linear-gradient(0deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 100%);
     }
 
     &:before, .content {

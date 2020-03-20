@@ -8,8 +8,8 @@
   "description": "My own component library",
   "author": "Marco Montalbano <me@marcomontalbano.com>",
   "homepage": "https://github.com/marcomontalbano/portfolio/tree/master/packages/component-library#readme",
-  "main": "./dist/main.js",
-  "types": "./dist/main.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],

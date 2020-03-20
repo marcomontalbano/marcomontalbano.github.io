@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import StyledComponentsType from './StyledComponentsType';
 
-import Tile, { TileProps } from './Tile';
+import { StyledComponents } from '../types';
+import Tile, { Props as TileProps } from './Tile';
 
-type TileListProps = {
+export type Props = {
     tiles: TileProps[]
 }
 
-const TileList = ({ className, tiles }: TileListProps & StyledComponentsType) => (
+const TileList = ({ className, tiles }: Props & StyledComponents) => (
     <div className={className}>
         {tiles.map(tile => (
             <Tile key={tile.id} { ...tile } />
