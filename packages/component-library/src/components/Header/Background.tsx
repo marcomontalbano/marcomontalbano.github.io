@@ -13,10 +13,10 @@ const BackgroundGradient = css`
         var(--gradient-start),
         var(--gradient-end)
     );
-    
-    background-size: 200% 100%;
+
+    background-size: 200%;
     background-position: 50% 0;
-    
+
     &.animate {
         animation: ${animation} 5s ease infinite;
         animation: ${animation} 5s linear forwards;

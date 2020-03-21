@@ -31,16 +31,23 @@ const FixedContainer = styled.div`
         position: absolute;
         width: 100%;
         height: 100%;
-        background: linear-gradient(180deg, black -30%, transparent 90%);
+        background: linear-gradient(180deg, black -60%, transparent 105%);
     }
 `;
+
+export type Props = {
+    title: string,
+    forceSolid?: boolean,
+    gradientStart?: number,
+    gradientEnd?: number
+};
 
 const Header = ({
     title = 'Website Title',
     forceSolid = true,
     gradientStart = initialGradientStart,
     gradientEnd = initialGradientEnd
-}) => {
+}: Props) => {
     const [solid, setSolid] = useState(forceSolid);
     const intersectionObserverRef = useRef<HTMLElement>(document.createElement('span'));
 
@@ -62,7 +69,7 @@ const Header = ({
     return (
         <Container>
             <FixedContainer style={gradientProperties} >
-                <Background isSolid={solid} className="animate" />
+                <Background isSolid={solid} />
                 <BrandName href="/">{title}</BrandName>
                 <Menu>
                     <a href="https://github.com/marcomontalbano">GitHub</a>
