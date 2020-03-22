@@ -1,10 +1,15 @@
 import React, { ReactNode } from 'react';
-import { withKnobs, text } from '@storybook/addon-knobs';
+import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs';
 import { StoryFn } from '@storybook/addons';
 
 import Tile from './Tile';
 
 import tiles from '../mocks/tiles';
+
+const valuesObj = tiles.reduce((acc, tile) => ({
+    ...acc,
+    [tile.title]: JSON.stringify(tile)
+}), {});
 
 const [ tile ] = tiles;
 
@@ -38,4 +43,8 @@ export const WithLongDescription = () => (
         src={ text('src', tile.src) }
         link={ text('link', tile.link) }
     />
+)
+
+export const RealData = () => (
+    <Tile { ...JSON.parse(options('tile', valuesObj, JSON.stringify(tile), { display: 'radio' })) } />
 )

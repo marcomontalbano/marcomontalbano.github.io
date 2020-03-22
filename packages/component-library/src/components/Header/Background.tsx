@@ -6,7 +6,7 @@ const animation = keyframes`
 `;
 
 const BackgroundGradient = css`
-    box-shadow: 1px 1px 10px black;
+    box-shadow: 1px 1px 10px -4px black;
     background: rgb(19, 96, 138);
     background: linear-gradient(
         96deg,

@@ -11,7 +11,7 @@ const [firstTile] = tiles;
 const valuesObj = tiles.reduce((acc, tile) => ({
     ...acc,
     [tile.title]: tile.src
-}), {});
+}), { empty: '' });
 
 export default {
     title: 'Header',
@@ -21,7 +21,7 @@ export default {
         (storyFn: StoryFn) => (
             <div style={{
                 height: '200vh',
-                backgroundImage: `url('${options('backgroundImage', valuesObj, firstTile.src, { display: 'select' })}')`,
+                backgroundImage: `url('${options('', valuesObj, firstTile.src, { display: 'select' })}')`,
                 backgroundSize: '100%',
                 backgroundRepeat: 'no-repeat'
             }}>{ (storyFn() as ReactNode) }</div>
