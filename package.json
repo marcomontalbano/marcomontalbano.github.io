@@ -4,16 +4,17 @@
   "license": "MIT",
   "description": "My website",
   "scripts": {
-    "clean": "rm -rf node_modules/ */*/node_modules */*/dist */*/tsconfig.tsbuildinfo",
-    "postinstall": "lerna bootstrap --force-local",
+    "clean": "rm -rf node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo",
+    "postinstall": "lerna bootstrap && npm run build:ts && node lernaCopy.js",
+    "prestart": "npm run build:ts && node lernaCopy.js",
+    "start": "dotenv lerna run start --parallel",
+    "build": "dotenv lerna run build --stream",
+    "build:ts": "lerna run --scope @marcomontalbano/component-library build:ts",
+    "test": "dotenv lerna run test --stream",
+    "lint": "dotenv lerna run lint --stream",
     "lerna:version": "lerna version",
     "lerna:install": "lerna exec npm install --stream",
-    "lerna:update": "lerna exec npm update --stream",
-    "start": "dotenv lerna run start --parallel",
-    "watch": "dotenv lerna run watch --stream",
-    "build": "dotenv lerna run build --stream",
-    "test": "dotenv lerna run test --stream",
-    "lint": "dotenv lerna run lint --stream"
+    "lerna:update": "lerna exec npm update --stream"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://marcomontalbano.github.io/marcomontalbano.github.io",
   "devDependencies": {
+    "fs-extra": "~9.0.0",
     "lerna": "~3.20.2"
   },
   "engines": {

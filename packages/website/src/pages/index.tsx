@@ -15,8 +15,8 @@ const IndexPage = () => (
       id="hero"
       title="Hero"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit ante eget augue interdum, in dictum mi sollicitudin. Sed vitae lorem sed augue aliquam auctor ac a justo. Fusce efficitur bibendum lorem, vitae porttitor urna consequat quis. Praesent congue tempor sem, sed mollis massa porta et. Quisque tincidunt bibendum nisi, in porta felis vestibulum eget. Phasellus tempor lobortis purus, facilisis imperdiet nunc volutpat ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ut velit at magna consequat placerat. Fusce vel tellus nec justo lacinia efficitur. Nam imperdiet sapien pellentesque felis accumsan, id hendrerit justo mattis."
-      link={ new URL('https://example.com') }
       src="https://picsum.photos/id/958/1280/720"
+      link="https://example.com"
       ></Tile>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
