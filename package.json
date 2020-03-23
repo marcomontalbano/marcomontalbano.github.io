@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "My website",
   "scripts": {
+    "clean": "rm -rf node_modules/ */*/node_modules */*/dist */*/tsconfig.tsbuildinfo",
     "postinstall": "lerna bootstrap --force-local",
     "lerna:version": "lerna version",
     "lerna:install": "lerna exec npm install --stream",
@@ -24,13 +25,13 @@
   },
   "homepage": "https://marcomontalbano.github.io/marcomontalbano.github.io",
   "devDependencies": {
-    "lerna": "~3.16.5"
+    "lerna": "~3.20.2"
   },
   "engines": {
     "node": ">= 10.16.x <= 12.x",
     "npm": ">= 6.9.x < 7.x"
   },
   "dependencies": {
-    "dotenv": "~8.1.0"
+    "dotenv": "~8.2.0"
   }
 }
