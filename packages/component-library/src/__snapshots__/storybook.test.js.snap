@@ -1,5 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Header Solid 1`] = `
+<div
+  style={
+    Object {
+      "backgroundImage": "url('https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png')",
+      "backgroundRepeat": "no-repeat",
+      "backgroundSize": "100%",
+      "height": "200vh",
+    }
+  }
+>
+  <header
+    className="sc-AxhUy dtLEQA"
+  >
+    <div
+      className="sc-AxgMl bJqaMP"
+      style={
+        Object {
+          "--gradient-end": "hsl(180, 78%, 68%)",
+          "--gradient-start": "hsl(200, 78%, 68%)",
+        }
+      }
+    >
+      <div
+        className="sc-AxjAm kxgOcw"
+      />
+      <a
+        className="sc-AxirZ igXokt"
+        href="/"
+      >
+        Website Title
+      </a>
+      <div
+        className="sc-AxhCb dPBedJ"
+      >
+        <a
+          href="https://github.com/marcomontalbano"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+    <span
+      className="sc-AxiKw jzWNFJ"
+    />
+  </header>
+</div>
+`;
+
+exports[`Storyshots Header Transparent 1`] = `
+<div
+  style={
+    Object {
+      "backgroundImage": "url('https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png')",
+      "backgroundRepeat": "no-repeat",
+      "backgroundSize": "100%",
+      "height": "200vh",
+    }
+  }
+>
+  <header
+    className="sc-AxhUy dtLEQA"
+  >
+    <div
+      className="sc-AxgMl bJqaMP"
+      style={
+        Object {
+          "--gradient-end": "hsl(180, 78%, 68%)",
+          "--gradient-start": "hsl(200, 78%, 68%)",
+        }
+      }
+    >
+      <div
+        className="sc-AxjAm heYexZ"
+      />
+      <a
+        className="sc-AxirZ igXokt"
+        href="/"
+      >
+        Website Title
+      </a>
+      <div
+        className="sc-AxhCb dPBedJ"
+      >
+        <a
+          href="https://github.com/marcomontalbano"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+    <span
+      className="sc-AxiKw jzWNFJ"
+    />
+  </header>
+</div>
+`;
+
 exports[`Storyshots Tile Basic 1`] = `
 <div
   style={
@@ -9,21 +107,51 @@ exports[`Storyshots Tile Basic 1`] = `
   }
 >
   <a
-    className="sc-bZQynM iAvJIz"
-    href="https://github.com/marcomontalbano/kata.js"
+    className="sc-AxheI ccDUCo"
+    href="https://github.com/marcomontalbano/jquery-jcreate"
   >
     <img
-      alt="Test-Driven Development with Mocha: How to"
-      src="https://github.com/marcomontalbano/kata.js/raw/master/cover.png"
+      alt="jCreate"
+      src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
     />
     <div
       className="content"
     >
       <h2>
-        Test-Driven Development with Mocha: How to
+        jCreate
       </h2>
       <p>
-        A collection of katas with JavaScript.
+        jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
+      </p>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`Storyshots Tile Real Data 1`] = `
+<div
+  style={
+    Object {
+      "width": "50%",
+    }
+  }
+>
+  <a
+    className="sc-AxheI ccDUCo"
+    href="https://github.com/marcomontalbano/jquery-jcreate"
+  >
+    <img
+      alt="jCreate"
+      src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+    />
+    <div
+      className="content"
+    >
+      <h2>
+        jCreate
+      </h2>
+      <p>
+        jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
       </p>
     </div>
   </a>
@@ -39,18 +167,18 @@ exports[`Storyshots Tile With Long Description 1`] = `
   }
 >
   <a
-    className="sc-bZQynM iAvJIz"
-    href="https://github.com/marcomontalbano/kata.js"
+    className="sc-AxheI ccDUCo"
+    href="https://github.com/marcomontalbano/jquery-jcreate"
   >
     <img
-      alt="Test-Driven Development with Mocha: How to"
-      src="https://github.com/marcomontalbano/kata.js/raw/master/cover.png"
+      alt="jCreate"
+      src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
     />
     <div
       className="content"
     >
       <h2>
-        Test-Driven Development with Mocha: How to
+        jCreate
       </h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non posuere justo, a imperdiet leo. Etiam non ipsum a felis lobortis convallis sit amet id odio. Aliquam interdum posuere enim. Donec sollicitudin interdum sodales. Pellentesque eget nibh ac massa tristique eleifend in vitae lorem. Donec semper lectus et fermentum vehicula. Ut elementum fermentum nulla. Ut eget cursus nisi. Aliquam nec faucibus dolor. Pellentesque felis velit, volutpat eget egestas nec, ultricies eget magna. Proin iaculis consequat ante.
@@ -62,10 +190,10 @@ exports[`Storyshots Tile With Long Description 1`] = `
 
 exports[`Storyshots TileList Basic 1`] = `
 <div
-  className="sc-gzVnrw gkOJBV"
+  className="sc-Axmtr gvNRVA"
 >
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/jquery-jcreate"
   >
     <img
@@ -84,7 +212,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/kata.js"
   >
     <img
@@ -103,7 +231,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/numberun"
   >
     <img
@@ -122,7 +250,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/an-introduction-to-frontend"
   >
     <img
@@ -141,7 +269,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/html-miner"
   >
     <img
@@ -160,7 +288,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/speedtest-for-digitalocean"
   >
     <img
@@ -179,7 +307,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/github-emoji"
   >
     <img
@@ -198,7 +326,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/video-to-markdown"
   >
     <img
@@ -217,7 +345,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/wasm-vs-js-benchmark"
   >
     <img
@@ -236,7 +364,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-bZQynM iAvJIz"
+    className="sc-AxheI ccDUCo"
     href="https://github.com/marcomontalbano/figma-export"
   >
     <img

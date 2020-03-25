@@ -3,30 +3,26 @@
     "allowSyntheticDefaultImports": true,
     "module": "ESNext",
     "target": "ES5",
-    "lib": ["ES6", "DOM"],
-
+    "lib": [
+      "ES6",
+      "DOM"
+    ],
     "strict": true,
-
-    /* additional checks */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-
-    /* module resolution options */
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-
-    /* react */
     "allowJs": false,
     "jsx": "react",
     "skipLibCheck": true,
-
     "rootDir": "./src",
     "outDir": "./dist",
-
-    "noEmit": true
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true
   },
   "include": [
     "./src/**/*.ts*"

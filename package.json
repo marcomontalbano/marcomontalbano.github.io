@@ -5,15 +5,16 @@
   "description": "My website",
   "scripts": {
     "clean": "rm -rf node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo",
-    "postinstall": "lerna bootstrap && npm run build:ts && node lernaCopy.js",
-    "prestart": "npm run build:ts && node lernaCopy.js",
+    "postinstall": "run-s lerna:install build:dist",
+    "prestart": "run-s build:dist lerna:fixDependencies",
     "start": "dotenv lerna run start --parallel",
-    "build": "dotenv lerna run build --stream",
-    "build:ts": "lerna run --scope @marcomontalbano/component-library build:ts",
-    "test": "dotenv lerna run test --stream",
-    "lint": "dotenv lerna run lint --stream",
+    "build:dist": "dotenv lerna run build:dist --parallel",
+    "postbuild:dist": "npm run lerna:fixDependencies",
+    "test": "dotenv lerna run test",
+    "lint": "dotenv lerna run lint",
+    "lerna:fixDependencies": "node lernaCopy.js",
     "lerna:version": "lerna version",
-    "lerna:install": "lerna exec npm install --stream",
+    "lerna:install": "lerna exec npm install --parallel",
     "lerna:update": "lerna exec npm update --stream"
   },
   "repository": {
@@ -27,7 +28,8 @@
   "homepage": "https://marcomontalbano.github.io/marcomontalbano.github.io",
   "devDependencies": {
     "fs-extra": "~9.0.0",
-    "lerna": "~3.20.2"
+    "lerna": "~3.20.2",
+    "npm-run-all": "~4.1.5"
   },
   "engines": {
     "node": ">= 10.16.x <= 12.x",

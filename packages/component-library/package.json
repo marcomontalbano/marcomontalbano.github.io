@@ -23,7 +23,7 @@
     "start": "start-storybook -p 9009 -s public",
     "build:storybook": "build-storybook -s public",
     "build:ts": "tsc -b tsconfig.build.json",
-    "test": "react-scripts test"
+    "test": "react-scripts test --watchAll=false"
   },
   "eslintConfig": {
     "extends": "react-app"
