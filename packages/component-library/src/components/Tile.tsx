@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { StyledComponents } from '../types';
+import { StyledComponents } from '../types'
 
 export type Props = {
-    id: string,
-    src: string,
-    link: string,
-    title: string,
-    description: string,
-};
+    id: string
+    src: string
+    link: string
+    title: string
+    description: string
+}
 
 const Tile = ({ className, src, link, title, description }: Props & StyledComponents) => (
     <a href={link} className={className}>
@@ -19,11 +19,11 @@ const Tile = ({ className, src, link, title, description }: Props & StyledCompon
             <p>{description}</p>
         </div>
     </a>
-);
+)
 
 const cssVariables = {
     lineHeight: 1.2,
-    lineClamp: 3
+    lineClamp: 3,
 }
 
 export default styled(Tile)`
@@ -31,14 +31,15 @@ export default styled(Tile)`
     display: block;
 
     &:before {
-        content: "";
+        content: '';
         background: rgb(0, 0, 0);
-        background: linear-gradient(0deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
     }
 
-    &:before, .content {
+    &:before,
+    .content {
         opacity: 0;
-        transition: .3s opacity;
+        transition: 0.3s opacity;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -58,17 +59,18 @@ export default styled(Tile)`
 
         > p {
             margin: 10px 0 0;
-            line-height: ${ cssVariables.lineHeight }em;
-            max-height: ${ (cssVariables.lineHeight * cssVariables.lineClamp).toFixed(2) }em;
+            line-height: ${cssVariables.lineHeight}em;
+            max-height: ${(cssVariables.lineHeight * cssVariables.lineClamp).toFixed(2)}em;
             overflow: hidden;
             display: -webkit-box;
-            -webkit-line-clamp: ${ cssVariables.lineClamp };
+            -webkit-line-clamp: ${cssVariables.lineClamp};
             -webkit-box-orient: vertical;
         }
     }
 
     &:hover {
-        &:before, .content {
+        &:before,
+        .content {
             opacity: 1;
         }
     }
@@ -79,4 +81,4 @@ export default styled(Tile)`
         height: 100%;
         object-fit: cover;
     }
-`;
+`

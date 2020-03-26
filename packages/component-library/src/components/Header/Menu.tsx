@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export default styled.div`
     z-index: 1;
@@ -7,4 +7,4 @@ export default styled.div`
         text-decoration: none;
         padding: 0 25px;
     }
-`;
+`

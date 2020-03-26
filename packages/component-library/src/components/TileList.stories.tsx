@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import TileList from './TileList';
+import TileList from './TileList'
 
-import tiles from '../mocks/tiles';
+import tiles from '../mocks/tiles'
 
 export default {
-    title: 'TileList'
+    title: 'TileList',
 }
 
-export const basic = () => <TileList tiles={ tiles } />
+export const basic = () => <TileList tiles={tiles} />

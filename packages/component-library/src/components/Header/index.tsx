@@ -1,22 +1,22 @@
-import React, { useRef, useState } from 'react';
-import styled from 'styled-components';
+import React, { useRef, useState } from 'react'
+import styled from 'styled-components'
 
-import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+import useIntersectionObserver from '../../hooks/useIntersectionObserver'
 
-import Background from './Background';
-import BrandName from './BrandName';
-import IntersectionRoot from './IntersectionRoot';
-import Menu from './Menu';
+import Background from './Background'
+import BrandName from './BrandName'
+import IntersectionRoot from './IntersectionRoot'
+import Menu from './Menu'
 
-const rndGradient = () => Math.floor(Math.random() * 256);
+const rndGradient = () => Math.floor(Math.random() * 256)
 
-const initialGradientStart = rndGradient();
-const initialGradientEnd = rndGradient();
+const initialGradientStart = rndGradient()
+const initialGradientEnd = rndGradient()
 
 const Container = styled.header`
     position: relative;
     height: 70px;
-`;
+`
 
 const FixedContainer = styled.div`
     position: fixed;
@@ -27,48 +27,48 @@ const FixedContainer = styled.div`
     height: inherit;
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         width: 100%;
         height: 100%;
         background: linear-gradient(180deg, black -60%, transparent 105%);
     }
-`;
+`
 
 export type Props = {
-    title: string,
-    forceSolid?: boolean,
-    gradientStart?: number,
+    title: string
+    forceSolid?: boolean
+    gradientStart?: number
     gradientEnd?: number
-};
+}
 
 const Header = ({
     title = 'Website Title',
     forceSolid = true,
     gradientStart = initialGradientStart,
-    gradientEnd = initialGradientEnd
+    gradientEnd = initialGradientEnd,
 }: Props) => {
-    const [solid, setSolid] = useState(forceSolid);
-    const intersectionObserverRef = useRef<HTMLElement>(document.createElement('span'));
+    const [solid, setSolid] = useState(forceSolid)
+    const intersectionObserverRef = useRef<HTMLElement>(document.createElement('span'))
 
     useIntersectionObserver({
         ref: intersectionObserverRef,
         threshold: 1,
         callback: ([entry]) => {
             if (forceSolid === false) {
-                setSolid(entry.intersectionRatio < 1);
+                setSolid(entry.intersectionRatio < 1)
             }
-        }
-    });
+        },
+    })
 
     const gradientProperties: any = {
         '--gradient-start': `hsl(${gradientStart}, 78%, 68%)`,
-        '--gradient-end': `hsl(${gradientEnd}, 78%, 68%)`
-    };
+        '--gradient-end': `hsl(${gradientEnd}, 78%, 68%)`,
+    }
 
     return (
         <Container>
-            <FixedContainer style={gradientProperties} >
+            <FixedContainer style={gradientProperties}>
                 <Background isSolid={solid} />
                 <BrandName href="/">{title}</BrandName>
                 <Menu>
@@ -77,7 +77,7 @@ const Header = ({
             </FixedContainer>
             <IntersectionRoot ref={intersectionObserverRef} />
         </Container>
-    );
-};
+    )
+}
 
-export default Header;
+export default Header

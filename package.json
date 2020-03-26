@@ -28,8 +28,14 @@
   "homepage": "https://marcomontalbano.github.io/marcomontalbano.github.io",
   "husky": {
     "hooks": {
+      "pre-commit": "lint-staged",
       "pre-push": "npm test"
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier \"**/*.{j,t}s{,x}\" --write"
+    ]
   },
   "devDependencies": {
     "fs-extra": "~9.0.0",

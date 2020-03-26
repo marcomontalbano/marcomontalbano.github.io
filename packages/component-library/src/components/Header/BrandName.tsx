@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const BrandName = styled.a`
     text-decoration: none;
@@ -7,6 +7,6 @@ const BrandName = styled.a`
     font-size: 24px;
     padding-left: 25px;
     flex-grow: 1;
-`;
+`
 
-export default BrandName;
+export default BrandName

@@ -1,6 +1,6 @@
-const nock = require('nock');
+const nock = require('nock')
 
-const { createRepository, sanitize } = require('./utilities');
+const { createRepository, sanitize } = require('./utilities')
 
 const response = {
     data: {
@@ -41,7 +41,7 @@ const response = {
             },
         },
     },
-};
+}
 
 describe('Dump GitHub - utilities', () => {
     beforeEach(() => {
@@ -50,27 +50,27 @@ describe('Dump GitHub - utilities', () => {
             .get(/README\.md/)
             .reply(200, () => '# Kata JS\nREADME.md source :)', {
                 'content-type': 'text/plain',
-            });
+            })
 
         nock('https://github.com/marcomontalbano/kata.js/raw/master')
             .persist()
             .get(/package\.json/)
             .reply(200, () => 'package.json source :)', {
                 'content-type': 'text/plain',
-            });
+            })
 
         nock('https://github.com/marcomontalbano/kata.js/raw/master')
             .persist()
             .get(/cover\.png/)
-            .reply(404);
-    });
+            .reply(404)
+    })
 
     afterEach(() => {
-        nock.cleanAll();
-    });
+        nock.cleanAll()
+    })
 
     it('createRepository() should be able to enhance the repository object adding new properties', async () => {
-        const repositories = [...response.data.viewer.repositories.edges];
+        const repositories = [...response.data.viewer.repositories.edges]
         expect(await createRepository(repositories[0])).toStrictEqual({
             ...repositories[0].node,
             title: 'Kata JS',
@@ -102,22 +102,22 @@ describe('Dump GitHub - utilities', () => {
                     source: undefined,
                 },
             },
-        });
-    });
+        })
+    })
 
     it('sanitize() should clean up the response from graphql query', async () => {
         // const repositories = [...response.data.viewer.repositories.edges];
         const repositories = {
             'kata.js': {
-                ...await createRepository(response.data.viewer.repositories.edges[0]),
+                ...(await createRepository(response.data.viewer.repositories.edges[0])),
             },
-        };
+        }
 
         expect(await sanitize(response)).toStrictEqual({
             login: 'marcomontalbano',
             name: 'Marco Montalbano',
             repositoryCount: 1,
             repositories,
-        });
-    });
-});
+        })
+    })
+})

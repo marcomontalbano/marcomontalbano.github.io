@@ -1,17 +1,20 @@
-import React, { ReactNode } from 'react';
-import { withKnobs, number, text, optionsKnob as options } from '@storybook/addon-knobs';
-import { StoryFn } from '@storybook/addons';
+import React, { ReactNode } from 'react'
+import { withKnobs, number, text, optionsKnob as options } from '@storybook/addon-knobs'
+import { StoryFn } from '@storybook/addons'
 
-import Header from './Header';
+import Header from './Header'
 
-import tiles from '../mocks/tiles';
+import tiles from '../mocks/tiles'
 
-const [firstTile] = tiles;
+const [firstTile] = tiles
 
-const valuesObj = tiles.reduce((acc, tile) => ({
-    ...acc,
-    [tile.title]: tile.src
-}), { empty: '' });
+const valuesObj = tiles.reduce(
+    (acc, tile) => ({
+        ...acc,
+        [tile.title]: tile.src,
+    }),
+    { empty: '' }
+)
 
 export default {
     title: 'Header',
@@ -19,14 +22,20 @@ export default {
     decorators: [
         withKnobs,
         (storyFn: StoryFn) => (
-            <div style={{
-                height: '200vh',
-                backgroundImage: `url('${options('', valuesObj, firstTile.src, { display: 'select' })}')`,
-                backgroundSize: '100%',
-                backgroundRepeat: 'no-repeat'
-            }}>{ (storyFn() as ReactNode) }</div>
-        )
-    ]
+            <div
+                style={{
+                    height: '200vh',
+                    backgroundImage: `url('${options('', valuesObj, firstTile.src, {
+                        display: 'select',
+                    })}')`,
+                    backgroundSize: '100%',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                {storyFn() as ReactNode}
+            </div>
+        ),
+    ],
 }
 
 export const Solid = () => (
@@ -34,7 +43,7 @@ export const Solid = () => (
         title={text('title', 'Website Title')}
         gradientStart={number('gradientStart', 200)}
         gradientEnd={number('gradientEnd', 180)}
-        />
+    />
 )
 
 export const Transparent = () => (
@@ -43,5 +52,5 @@ export const Transparent = () => (
         gradientStart={number('gradientStart', 200)}
         gradientEnd={number('gradientEnd', 180)}
         forceSolid={false}
-        />
+    />
 )
