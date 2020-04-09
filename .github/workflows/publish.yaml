@@ -1,0 +1,31 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+          registry-url: https://npm.pkg.github.com
+          scope: '@marcomontalbano'
+      - name: Project setup `npm ci`
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run `publish` PRERELEASE
+        if: 'github.event.release.prerelease'
+        run: ./node_modules/.bin/lerna publish from-git --dist-tag next --require-scripts --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run `publish` PRODUCTION
+        if: '!github.event.release.prerelease'
+        run: ./node_modules/.bin/lerna publish from-git --require-scripts --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
