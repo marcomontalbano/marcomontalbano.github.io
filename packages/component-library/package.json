@@ -3,8 +3,7 @@
   "version": "0.0.1-alpha.4",
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "directory": "./dist"
+    "registry": "https://npm.pkg.github.com/"
   },
   "description": "My own component library",
   "author": "Marco Montalbano <me@marcomontalbano.com>",
@@ -69,5 +68,6 @@
     "react-test-renderer": "^16.13.1",
     "styled-components": "^5.0.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "gitHead": "8e4e4c2c40de7287202f1036ffeecf0652614258"
 }
