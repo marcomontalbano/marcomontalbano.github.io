@@ -18,3 +18,16 @@ https://github.com/lerna/lerna
 `npm run build`
 
 `npm run build -- --scope @marcomontalbano/dump-github`
+
+### GitHub Packages
+
+Useful links
+
+* https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages
+
+
+### Release
+
+```sh
+npm run lerna:version
+```
