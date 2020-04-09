@@ -6,7 +6,10 @@
     "create": {
       "license": "MIT",
       "access": "public"
+    },
+    "publish": {
+      "registry": "https://npm.pkg.github.com"
     }
   },
-  "version": "0.0.1-alpha.7"
+  "version": "0.0.1-alpha.8"
 }
