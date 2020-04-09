@@ -21,11 +21,11 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Run `publish` PRERELEASE
         if: 'github.event.release.prerelease'
-        run: ./node_modules/.bin/lerna publish from-git --dist-tag next --require-scripts --yes
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+          ./node_modules/.bin/lerna publish from-git --dist-tag next --require-scripts --yes
       - name: Run `publish` PRODUCTION
         if: '!github.event.release.prerelease'
-        run: ./node_modules/.bin/lerna publish from-git --require-scripts --yes
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+          ./node_modules/.bin/lerna publish from-git --require-scripts --yes
