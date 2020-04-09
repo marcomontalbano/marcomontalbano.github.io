@@ -138,44 +138,48 @@
         "signature": "afad8b1e8e0c2d796774f28473c0542d5bfcd6510ae911bda3bd69570e8c769f"
       },
       "./src/hooks/useintersectionobserver.tsx": {
-        "version": "134ef4f671708b6b4918df12eceb150a61638781fc44348215a09cd6fc15f3b5",
+        "version": "77be04662b69693beb3971f00041d954d6530ecadc1f67bd247c767a88d1fe5f",
         "signature": "f4880eb1c80834462c07a6b7e7b025ee1c925737fa1f062ae64053d571790922"
       },
       "./src/components/header/background.tsx": {
-        "version": "8ddea4cf94c8a2e4349ea5f5c393960b1c5629ca30e1b641ad7d3405c2acbf06",
+        "version": "5df8e65e127fe8142c6dea046c886a413b32913cf5c55918140fed923e6f9c57",
         "signature": "ce1c125c4aaa279807920e19ed6995f15bcd661fd1038bf811811848d6714f84"
       },
       "./src/components/header/brandname.tsx": {
-        "version": "48f4ae06d870521da39c76332fd318eeedfef34d7cb44b8bd58a5fdc69cea567",
+        "version": "0fcaab589b1268973c66854b9ff71cfc455380cb54dd6dc9779457ae5202a951",
         "signature": "79408d2d1c6125bb5f2c0e6fe4a4e5fb7a50a7816cfd493dac1c1b43a021ca02"
       },
       "./src/components/header/intersectionroot.tsx": {
-        "version": "8150a820aff7c3a680ff450cc2a32c76a76f4ffaf810ac4ae2b12a1bb25ac13a",
+        "version": "1711aec9ef06b55505c0364610c1ce8b3776a197836dbdf0193f2c765f7b5fed",
         "signature": "59bd19d373657d829a1cc80d71cf5ae26da80e577a3881e247bcd8edd1c7f0e9"
       },
       "./src/components/header/menu.tsx": {
-        "version": "00e53154d22add8f8daad24acb42ae49568d25ff957d20ae3a8bd4d6d570300e",
+        "version": "cb23970d1e0fecfb9b84271cc2de0f6eefefc88d5537abc5d25b1c8cf342a6f5",
         "signature": "65ec131976d5904dac8103d6e8024b866f1f693ccadfe04cfe53a94e04513f6f"
       },
       "./src/components/header/index.tsx": {
-        "version": "d35ece129a3cfb56a3ecf98c0470820495e48780ab02ef793adb99fd5c413cba",
-        "signature": "09be63963c0a166b41fcb6fd0235f4b6a1cab42b5ab613ccaa2bb2af17602b8a"
+        "version": "44256e33037eee7fc01f4e989d27ec5e86afa9a156b39a277de77bf3cccc86aa",
+        "signature": "79b6f35c0745d9052fc1d5a2def973df2288d26026209fe0c5516696e364e00a"
       },
       "./src/types.ts": {
-        "version": "dc852a60b1c816af11b69d966bb2a4629b67d65b70d6120f7362e26fbc90cf5e",
+        "version": "ea7cc48f522027fa03f517b04ac62772168b94eaee98bbc13677fde755df24d0",
         "signature": "0c621f55e336f270ea82d85896aee63373bbed43d9ddb74ab05cdfce41ea9df9"
       },
       "./src/components/tile.tsx": {
-        "version": "9bb0b8d08edf3e60faae6b34e0d88678ad92fa9dd44ed27e1ece66cbcd064264",
+        "version": "49cac009aa383c89d181df56b14baf74a755fc26c0a2a97c30d71811a7e10334",
         "signature": "952f576d5a71e9bea59f82b9767070ed69af9046843030b272856741196167de"
       },
       "./src/components/tilelist.tsx": {
-        "version": "94cc085cfe4678b1e0db33cbee13cdc6d41965d71076ba7ffe5ff553da703b5b",
+        "version": "f637cc8458da9a41ce0126d18d62f4f2aa921ed95cee89bd3a2fea2e31b2bfcc",
         "signature": "061c3ee6ab6c9c2361df9acb0027533061803e30ee58dc108a64f9460312e133"
       },
+      "./src/components/page.tsx": {
+        "version": "494b43e399eea20b4d2dc21aacbf91a3302819dd6462b5bace08ee44374bee1f",
+        "signature": "4c47c5e6537b0d8043bde34190335d7908a9025f3c56413abf73207b6121e265"
+      },
       "./src/index.ts": {
-        "version": "f109fb546d06c14ea970cd4a515a9148f9e14a05223037a5a620482c46c79f29",
-        "signature": "4128fdd9bfe5ff70948453c8004f9174dc75c04d33a4e4e4880fd2c434b2be98"
+        "version": "7340f23840a4309533baeafbb5775a440f85e13da296249d799f5bf7549577b8",
+        "signature": "ec18404cce6df2eb2c5e750dba4382e276380df2a896513db14b5e24509bf793"
       },
       "./node_modules/@types/node/globals.d.ts": {
         "version": "1236b98326630298e0b9cd30ccecd77560ac925140b753f1b1a0ffc6e7b51ad4",
@@ -688,6 +692,8 @@
       "rootDir": "./src",
       "outDir": "./dist",
       "noEmit": false,
+      "forceConsistentCasingInFileNames": true,
+      "isolatedModules": true,
       "sourceMap": true,
       "declaration": true,
       "declarationMap": true,
@@ -979,10 +985,18 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./src/components/page.tsx": [
+        "./node_modules/@types/styled-components/ts3.7/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./src/index.ts": [
         "./src/components/header/index.tsx",
         "./src/components/tile.tsx",
         "./src/components/tilelist.tsx",
+        "./src/components/page.tsx",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/util.d.ts",
@@ -2167,7 +2181,8 @@
       "./src/index.ts": [
         "./src/components/header/index.tsx",
         "./src/components/tile.tsx",
-        "./src/components/tilelist.tsx"
+        "./src/components/tilelist.tsx",
+        "./src/components/page.tsx"
       ],
       "./node_modules/@types/node/globals.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
@@ -3107,6 +3122,9 @@
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/components/page.tsx": [
+        "./node_modules/@types/styled-components/ts3.7/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -3144,15 +3162,6 @@
       "./node_modules/@types/react/index.d.ts",
       "./node_modules/@types/hoist-non-react-statics/index.d.ts",
       "./node_modules/@types/styled-components/ts3.7/index.d.ts",
-      "./src/hooks/useintersectionobserver.tsx",
-      "./src/components/header/background.tsx",
-      "./src/components/header/brandname.tsx",
-      "./src/components/header/intersectionroot.tsx",
-      "./src/components/header/menu.tsx",
-      "./src/components/header/index.tsx",
-      "./src/types.ts",
-      "./src/components/tilelist.tsx",
-      "./src/index.ts",
       "./node_modules/@types/node/globals.d.ts",
       "./node_modules/@types/node/assert.d.ts",
       "./node_modules/@types/node/async_hooks.d.ts",
@@ -3275,7 +3284,17 @@
       "./node_modules/@types/webpack-env/index.d.ts",
       "./node_modules/@types/yargs-parser/index.d.ts",
       "./node_modules/@types/yargs/index.d.ts",
-      "./src/components/tile.tsx"
+      "./src/hooks/useintersectionobserver.tsx",
+      "./src/components/header/background.tsx",
+      "./src/components/header/brandname.tsx",
+      "./src/components/header/intersectionroot.tsx",
+      "./src/components/header/menu.tsx",
+      "./src/components/header/index.tsx",
+      "./src/types.ts",
+      "./src/components/tile.tsx",
+      "./src/components/tilelist.tsx",
+      "./src/components/page.tsx",
+      "./src/index.ts"
     ]
   },
   "version": "3.8.3"
