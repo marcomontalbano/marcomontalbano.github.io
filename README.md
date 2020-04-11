@@ -49,3 +49,4 @@ Useful links
 1. If you want to double-check the website before deploying it, you can use `npm run website:build` and `npm run website:serve`.
     A production copy of the website will be available at http://localhost:9000/
 1. Commit and push the updated `package.json` and `package-lock.json`
+1. Merge `master` into `production` branch

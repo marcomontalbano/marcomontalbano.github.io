@@ -1,0 +1,32 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches: ["production"]
+
+jobs:
+  github_pages:
+    name: Deploy "website" on GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+          registry-url: https://npm.pkg.github.com
+          scope: '@marcomontalbano'
+      - name: Project setup `npm ci`
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run `website:build`
+        run: npm run website:build
+
+      - name: Deploy on `GitHub Pages`
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./packages/website/public
+          publish_branch: gh-pages
