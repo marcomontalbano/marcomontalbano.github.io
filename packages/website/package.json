@@ -4,7 +4,7 @@
   "description": "My personal website",
   "author": "Marco Montalbano <me@marcomontalbano.com>",
   "dependencies": {
-    "@marcomontalbano/component-library": "0.0.1-alpha.3",
+    "@marcomontalbano/component-library": "0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
