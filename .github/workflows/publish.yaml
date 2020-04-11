@@ -29,3 +29,8 @@ jobs:
         run: |
           npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
           ./node_modules/.bin/lerna publish from-git --require-scripts --yes
+      - name: Deploy on Netlify
+        if: '!github.event.release.prerelease'
+        uses: wei/curl@v1
+        with:
+          args: -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_HOOK_PROD }}
