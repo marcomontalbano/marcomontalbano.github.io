@@ -16,7 +16,9 @@
     "lerna:version": "lerna version",
     "lerna:install": "lerna exec npm install --parallel",
     "lerna:update": "lerna exec npm update --stream",
-    "website:build": "lerna run build --scope @marcomontalbano/website"
+    "website:update": "lerna exec \"npm install @marcomontalbano/component-library@latest --save-exact\" --scope @marcomontalbano/website",
+    "website:build": "lerna run build --scope @marcomontalbano/website",
+    "website:serve": "lerna run serve --scope @marcomontalbano/website"
   },
   "repository": {
     "type": "git",
@@ -42,6 +44,7 @@
     "fs-extra": "~9.0.0",
     "husky": "~4.2.3",
     "lerna": "~3.20.2",
+    "lerna-changelog": "~1.0.1",
     "lint-staged": "~10.0.9",
     "npm-run-all": "~4.1.5",
     "prettier": "2.0.2"
