@@ -49,7 +49,7 @@ const Header = ({
     gradientEnd = initialGradientEnd,
 }: Props) => {
     const [solid, setSolid] = useState(forceSolid)
-    const intersectionObserverRef = useRef<HTMLElement>(document.createElement('span'))
+    const intersectionObserverRef = useRef<HTMLElement>(null)
 
     useIntersectionObserver({
         ref: intersectionObserverRef,

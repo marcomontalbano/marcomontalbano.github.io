@@ -4,19 +4,19 @@
   "license": "MIT",
   "description": "My website",
   "scripts": {
-    "clean": "rm -rf node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo",
+    "clean": "rm -rf node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo */*/.cache */website/public",
     "postinstall": "run-s lerna:install",
-    "prestart": "run-s build:dist",
+    "watch": "npx chokidar-cli \"packages/component-library/src/**/*.{j,t}s{,x}\" -c \"run-s prestart\"",
+    "prestart": "run-s build:dist lerna:fixDependencies",
     "start": "dotenv lerna run start --parallel",
-    "build:dist": "dotenv lerna run build:dist --parallel",
-    "postbuild:dist": "npm run lerna:fixDependencies",
     "test": "lerna run test",
     "lint": "lerna run lint",
-    "watch": "npx chokidar-cli \"packages/component-library/src/**/*.{j,t}s{,x}\" -c \"npm run build:dist\"",
+    "build:dist": "lerna run build:dist --parallel",
     "lerna:fixDependencies": "node lernaCopy.js",
     "lerna:version": "lerna version",
     "lerna:install": "lerna exec npm install --parallel",
-    "lerna:update": "lerna exec npm update --stream"
+    "lerna:update": "lerna exec npm update --stream",
+    "website:build": "lerna run build --scope @marcomontalbano/website"
   },
   "repository": {
     "type": "git",

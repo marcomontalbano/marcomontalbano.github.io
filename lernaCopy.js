@@ -6,12 +6,12 @@ const packages = path.resolve('packages')
 const getPackageInfo = (folderName) => {
     const folderPath = path.resolve(packages, folderName)
 
-    const { name, publishConfig: { directory = '' } = {} } = require(path.resolve(folderPath, 'package.json'))
+    const { name, files = [] } = require(path.resolve(folderPath, 'package.json'))
 
     const folders = {
         base: folderPath,
-        dist: path.resolve(folderPath, directory),
         node_modules: path.resolve(folderPath, 'node_modules'),
+        files,
     }
 
     return {
@@ -24,13 +24,18 @@ const copyDependency = (depSource, depDestination) => {
     const packageSource = getPackageInfo(depSource)
     const packageDestination = getPackageInfo(depDestination)
 
-    const source = packageSource.folders.dist
+    const { files } = packageSource.folders
     const destination = path.resolve(packageDestination.folders.node_modules, ...packageSource.name.split('/'))
 
-    console.log(`COPY`, `./${path.relative('.', source)}`, '-->', `./${path.relative('.', destination)}`)
+    files.forEach((file) => {
+        const fileSource = path.resolve(packageSource.folders.base, file)
+        const fileDestination = path.resolve(destination, file)
 
-    fs.removeSync(destination)
-    fs.copySync(source, destination)
+        console.log(`COPY`, `./${path.relative('.', fileSource)}`, '-->', `./${path.relative('.', fileDestination)}`)
+
+        fs.removeSync(fileDestination)
+        fs.copySync(fileSource, fileDestination)
+    })
 }
 
 copyDependency('component-library', 'website')
