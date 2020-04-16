@@ -14,8 +14,12 @@ module.exports = {
         ecmaVersion: 2018,
     },
     rules: {
-        indent: ['error', 4],
+        indent: 'off',
         'max-len': 'off',
+        semi: 'off',
+        'operator-linebreak': 'off',
+        'implicit-arrow-linebreak': 'off',
+        'comma-dangle': 'off',
     },
     plugins: ['jest'],
 }

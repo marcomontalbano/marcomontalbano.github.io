@@ -43,15 +43,21 @@ const createFile = async (url) => {
     }
 }
 
-const createMarkdown = async (url) => {
-    const markdown = await createFile(url)
+const createMarkdown = async (repositoryUrl, markdownUrl) => {
+    const markdown = await createFile(markdownUrl)
     const [markdownKey] = Object.keys(markdown)
     const [markdownValues] = Object.values(markdown)
+
+    const source = markdownValues.source.replace(/\]\(([^)]+)\)/g, (match, url) => {
+        const isRelative = !/^http.*/g.test(url)
+        return match.replace(url, isRelative ? `${repositoryUrl}/raw/master/${url}` : url)
+    })
 
     return {
         [markdownKey]: {
             ...markdownValues,
-            html: converter.makeHtml(markdownValues.source),
+            source,
+            html: converter.makeHtml(source),
         },
     }
 }
@@ -63,7 +69,7 @@ const getH1FromHtml = (html = '') => {
 
 const createRepository = async ({ node }) => {
     const coverFile = await createFile(`${node.url}/raw/master/cover.png`)
-    const readmeFile = await createMarkdown(`${node.url}/raw/master/README.md`)
+    const readmeFile = await createMarkdown(node.url, `${node.url}/raw/master/README.md`)
 
     const [cover] = Object.values(coverFile)
     const [readme] = Object.values(readmeFile)

@@ -44,14 +44,41 @@ const response = {
 }
 
 describe('Dump GitHub - utilities', () => {
-    beforeEach(() => {
-        nock('https://github.com/marcomontalbano/kata.js/raw/master')
-            .persist()
-            .get(/README\.md/)
-            .reply(200, () => '# Kata JS\nREADME.md source :)', {
-                'content-type': 'text/plain',
-            })
+    const repositories = [...response.data.viewer.repositories.edges]
+    const expectedResult = {
+        ...repositories[0].node,
+        title: 'Kata JS',
+        visible: false,
+        starCount: 2,
+        repositoryTopics: ['kata', 'tdd'],
+        files: {
+            'README.md': {
+                url: 'https://github.com/marcomontalbano/kata.js/raw/master/README.md',
+                isPresent: true,
+                headers: {
+                    'content-type': 'text/plain',
+                },
+                source: '# Kata JS\nREADME.md source :)',
+                html: '<h1 id="katajs">Kata JS</h1>\n<p>README.md source :)</p>',
+            },
+            'package.json': {
+                url: 'https://github.com/marcomontalbano/kata.js/raw/master/package.json',
+                isPresent: true,
+                headers: {
+                    'content-type': 'text/plain',
+                },
+                source: 'package.json source :)',
+            },
+            'cover.png': {
+                url: 'https://github.com/marcomontalbano/kata.js/raw/master/cover.png',
+                isPresent: false,
+                headers: undefined,
+                source: undefined,
+            },
+        },
+    }
 
+    beforeEach(() => {
         nock('https://github.com/marcomontalbano/kata.js/raw/master')
             .persist()
             .get(/package\.json/)
@@ -69,55 +96,74 @@ describe('Dump GitHub - utilities', () => {
         nock.cleanAll()
     })
 
-    it('createRepository() should be able to enhance the repository object adding new properties', async () => {
-        const repositories = [...response.data.viewer.repositories.edges]
-        expect(await createRepository(repositories[0])).toStrictEqual({
-            ...repositories[0].node,
-            title: 'Kata JS',
-            visible: false,
-            starCount: 2,
-            repositoryTopics: ['kata', 'tdd'],
-            files: {
-                'README.md': {
-                    url: 'https://github.com/marcomontalbano/kata.js/raw/master/README.md',
-                    isPresent: true,
-                    headers: {
-                        'content-type': 'text/plain',
+    describe('createRepository()', () => {
+        it('should be able to enhance the repository object adding new properties', async () => {
+            nock('https://github.com/marcomontalbano/kata.js/raw/master')
+                .persist()
+                .get(/README\.md/)
+                .reply(200, () => '# Kata JS\nREADME.md source :)', {
+                    'content-type': 'text/plain',
+                })
+
+            expect(await createRepository(repositories[0])).toStrictEqual(expectedResult)
+        })
+
+        it('should be able to enhance the repository object adding new properties', async () => {
+            nock('https://github.com/marcomontalbano/kata.js/raw/master')
+                .persist()
+                .get(/README\.md/)
+                .reply(
+                    200,
+                    () => `# Kata JS
+README.md source :)
+[Absolute URL](https://example.com)
+![Relative URL](images/example.png)`,
+                    { 'content-type': 'text/plain' }
+                )
+
+            expect(await createRepository(repositories[0])).toStrictEqual({
+                ...expectedResult,
+                files: {
+                    ...expectedResult.files,
+                    'README.md': {
+                        url: 'https://github.com/marcomontalbano/kata.js/raw/master/README.md',
+                        isPresent: true,
+                        headers: {
+                            'content-type': 'text/plain',
+                        },
+                        source: `# Kata JS
+README.md source :)
+[Absolute URL](https://example.com)
+![Relative URL](https://github.com/marcomontalbano/kata.js/raw/master/images/example.png)`,
+                        html: `<h1 id="katajs">Kata JS</h1>
+<p>README.md source :)
+<a href="https://example.com">Absolute URL</a>
+<img src="https://github.com/marcomontalbano/kata.js/raw/master/images/example.png" alt="Relative URL" /></p>`,
                     },
-                    source: '# Kata JS\nREADME.md source :)',
-                    html: '<h1 id="katajs">Kata JS</h1>\n<p>README.md source :)</p>',
                 },
-                'package.json': {
-                    url: 'https://github.com/marcomontalbano/kata.js/raw/master/package.json',
-                    isPresent: true,
-                    headers: {
-                        'content-type': 'text/plain',
-                    },
-                    source: 'package.json source :)',
-                },
-                'cover.png': {
-                    url: 'https://github.com/marcomontalbano/kata.js/raw/master/cover.png',
-                    isPresent: false,
-                    headers: undefined,
-                    source: undefined,
-                },
-            },
+            })
         })
     })
 
-    it('sanitize() should clean up the response from graphql query', async () => {
-        // const repositories = [...response.data.viewer.repositories.edges];
-        const repositories = {
-            'kata.js': {
-                ...(await createRepository(response.data.viewer.repositories.edges[0])),
-            },
-        }
+    describe('sanitize()', () => {
+        it('should clean up the response from graphql query', async () => {
+            nock('https://github.com/marcomontalbano/kata.js/raw/master')
+                .persist()
+                .get(/README\.md/)
+                .reply(200, () => '# Kata JS\nREADME.md source :)', {
+                    'content-type': 'text/plain',
+                })
 
-        expect(await sanitize(response)).toStrictEqual({
-            login: 'marcomontalbano',
-            name: 'Marco Montalbano',
-            repositoryCount: 1,
-            repositories,
+            expect(await sanitize(response)).toStrictEqual({
+                login: 'marcomontalbano',
+                name: 'Marco Montalbano',
+                repositoryCount: 1,
+                repositories: {
+                    'kata.js': {
+                        ...(await createRepository(response.data.viewer.repositories.edges[0])),
+                    },
+                },
+            })
         })
     })
 })
