@@ -36,8 +36,9 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier \"**/*.{j,t}s{,x}\" --write"
+    "*.{j,t}s{,x}": [
+      "prettier \"**/*.{j,t}s{,x}\" --write",
+      "npm run lint -- -- "
     ]
   },
   "devDependencies": {
