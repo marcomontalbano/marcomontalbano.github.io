@@ -28,4 +28,6 @@ export default {
 
 export const Basic = () => <Markdown markdown={text('markdown', tile.readme.source)} />
 
-export const RealData = () => <Markdown markdown={options('tile', valuesObj, tile.readme.source, { display: 'radio' })} />
+export const RealData = () => (
+    <Markdown markdown={options('tile', valuesObj, tile.readme.source, { display: 'radio' })} />
+)

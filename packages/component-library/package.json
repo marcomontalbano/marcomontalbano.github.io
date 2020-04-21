@@ -19,6 +19,7 @@
     "directory": "packages/component-library"
   },
   "scripts": {
+    "lint": "tsc -b ./tsconfig.lint.json",
     "start": "start-storybook -p 9009 -s public",
     "build:storybook": "build-storybook -s public",
     "build:dist": "tsc -b tsconfig.build.json",

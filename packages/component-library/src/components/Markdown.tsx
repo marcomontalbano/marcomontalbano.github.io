@@ -3,8 +3,7 @@ import styled from 'styled-components'
 import showdown from 'showdown'
 
 import hljs from 'highlight.js'
-// import 'highlight.js/styles/github.css';
-import 'highlight.js/styles/atom-one-dark.css';
+import 'highlight.js/styles/atom-one-dark.css'
 
 import { StyledComponents } from '../types'
 
@@ -15,7 +14,7 @@ export type Props = {
 const converter = new showdown.Converter({
     simplifiedAutoLink: true,
     emoji: true,
-    tables: true
+    tables: true,
 })
 
 const convertMarkdownToHtml = (markdown: string = ''): string => converter.makeHtml(markdown)
@@ -23,7 +22,7 @@ const convertMarkdownToHtml = (markdown: string = ''): string => converter.makeH
 const Markdown = ({ className, markdown }: Props & StyledComponents) => {
     const containerRef = useRef<HTMLDivElement>(null)
 
-    const [html, setHtml] = useState(() => typeof window !== 'undefined' ? '' : convertMarkdownToHtml(markdown))
+    const [html, setHtml] = useState(() => (typeof window !== 'undefined' ? '' : convertMarkdownToHtml(markdown)))
 
     useEffect(() => {
         setHtml(convertMarkdownToHtml(markdown))
@@ -31,7 +30,7 @@ const Markdown = ({ className, markdown }: Props & StyledComponents) => {
 
     useEffect(() => {
         if (containerRef.current) {
-            containerRef.current.querySelectorAll('code[class*=language-]').forEach(block => {
+            containerRef.current.querySelectorAll('code[class*=language-]').forEach((block) => {
                 hljs.highlightBlock(block)
             })
         }
