@@ -35,18 +35,12 @@
       "pre-push": "npm test"
     }
   },
-  "lint-staged": {
-    "*.{j,t}s{,x}": [
-      "prettier \"**/*.{j,t}s{,x}\" --write",
-      "npm run lint -- -- "
-    ]
-  },
   "devDependencies": {
     "fs-extra": "~9.0.0",
     "husky": "~4.2.3",
     "lerna": "~3.20.2",
     "lerna-changelog": "~1.0.1",
-    "lint-staged": "~10.0.9",
+    "lint-staged": "~10.1.6",
     "npm-run-all": "~4.1.5",
     "prettier": "2.0.2"
   },

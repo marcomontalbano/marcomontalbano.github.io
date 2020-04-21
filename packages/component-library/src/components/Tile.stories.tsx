@@ -6,6 +6,8 @@ import Tile from './Tile'
 
 import tiles from '../mocks/tiles'
 
+const [tile] = tiles
+
 const valuesObj = tiles.reduce(
     (acc, tile) => ({
         ...acc,
@@ -13,8 +15,6 @@ const valuesObj = tiles.reduce(
     }),
     {}
 )
-
-const [tile] = tiles
 
 export default {
     title: 'Tile',
