@@ -1,14 +1,6 @@
 {
   viewer {
-    login
-    avatarUrl
-    location
-    name
-    websiteUrl
-    url
-    resourcePath
     repositories(first: 100, affiliations: OWNER, privacy: PUBLIC) {
-      totalCount
       edges {
         node {
           name
