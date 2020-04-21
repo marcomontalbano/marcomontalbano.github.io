@@ -1,10 +1,9 @@
+const fs = require('fs')
+const path = require('path')
 const fetch = require('node-fetch')
 
-const showdown = require('showdown')
-
-const converter = new showdown.Converter()
-
-const { GITHUB_TOKEN } = process.env
+const { NODE_ENV, GITHUB_TOKEN } = process.env
+const isProduction = NODE_ENV === 'production'
 
 const ghRunQuery = (query) =>
     fetch('https://api.github.com/graphql', {
@@ -17,94 +16,35 @@ const ghRunQuery = (query) =>
         body: JSON.stringify({ query }),
     }).then((response) => response.json())
 
-const createRepositoryTopics = ({ edges = [] }) => edges.map((edge) => edge.node.topic.name)
+const ghGetData = async (graphqlPath, transformer) => {
+    const json = await ghRunQuery(fs.readFileSync(graphqlPath, 'utf8'))
 
-const createFile = async (url) => {
-    const response = await fetch(url)
-        // eslint-disable-next-line no-console
-        .catch((error) => console.info(`'There has been a problem with your fetch operation: ${error.message}`))
-
-    const isPresent = response.ok
-    const source =
-        isPresent && response.headers.get('content-type').includes('text/plain') ? await response.text() : undefined
-    const headers = isPresent
-        ? {
-              'content-type': response.headers.get('content-type'),
-          }
-        : undefined
-
-    return {
-        [url.match(/raw\/master\/(.*)/)[1]]: {
-            url,
-            isPresent,
-            headers,
-            source,
-        },
+    if (json.message) {
+        throw new Error(json.message)
     }
+
+    if (json.errors) {
+        throw new Error(json.errors[0].message)
+    }
+
+    const { data } = json
+    const output = await Promise.all(transformer(data))
+
+    return output
 }
 
-const createMarkdown = async (repositoryUrl, markdownUrl) => {
-    const markdown = await createFile(markdownUrl)
-    const [markdownKey] = Object.keys(markdown)
-    const [markdownValues] = Object.values(markdown)
+const ghStoreAsJson = async (graphqlPath, transformer, outputPath) => {
+    const data = await ghGetData(graphqlPath, transformer)
+    const resolvedOutputPath = path.resolve(outputPath, `${path.basename(graphqlPath, '.graphql')}.json`)
 
-    const source = markdownValues.source.replace(/\]\(([^)]+)\)/g, (match, url) => {
-        const isRelative = !/^http.*/g.test(url)
-        return match.replace(url, isRelative ? `${repositoryUrl}/raw/master/${url}` : url)
-    })
+    const dataAsString = JSON.stringify(data, undefined, isProduction ? undefined : 2)
 
-    return {
-        [markdownKey]: {
-            ...markdownValues,
-            source,
-            html: converter.makeHtml(source),
-        },
-    }
-}
+    fs.writeFileSync(resolvedOutputPath, dataAsString, 'utf8')
 
-const getH1FromHtml = (html = '') => {
-    const [, h1] = html.match(/<h1 .*>(.*)<\/h1>/) || []
-    return h1
-}
-
-const createRepository = async ({ node }) => {
-    const coverFile = await createFile(`${node.url}/raw/master/cover.png`)
-    const readmeFile = await createMarkdown(node.url, `${node.url}/raw/master/README.md`)
-
-    const [cover] = Object.values(coverFile)
-    const [readme] = Object.values(readmeFile)
-    return {
-        ...node,
-        title: getH1FromHtml(readme.html) || node.name,
-        visible: cover.isPresent === true,
-        starCount: node.stargazers.totalCount,
-        // forkCount: node.forks.totalCount,
-        repositoryTopics: createRepositoryTopics(node.repositoryTopics),
-        files: {
-            ...readmeFile,
-            ...(await createFile(`${node.url}/raw/master/package.json`)),
-            ...coverFile,
-        },
-    }
-}
-
-const sanitize = async ({ data: { viewer } }) => {
-    const repositories = await Promise.all(viewer.repositories.edges.map(createRepository))
-    return {
-        ...viewer,
-        repositoryCount: repositories.length,
-        repositories: repositories.reduce(
-            (acc, repository) => ({
-                ...acc,
-                [repository.name]: repository,
-            }),
-            {}
-        ),
-    }
+    // eslint-disable-next-line no-console
+    console.log(`Built database in ${resolvedOutputPath}`)
 }
 
 module.exports = {
-    ghRunQuery,
-    sanitize,
-    createRepository,
+    ghStoreAsJson,
 }

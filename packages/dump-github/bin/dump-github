@@ -1,3 +1,7 @@
 #!/usr/bin/env node
 
-require('../lib/dump-github').exportDb();
+const path = require('path');
+
+require('../lib/dump-github').exportAll(
+    path.resolve(__dirname, '..', '..', '..', 'data')
+);
