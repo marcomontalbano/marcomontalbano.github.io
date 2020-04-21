@@ -98,6 +98,32 @@ exports[`Storyshots Header Transparent 1`] = `
 </div>
 `;
 
+exports[`Storyshots Markdown Basic 1`] = `
+<div>
+  <div
+    className="sc-AxheI fniENP"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Markdown Real Data 1`] = `
+<div>
+  <div
+    className="sc-AxheI fniENP"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "",
+      }
+    }
+  />
+</div>
+`;
+
 exports[`Storyshots Tile Basic 1`] = `
 <div
   style={
@@ -107,7 +133,7 @@ exports[`Storyshots Tile Basic 1`] = `
   }
 >
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/jquery-jcreate"
   >
     <img
@@ -137,7 +163,7 @@ exports[`Storyshots Tile Real Data 1`] = `
   }
 >
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/jquery-jcreate"
   >
     <img
@@ -167,7 +193,7 @@ exports[`Storyshots Tile With Long Description 1`] = `
   }
 >
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/jquery-jcreate"
   >
     <img
@@ -190,10 +216,10 @@ exports[`Storyshots Tile With Long Description 1`] = `
 
 exports[`Storyshots TileList Basic 1`] = `
 <div
-  className="sc-Axmtr kKsUug"
+  className="sc-AxmLO kAQYiC"
 >
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/jquery-jcreate"
   >
     <img
@@ -212,7 +238,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/kata.js"
   >
     <img
@@ -231,7 +257,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/numberun"
   >
     <img
@@ -250,7 +276,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/an-introduction-to-frontend"
   >
     <img
@@ -269,7 +295,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/html-miner"
   >
     <img
@@ -288,7 +314,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/speedtest-for-digitalocean"
   >
     <img
@@ -307,7 +333,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/github-emoji"
   >
     <img
@@ -326,7 +352,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/video-to-markdown"
   >
     <img
@@ -345,7 +371,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/wasm-vs-js-benchmark"
   >
     <img
@@ -364,7 +390,7 @@ exports[`Storyshots TileList Basic 1`] = `
     </div>
   </a>
   <a
-    className="sc-AxheI dPYCQw"
+    className="sc-Axmtr gySyhf"
     href="https://github.com/marcomontalbano/figma-export"
   >
     <img

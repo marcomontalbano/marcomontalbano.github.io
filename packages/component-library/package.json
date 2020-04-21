@@ -54,10 +54,12 @@
     "@storybook/addons": "^5.3.17",
     "@storybook/preset-create-react-app": "^2.1.0",
     "@storybook/react": "^5.3.17",
+    "@types/highlight.js": "~9.12.3",
     "@types/jest": "^25.1.4",
     "@types/node": "^13.9.3",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
+    "@types/showdown": "~1.9.3",
     "@types/styled-components": "^5.0.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-plugin-macros": "^2.8.0",
@@ -69,6 +71,10 @@
     "react-test-renderer": "^16.13.1",
     "styled-components": "^5.0.1",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "highlight.js": "~9.18.1",
+    "showdown": "~1.9.1"
   },
   "gitHead": "8e4e4c2c40de7287202f1036ffeecf0652614258"
 }
