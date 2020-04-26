@@ -19,12 +19,12 @@
     "directory": "packages/component-library"
   },
   "scripts": {
+    "test": "react-scripts test --watchAll=false",
     "lint": "tsc -b ./tsconfig.lint.json",
     "start": "start-storybook -p 9009 -s public",
     "build:storybook": "build-storybook -s public",
     "build:dist": "tsc -b tsconfig.build.json",
-    "prepublishOnly": "npm run build:dist",
-    "test": "react-scripts test --watchAll=false"
+    "prepublishOnly": "npm run build:dist"
   },
   "eslintConfig": {
     "extends": "react-app"

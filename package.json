@@ -4,21 +4,22 @@
   "license": "MIT",
   "description": "My website",
   "scripts": {
-    "clean": "rm -rf node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo */*/.cache */website/public",
-    "postinstall": "run-s lerna:install",
-    "watch": "npx chokidar-cli \"packages/component-library/src/**/*.{j,t}s{,x}\" -c \"run-s prestart\"",
-    "prestart": "run-s build:dist lerna:fixDependencies",
-    "start": "dotenv lerna run start --parallel",
+    "clean": "rm -rf data/*.json node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo */*/.cache */website/public",
+    "postinstall": "lerna exec npm install --parallel",
     "test": "lerna run test",
     "lint": "lerna run lint",
-    "build:dist": "lerna run build:dist --parallel",
     "lerna:fixDependencies": "node lernaCopy.js",
     "lerna:version": "lerna version",
-    "lerna:install": "lerna exec npm install --parallel",
-    "lerna:update": "lerna exec npm update --stream",
+    "db:build": "dotenv lerna run build --stream --scope @marcomontalbano/dump-github",
+    "componentLibrary:start": "lerna run start --stream --scope @marcomontalbano/component-library",
+    "componentLibrary:watch": "npx chokidar-cli \"packages/component-library/src/**/*.{j,t}s{,x}\" -c \"run-s componentLibrary:build 'lerna:fixDependencies -- false'\"",
+    "componentLibrary:build": "lerna run build:dist --stream --scope @marcomontalbano/component-library",
+    "prewebsite:start": "run-s db:build componentLibrary:build lerna:fixDependencies",
+    "website:start": "lerna run start --stream --scope @marcomontalbano/website",
     "website:update": "lerna exec \"npm install @marcomontalbano/component-library@latest --save-exact\" --scope @marcomontalbano/website",
-    "website:build": "lerna run build --scope @marcomontalbano/website",
-    "website:serve": "lerna run serve --scope @marcomontalbano/website"
+    "prewebsite:build": "run-s db:build",
+    "website:build": "lerna run build --stream --scope @marcomontalbano/website",
+    "website:serve": "lerna run serve --stream --scope @marcomontalbano/website"
   },
   "repository": {
     "type": "git",
@@ -36,12 +37,14 @@
     }
   },
   "devDependencies": {
+    "chalk": "~4.0.0",
     "fs-extra": "~9.0.0",
     "husky": "~4.2.3",
     "lerna": "~3.20.2",
     "lerna-changelog": "~1.0.1",
     "lint-staged": "~10.1.6",
     "npm-run-all": "~4.1.5",
+    "ora": "~4.0.4",
     "prettier": "2.0.2"
   },
   "engines": {

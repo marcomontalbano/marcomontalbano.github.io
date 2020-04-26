@@ -1,9 +1,9 @@
 {
   "name": "@marcomontalbano/dump-github",
   "private": true,
-  "description": "Fetch GitHub repository and export as db.json",
+  "description": "Fetch GitHub API and export data in multiple json files",
   "author": "Marco Montalbano <marcomontalbano.work@gmail.com>",
-  "homepage": "https://github.com/marcomontalbano/portfolio/tree/master/packages/dump-github#readme",
+  "homepage": "https://github.com/marcomontalbano/marcomontalbano.github.io/tree/master/packages/dump-github#readme",
   "license": "MIT",
   "main": "lib/dump-github.js",
   "bin": {
@@ -18,16 +18,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marcomontalbano/portfolio.git"
+    "url": "git+https://github.com/marcomontalbano/marcomontalbano.github.io.git"
   },
   "scripts": {
     "test": "jest",
-    "watch": "jest --watch",
     "lint": "eslint .",
     "build": "./bin/dump-github"
   },
   "bugs": {
-    "url": "https://github.com/marcomontalbano/portfolio/issues"
+    "url": "https://github.com/marcomontalbano/marcomontalbano.github.io/issues"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
