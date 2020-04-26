@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "module": "ESNext",
-    "target": "ES5",
+    "target": "ES6",
     "lib": [
       "ES6",
       "DOM"
@@ -31,6 +31,6 @@
     "**/*.stories.ts*",
     "**/*.test.ts*",
     "**/*.spec.ts*",
-    "src/mocks"
+    "src/mocks/*"
   ]
 }
