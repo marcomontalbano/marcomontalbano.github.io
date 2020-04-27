@@ -8,6 +8,7 @@
     "postinstall": "lerna exec npm install --parallel",
     "test": "lerna run test",
     "lint": "lerna run lint",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "lerna:fixDependencies": "node lernaCopy.js",
     "lerna:version": "lerna version",
     "db:build": "dotenv lerna run build --stream --scope @marcomontalbano/dump-github",
