@@ -27,7 +27,9 @@
     "gatsby-plugin-styled-components": "^3.2.1",
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-plugin-typescript-checker": "^1.1.1",
-    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-source-filesystem": "~2.2.3",
+    "gatsby-source-graphql": "~2.4.2",
+    "gatsby-transformer-json": "~2.3.2",
     "gatsby-transformer-sharp": "^2.4.2",
     "prettier": "^2.0.1",
     "typescript": "^3.8.3"
@@ -38,10 +40,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "lint": "tsc -b tsconfig.json",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 0"
   },
   "repository": {

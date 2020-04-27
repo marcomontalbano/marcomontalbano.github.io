@@ -44,7 +44,7 @@ This task are used for the releasing the website.
 * `website:update` - Update the `component-library` version to the latest one.
 * `prewebsite:build` - Create the json files.
 * `website:build` - Create a production build of the website using *gatsby*
-* `website:serve` - Serve the production build for testing
+* `website:serve` - Serve the production build for testing at http://localhost:9000/
 
 
 ## Release Life Cycle
