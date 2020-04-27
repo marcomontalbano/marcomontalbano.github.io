@@ -1,8 +1,8 @@
-import repositories from './Repositories.json'
+const repositories = require('./Repositories.json')
 
-const visibleRepositories = repositories.filter((repository) => repository.customFields.visible)
+const visibleRepositories = repositories.filter((repository: any) => repository.customFields.visible)
 
-export default visibleRepositories.map((repository) => {
+export default visibleRepositories.map((repository: any) => {
     return {
         id: repository.name,
         title: repository.customFields.title,
