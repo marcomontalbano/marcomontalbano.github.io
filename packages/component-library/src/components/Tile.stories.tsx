@@ -28,7 +28,7 @@ export default {
 
 export const Basic = () => (
     <Tile
-        id={text('id', tile.id)}
+        id={tile.id}
         title={text('title', tile.title)}
         description={text('description', tile.description)}
         src={text('src', tile.src)}
@@ -38,7 +38,7 @@ export const Basic = () => (
 
 export const WithLongDescription = () => (
     <Tile
-        id={text('id', tile.id)}
+        id={tile.id}
         title={text('title', tile.title)}
         description={text(
             'description',

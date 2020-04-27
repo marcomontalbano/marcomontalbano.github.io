@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import { Page, Header } from '@marcomontalbano/component-library'
 
@@ -30,7 +30,7 @@ const Layout = ({ children, forceSolid = true }: Props) => {
 
     return (
         <Page>
-            <Header title={data.site.siteMetadata.title} forceSolid={forceSolid} />
+            <Header forceSolid={forceSolid} title={<Link to="/">{data.site.siteMetadata.title}</Link>} />
             <main>{children}</main>
         </Page>
     )

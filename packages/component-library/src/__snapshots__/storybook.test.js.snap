@@ -12,7 +12,7 @@ exports[`Storyshots Header Solid 1`] = `
   }
 >
   <header
-    className="sc-AxhUy dtLEQA"
+    className="sc-AxhUy JeDLi"
   >
     <div
       className="sc-AxgMl Kvfsj"
@@ -26,14 +26,17 @@ exports[`Storyshots Header Solid 1`] = `
       <div
         className="sc-AxjAm ksYYaE"
       />
-      <a
-        className="sc-AxirZ jFZGfM"
-        href="/"
-      >
-        Website Title
-      </a>
       <div
-        className="sc-AxhCb dPBedJ"
+        className="sc-AxirZ dBktui"
+      >
+        <a
+          href="/"
+        >
+          Website Title
+        </a>
+      </div>
+      <div
+        className="sc-AxhCb etCmKT"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -61,7 +64,7 @@ exports[`Storyshots Header Transparent 1`] = `
   }
 >
   <header
-    className="sc-AxhUy dtLEQA"
+    className="sc-AxhUy JeDLi"
   >
     <div
       className="sc-AxgMl Kvfsj"
@@ -75,14 +78,17 @@ exports[`Storyshots Header Transparent 1`] = `
       <div
         className="sc-AxjAm fURSlJ"
       />
-      <a
-        className="sc-AxirZ jFZGfM"
-        href="/"
-      >
-        Website Title
-      </a>
       <div
-        className="sc-AxhCb dPBedJ"
+        className="sc-AxirZ dBktui"
+      >
+        <a
+          href="/"
+        >
+          Website Title
+        </a>
+      </div>
+      <div
+        className="sc-AxhCb etCmKT"
       >
         <a
           href="https://github.com/marcomontalbano"

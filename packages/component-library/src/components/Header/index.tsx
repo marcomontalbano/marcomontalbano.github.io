@@ -16,6 +16,12 @@ const initialGradientEnd = rndGradient()
 const Container = styled.header`
     position: relative;
     height: 70px;
+    color: white;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
 `
 
 const FixedContainer = styled.div`
@@ -36,14 +42,14 @@ const FixedContainer = styled.div`
 `
 
 export type Props = {
-    title: string
+    title: JSX.Element
     forceSolid?: boolean
     gradientStart?: number
     gradientEnd?: number
 }
 
 const Header = ({
-    title = 'Website Title',
+    title = <a href="/">Website Title</a>,
     forceSolid = true,
     gradientStart = initialGradientStart,
     gradientEnd = initialGradientEnd,
@@ -70,7 +76,7 @@ const Header = ({
         <Container>
             <FixedContainer style={gradientProperties}>
                 <Background isSolid={solid} />
-                <BrandName href="/">{title}</BrandName>
+                <BrandName>{title}</BrandName>
                 <Menu>
                     <a href="https://github.com/marcomontalbano">GitHub</a>
                 </Menu>

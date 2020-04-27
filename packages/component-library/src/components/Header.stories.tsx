@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { withKnobs, number, text, optionsKnob as options } from '@storybook/addon-knobs'
+import { withKnobs, number, optionsKnob as options } from '@storybook/addon-knobs'
 import { StoryFn } from '@storybook/addons'
 
 import Header from './Header'
@@ -40,7 +40,7 @@ export default {
 
 export const Solid = () => (
     <Header
-        title={text('title', 'Website Title')}
+        title={<a href="/">Website Title</a>}
         gradientStart={number('gradientStart', 200)}
         gradientEnd={number('gradientEnd', 180)}
     />
@@ -48,7 +48,7 @@ export const Solid = () => (
 
 export const Transparent = () => (
     <Header
-        title={text('title', 'Website Title')}
+        title={<a href="/">Website Title</a>}
         gradientStart={number('gradientStart', 200)}
         gradientEnd={number('gradientEnd', 180)}
         forceSolid={false}
