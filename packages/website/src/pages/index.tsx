@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-import { TileList } from '@marcomontalbano/component-library'
+import { TileList, TileProps } from '@marcomontalbano/component-library'
 
 const useProjects = () => {
     const data = useStaticQuery(graphql`
@@ -36,18 +36,20 @@ const useProjects = () => {
         allRepositories: { nodes },
     } = data
 
-    const projects = nodes.map((node: any) => ({
-        id: node.name,
-        title: node.customFields.title,
-        description: node.description,
-        src: node.customFields.cover.url,
-        link: `/project/${node.name}`,
-    }))
+    const projects: TileProps[] = nodes.map(
+        (node: any): TileProps => ({
+            id: node.name,
+            title: node.customFields.title,
+            description: node.description,
+            src: node.customFields.cover.url,
+            Wrapper: ({ children }) => <Link to={`/project/${node.name}`}>{children}</Link>,
+        })
+    )
 
     return projects
 }
 
-const IndexPage = (props: any) => {
+const IndexPage = () => {
     const projects = useProjects()
 
     return (
