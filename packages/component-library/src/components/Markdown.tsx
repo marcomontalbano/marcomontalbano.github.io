@@ -13,8 +13,10 @@ export type Props = {
 
 const converter = new showdown.Converter({
     simplifiedAutoLink: true,
+    strikethrough: true,
     emoji: true,
     tables: true,
+    tasklists: true,
 })
 
 const convertMarkdownToHtml = (markdown: string = ''): string => converter.makeHtml(markdown)

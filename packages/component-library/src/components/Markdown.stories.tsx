@@ -23,7 +23,7 @@ export default {
         withKnobs({
             escapeHTML: false,
         }),
-        (storyFn: StoryFn) => <GlobalStyle>{storyFn() as ReactNode}</GlobalStyle>,
+        (storyFn: StoryFn) => <GlobalStyle style={{ margin: '15px' }}>{storyFn() as ReactNode}</GlobalStyle>,
     ],
 }
 
