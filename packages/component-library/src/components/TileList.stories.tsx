@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
+import { StoryFn } from '@storybook/addons'
 
+import GlobalStyle from './GlobalStyle'
 import TileList from './TileList'
 import { Props as TileProps } from './Tile'
 
@@ -14,6 +16,7 @@ const tilesWithLink: TileProps[] = tiles.map(
 
 export default {
     title: 'TileList',
+    decorators: [(storyFn: StoryFn) => <GlobalStyle>{storyFn() as ReactNode}</GlobalStyle>],
 }
 
 export const basic = () => <TileList tiles={tilesWithLink} />

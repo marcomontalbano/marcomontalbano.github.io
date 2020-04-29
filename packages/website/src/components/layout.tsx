@@ -8,7 +8,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import { Page, Header } from '@marcomontalbano/component-library'
+import { GlobalStyle, Header } from '@marcomontalbano/component-library'
 
 import './layout.css'
 
@@ -29,10 +29,10 @@ const Layout = ({ children, forceSolid = true }: Props) => {
     `)
 
     return (
-        <Page>
+        <GlobalStyle>
             <Header forceSolid={forceSolid} title={<Link to="/">{data.site.siteMetadata.title}</Link>} />
             <main>{children}</main>
-        </Page>
+        </GlobalStyle>
     )
 }
 

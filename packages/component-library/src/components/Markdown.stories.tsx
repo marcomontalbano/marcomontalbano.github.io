@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs'
 import { StoryFn } from '@storybook/addons'
 
+import GlobalStyle from './GlobalStyle'
 import Markdown from './Markdown'
 
 import tiles from '../mocks/tiles'
@@ -22,7 +23,7 @@ export default {
         withKnobs({
             escapeHTML: false,
         }),
-        (storyFn: StoryFn) => <div>{storyFn() as ReactNode}</div>,
+        (storyFn: StoryFn) => <GlobalStyle>{storyFn() as ReactNode}</GlobalStyle>,
     ],
 }
 

@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import { withKnobs, number, optionsKnob as options } from '@storybook/addon-knobs'
 import { StoryFn } from '@storybook/addons'
 
+import GlobalStyle from './GlobalStyle'
 import Header from './Header'
 
 import tiles from '../mocks/tiles'
@@ -22,7 +23,7 @@ export default {
     decorators: [
         withKnobs,
         (storyFn: StoryFn) => (
-            <div
+            <GlobalStyle
                 style={{
                     height: '200vh',
                     backgroundImage: `url('${options('', valuesObj, firstTile.src, {
@@ -33,7 +34,7 @@ export default {
                 }}
             >
                 {storyFn() as ReactNode}
-            </div>
+            </GlobalStyle>
         ),
     ],
 }

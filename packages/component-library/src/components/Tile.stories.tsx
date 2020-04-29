@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import { StoryFn } from '@storybook/addons'
 
+import GlobalStyle from './GlobalStyle'
 import Tile from './Tile'
 
 import tiles from '../mocks/tiles'
@@ -14,7 +15,7 @@ export default {
         withKnobs({
             escapeHTML: false,
         }),
-        (storyFn: StoryFn) => <div style={{ width: '50%' }}>{storyFn() as ReactNode}</div>,
+        (storyFn: StoryFn) => <GlobalStyle style={{ width: '50%' }}>{storyFn() as ReactNode}</GlobalStyle>,
     ],
 }
 
