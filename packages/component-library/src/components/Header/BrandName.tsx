@@ -1,13 +1,11 @@
 import styled from 'styled-components'
 
-const BrandName = styled.a`
-    font-family: 'Spinnaker', sans-serif;
-    text-decoration: none;
+const BrandName = styled.div`
+    flex-grow: 1;
     z-index: 1;
-    color: white;
+    font-family: 'Spinnaker', sans-serif;
     font-size: 24px;
     padding-left: 25px;
-    flex-grow: 1;
 `
 
 export default BrandName

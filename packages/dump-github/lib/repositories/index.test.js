@@ -58,12 +58,14 @@ describe('Dump GitHub - repositories', () => {
             forkCount: 0,
             repositoryTopics: ['kata', 'tdd'],
             cover: {
+                originalUrl: 'https://github.com/marcomontalbano/kata.js/raw/master/cover.png',
                 url: 'https://github.com/marcomontalbano/kata.js/raw/master/cover.png',
                 isPresent: false,
                 headers: undefined,
                 source: undefined,
             },
             readme: {
+                originalUrl: 'https://github.com/marcomontalbano/kata.js/raw/master/README.md',
                 url: 'https://github.com/marcomontalbano/kata.js/raw/master/README.md',
                 isPresent: true,
                 headers: {

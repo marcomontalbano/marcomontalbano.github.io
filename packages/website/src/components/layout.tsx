@@ -6,17 +6,18 @@
  */
 
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import { Page, Header } from '@marcomontalbano/component-library'
+import { GlobalStyle, Header } from '@marcomontalbano/component-library'
 
 import './layout.css'
 
 type Props = {
     children: any
+    forceSolid?: boolean
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, forceSolid = true }: Props) => {
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
@@ -28,24 +29,10 @@ const Layout = ({ children }: Props) => {
     `)
 
     return (
-        <Page>
-            <Header title={data.site.siteMetadata.title} />
-            <div
-                style={{
-                    margin: `0 auto`,
-                    maxWidth: 960,
-                    padding: `0px 1.0875rem 1.45rem`,
-                    paddingTop: 0,
-                }}
-            >
-                <main>{children}</main>
-                <footer>
-                    © {new Date().getFullYear()}, Built with
-                    {` `}
-                    <a href="https://www.gatsbyjs.org">Gatsby</a>
-                </footer>
-            </div>
-        </Page>
+        <GlobalStyle>
+            <Header forceSolid={forceSolid} title={<Link to="/">{data.site.siteMetadata.title}</Link>} />
+            <main>{children}</main>
+        </GlobalStyle>
     )
 }
 

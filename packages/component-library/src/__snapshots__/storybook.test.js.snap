@@ -2,6 +2,7 @@
 
 exports[`Storyshots Header Solid 1`] = `
 <div
+  className="sc-AxjAm knQsXj"
   style={
     Object {
       "backgroundImage": "url('https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png')",
@@ -12,10 +13,10 @@ exports[`Storyshots Header Solid 1`] = `
   }
 >
   <header
-    className="sc-AxhUy dtLEQA"
+    className="sc-AxgMl cnYJKE"
   >
     <div
-      className="sc-AxgMl Kvfsj"
+      className="sc-AxheI nASbp"
       style={
         Object {
           "--gradient-end": "hsl(180, 78%, 68%)",
@@ -24,16 +25,19 @@ exports[`Storyshots Header Solid 1`] = `
       }
     >
       <div
-        className="sc-AxjAm ksYYaE"
+        className="sc-AxirZ Haoyz"
       />
-      <a
-        className="sc-AxirZ jFZGfM"
-        href="/"
-      >
-        Website Title
-      </a>
       <div
-        className="sc-AxhCb dPBedJ"
+        className="sc-AxiKw dymYaC"
+      >
+        <a
+          href="/"
+        >
+          Website Title
+        </a>
+      </div>
+      <div
+        className="sc-AxhUy glVQFe"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -43,7 +47,7 @@ exports[`Storyshots Header Solid 1`] = `
       </div>
     </div>
     <span
-      className="sc-AxiKw jzWNFJ"
+      className="sc-AxhCb cdvffV"
     />
   </header>
 </div>
@@ -51,6 +55,7 @@ exports[`Storyshots Header Solid 1`] = `
 
 exports[`Storyshots Header Transparent 1`] = `
 <div
+  className="sc-AxjAm knQsXj"
   style={
     Object {
       "backgroundImage": "url('https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png')",
@@ -61,10 +66,10 @@ exports[`Storyshots Header Transparent 1`] = `
   }
 >
   <header
-    className="sc-AxhUy dtLEQA"
+    className="sc-AxgMl cnYJKE"
   >
     <div
-      className="sc-AxgMl Kvfsj"
+      className="sc-AxheI nASbp"
       style={
         Object {
           "--gradient-end": "hsl(180, 78%, 68%)",
@@ -73,16 +78,19 @@ exports[`Storyshots Header Transparent 1`] = `
       }
     >
       <div
-        className="sc-AxjAm fURSlJ"
+        className="sc-AxirZ kmIOQW"
       />
-      <a
-        className="sc-AxirZ jFZGfM"
-        href="/"
-      >
-        Website Title
-      </a>
       <div
-        className="sc-AxhCb dPBedJ"
+        className="sc-AxiKw dymYaC"
+      >
+        <a
+          href="/"
+        >
+          Website Title
+        </a>
+      </div>
+      <div
+        className="sc-AxhUy glVQFe"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -92,16 +100,23 @@ exports[`Storyshots Header Transparent 1`] = `
       </div>
     </div>
     <span
-      className="sc-AxiKw jzWNFJ"
+      className="sc-AxhCb cdvffV"
     />
   </header>
 </div>
 `;
 
 exports[`Storyshots Markdown Basic 1`] = `
-<div>
+<div
+  className="sc-AxjAm knQsXj"
+  style={
+    Object {
+      "margin": "15px",
+    }
+  }
+>
   <div
-    className="sc-AxheI fniENP"
+    className="sc-Axmtr hBVTto"
     dangerouslySetInnerHTML={
       Object {
         "__html": "",
@@ -112,9 +127,16 @@ exports[`Storyshots Markdown Basic 1`] = `
 `;
 
 exports[`Storyshots Markdown Real Data 1`] = `
-<div>
+<div
+  className="sc-AxjAm knQsXj"
+  style={
+    Object {
+      "margin": "15px",
+    }
+  }
+>
   <div
-    className="sc-AxheI fniENP"
+    className="sc-Axmtr hBVTto"
     dangerouslySetInnerHTML={
       Object {
         "__html": "",
@@ -126,287 +148,329 @@ exports[`Storyshots Markdown Real Data 1`] = `
 
 exports[`Storyshots Tile Basic 1`] = `
 <div
+  className="sc-AxjAm knQsXj"
   style={
     Object {
       "width": "50%",
     }
   }
 >
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/jquery-jcreate"
+  <div
+    className="sc-AxmLO edUurR"
   >
-    <img
-      alt="jCreate"
-      src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
-    />
-    <div
-      className="content"
-    >
-      <h2>
-        jCreate
-      </h2>
-      <p>
-        jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
-      </p>
+    <div>
+      <img
+        alt="jCreate"
+        src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          jCreate
+        </h2>
+        <p>
+          jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
+        </p>
+      </div>
     </div>
-  </a>
+  </div>
 </div>
 `;
 
-exports[`Storyshots Tile Real Data 1`] = `
+exports[`Storyshots Tile With Link 1`] = `
 <div
+  className="sc-AxjAm knQsXj"
   style={
     Object {
       "width": "50%",
     }
   }
 >
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/jquery-jcreate"
+  <div
+    className="sc-AxmLO edUurR"
   >
-    <img
-      alt="jCreate"
-      src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
-    />
-    <div
-      className="content"
+    <a
+      href="https://github.com/marcomontalbano/jquery-jcreate"
     >
-      <h2>
-        jCreate
-      </h2>
-      <p>
-        jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
-      </p>
-    </div>
-  </a>
+      <img
+        alt="jCreate"
+        src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          jCreate
+        </h2>
+        <p>
+          jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
+        </p>
+      </div>
+    </a>
+  </div>
 </div>
 `;
 
 exports[`Storyshots Tile With Long Description 1`] = `
 <div
+  className="sc-AxjAm knQsXj"
   style={
     Object {
       "width": "50%",
     }
   }
 >
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/jquery-jcreate"
+  <div
+    className="sc-AxmLO edUurR"
   >
-    <img
-      alt="jCreate"
-      src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
-    />
-    <div
-      className="content"
-    >
-      <h2>
-        jCreate
-      </h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non posuere justo, a imperdiet leo. Etiam non ipsum a felis lobortis convallis sit amet id odio. Aliquam interdum posuere enim. Donec sollicitudin interdum sodales. Pellentesque eget nibh ac massa tristique eleifend in vitae lorem. Donec semper lectus et fermentum vehicula. Ut elementum fermentum nulla. Ut eget cursus nisi. Aliquam nec faucibus dolor. Pellentesque felis velit, volutpat eget egestas nec, ultricies eget magna. Proin iaculis consequat ante.
-      </p>
+    <div>
+      <img
+        alt="jCreate"
+        src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+      />
+      <div
+        className="content"
+      >
+        <h2>
+          jCreate
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non posuere justo, a imperdiet leo. Etiam non ipsum a felis lobortis convallis sit amet id odio. Aliquam interdum posuere enim. Donec sollicitudin interdum sodales. Pellentesque eget nibh ac massa tristique eleifend in vitae lorem. Donec semper lectus et fermentum vehicula. Ut elementum fermentum nulla. Ut eget cursus nisi. Aliquam nec faucibus dolor. Pellentesque felis velit, volutpat eget egestas nec, ultricies eget magna. Proin iaculis consequat ante.
+        </p>
+      </div>
     </div>
-  </a>
+  </div>
 </div>
 `;
 
 exports[`Storyshots TileList Basic 1`] = `
 <div
-  className="sc-AxmLO kAQYiC"
+  className="sc-AxjAm knQsXj"
 >
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/jquery-jcreate"
+  <div
+    className="sc-fzozJi gFWXuK"
   >
-    <img
-      alt="jCreate"
-      src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        jCreate
-      </h2>
-      <p>
-        jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/jquery-jcreate"
+      >
+        <img
+          alt="jCreate"
+          src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            jCreate
+          </h2>
+          <p>
+            jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/kata.js"
-  >
-    <img
-      alt="Test-Driven Development with Mocha: How to"
-      src="https://github.com/marcomontalbano/kata.js/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        Test-Driven Development with Mocha: How to
-      </h2>
-      <p>
-        A collection of katas with JavaScript.
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/kata.js"
+      >
+        <img
+          alt="Test-Driven Development with Mocha: How to"
+          src="https://github.com/marcomontalbano/kata.js/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            Test-Driven Development with Mocha: How to
+          </h2>
+          <p>
+            A collection of katas with JavaScript.
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/numberun"
-  >
-    <img
-      alt="NumbeRun"
-      src="https://github.com/marcomontalbano/numberun/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        NumbeRun
-      </h2>
-      <p>
-        NumbeRun is a puzzle game I developed in 2007 for my school-leaving examination. The game was developed in Microsoft Visual C# 2005 using the Microsoft XNA library.
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/numberun"
+      >
+        <img
+          alt="NumbeRun"
+          src="https://github.com/marcomontalbano/numberun/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            NumbeRun
+          </h2>
+          <p>
+            NumbeRun is a puzzle game I developed in 2007 for my school-leaving examination. The game was developed in Microsoft Visual C# 2005 using the Microsoft XNA library.
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/an-introduction-to-frontend"
-  >
-    <img
-      alt="An introduction to Frontend"
-      src="https://github.com/marcomontalbano/an-introduction-to-frontend/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        An introduction to Frontend
-      </h2>
-      <p>
-        This is an introduction to Frontend.
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/an-introduction-to-frontend"
+      >
+        <img
+          alt="An introduction to Frontend"
+          src="https://github.com/marcomontalbano/an-introduction-to-frontend/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            An introduction to Frontend
+          </h2>
+          <p>
+            This is an introduction to Frontend.
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/html-miner"
-  >
-    <img
-      alt="HTML Miner"
-      src="https://github.com/marcomontalbano/html-miner/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        HTML Miner
-      </h2>
-      <p>
-        A powerful miner that will scrape html pages for you. \` HTML Scraper ´
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/html-miner"
+      >
+        <img
+          alt="HTML Miner"
+          src="https://github.com/marcomontalbano/html-miner/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            HTML Miner
+          </h2>
+          <p>
+            A powerful miner that will scrape html pages for you. \` HTML Scraper ´
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/speedtest-for-digitalocean"
-  >
-    <img
-      alt="Speed Test for DigitalOcean"
-      src="https://github.com/marcomontalbano/speedtest-for-digitalocean/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        Speed Test for DigitalOcean
-      </h2>
-      <p>
-        Run speed tests for all DigitalOcean datacenters faster than ever.
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/speedtest-for-digitalocean"
+      >
+        <img
+          alt="Speed Test for DigitalOcean"
+          src="https://github.com/marcomontalbano/speedtest-for-digitalocean/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            Speed Test for DigitalOcean
+          </h2>
+          <p>
+            Run speed tests for all DigitalOcean datacenters faster than ever.
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/github-emoji"
-  >
-    <img
-      alt="GitHub Emoji"
-      src="https://github.com/marcomontalbano/github-emoji/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        GitHub Emoji
-      </h2>
-      <p>
-        Finally a complete list of GitHub Emojis.
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/github-emoji"
+      >
+        <img
+          alt="GitHub Emoji"
+          src="https://github.com/marcomontalbano/github-emoji/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            GitHub Emoji
+          </h2>
+          <p>
+            Finally a complete list of GitHub Emojis.
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/video-to-markdown"
-  >
-    <img
-      alt="Video to Markdown"
-      src="https://github.com/marcomontalbano/video-to-markdown/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        Video to Markdown
-      </h2>
-      <p>
-        How to embed a video in markdown? Here the answer. Add videos to your markdown files easier.
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/video-to-markdown"
+      >
+        <img
+          alt="Video to Markdown"
+          src="https://github.com/marcomontalbano/video-to-markdown/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            Video to Markdown
+          </h2>
+          <p>
+            How to embed a video in markdown? Here the answer. Add videos to your markdown files easier.
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/wasm-vs-js-benchmark"
-  >
-    <img
-      alt="WebAssembly vs Javascript"
-      src="https://github.com/marcomontalbano/wasm-vs-js-benchmark/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        WebAssembly vs Javascript
-      </h2>
-      <p>
-        A comparison between WebAssembly and Javascript
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/wasm-vs-js-benchmark"
+      >
+        <img
+          alt="WebAssembly vs Javascript"
+          src="https://github.com/marcomontalbano/wasm-vs-js-benchmark/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            WebAssembly vs Javascript
+          </h2>
+          <p>
+            A comparison between WebAssembly and Javascript
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
-  <a
-    className="sc-Axmtr gySyhf"
-    href="https://github.com/marcomontalbano/figma-export"
-  >
-    <img
-      alt="figma-export"
-      src="https://github.com/marcomontalbano/figma-export/raw/master/cover.png"
-    />
     <div
-      className="content"
+      className="sc-AxmLO edUurR"
     >
-      <h2>
-        figma-export
-      </h2>
-      <p>
-        Export tool for Figma. You can easily and automatically export your figma components and use them directly into your website.
-      </p>
+      <a
+        href="https://github.com/marcomontalbano/figma-export"
+      >
+        <img
+          alt="figma-export"
+          src="https://github.com/marcomontalbano/figma-export/raw/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            figma-export
+          </h2>
+          <p>
+            Export tool for Figma. You can easily and automatically export your figma components and use them directly into your website.
+          </p>
+        </div>
+      </a>
     </div>
-  </a>
+  </div>
 </div>
 `;

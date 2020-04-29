@@ -11,3 +11,15 @@ The storybook site is hosted by [Netlify](https://www.netlify.com/) and availabl
 
 `npm start` - http://localhost:9009
 
+### index.ts
+
+The file `./src/index.ts` imports and exports all components so that you can easily import them on your website:
+
+```js
+import { Header } from '@marcomontalbano/component-library';
+```
+
+:warning: **the order** in which you import the components into `index.ts` **is relevant** for `styled-components`
+
+> *We guarantee CSS ordering by injecting CSS in the order that the components are defined.*
+> https://github.com/styled-components/styled-components/issues/382#issuecomment-273330002

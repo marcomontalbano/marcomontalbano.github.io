@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react'
-import { withKnobs, number, text, optionsKnob as options } from '@storybook/addon-knobs'
+import { withKnobs, number, optionsKnob as options } from '@storybook/addon-knobs'
 import { StoryFn } from '@storybook/addons'
 
+import GlobalStyle from './GlobalStyle'
 import Header from './Header'
 
 import tiles from '../mocks/tiles'
@@ -22,7 +23,7 @@ export default {
     decorators: [
         withKnobs,
         (storyFn: StoryFn) => (
-            <div
+            <GlobalStyle
                 style={{
                     height: '200vh',
                     backgroundImage: `url('${options('', valuesObj, firstTile.src, {
@@ -33,14 +34,14 @@ export default {
                 }}
             >
                 {storyFn() as ReactNode}
-            </div>
+            </GlobalStyle>
         ),
     ],
 }
 
 export const Solid = () => (
     <Header
-        title={text('title', 'Website Title')}
+        title={<a href="/">Website Title</a>}
         gradientStart={number('gradientStart', 200)}
         gradientEnd={number('gradientEnd', 180)}
     />
@@ -48,7 +49,7 @@ export const Solid = () => (
 
 export const Transparent = () => (
     <Header
-        title={text('title', 'Website Title')}
+        title={<a href="/">Website Title</a>}
         gradientStart={number('gradientStart', 200)}
         gradientEnd={number('gradientEnd', 180)}
         forceSolid={false}

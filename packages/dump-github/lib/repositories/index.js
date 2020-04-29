@@ -8,8 +8,8 @@ const converter = new showdown.Converter()
 
 const createTopics = ({ edges = [] }) => edges.map((edge) => edge.node.topic.name)
 
-const createFile = async (url) => {
-    const response = await fetch(url)
+const createFile = async (originalUrl) => {
+    const response = await fetch(originalUrl)
         // eslint-disable-next-line no-console
         .catch((error) => console.info(`'There has been a problem with your fetch operation: ${error.message}`))
 
@@ -22,7 +22,10 @@ const createFile = async (url) => {
           }
         : undefined
 
+    const { url } = response
+
     return {
+        originalUrl,
         url,
         isPresent,
         headers,

@@ -1,7 +1,9 @@
-import Header from './components/Header'
-import Tile from './components/Tile'
-import TileList from './components/TileList'
-import Page from './components/Page'
-import Markdown from './components/Markdown'
+import GlobalStyle from './components/GlobalStyle'
+import Header, { Props as HeaderProps } from './components/Header'
+import Tile, { Props as TileProps } from './components/Tile'
+import TileList, { Props as TileListProps } from './components/TileList'
+import Markdown, { Props as MarkdownProps } from './components/Markdown'
 
-export { Header, Tile, TileList, Page, Markdown }
+export { Header, Tile, TileList, GlobalStyle, Markdown }
+
+export type { HeaderProps, TileProps, TileListProps, MarkdownProps }
