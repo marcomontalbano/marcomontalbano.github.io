@@ -1,6 +1,6 @@
 {
   viewer {
-    repositories(first: 100, affiliations: OWNER, privacy: PUBLIC) {
+    repositories(first: 100, affiliations: OWNER, privacy: PUBLIC, orderBy: { field: CREATED_AT, direction: DESC }) {
       edges {
         node {
           name
