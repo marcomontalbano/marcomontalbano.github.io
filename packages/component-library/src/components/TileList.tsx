@@ -19,7 +19,7 @@ const TileList = ({ className, tiles }: Props & StyledComponents) => (
 export default styled(TileList)`
     display: flex;
     flex-wrap: wrap;
-    margin: 1px;
+    margin: -1px;
 
     > ${Tile} {
         flex: 1 1 512px;

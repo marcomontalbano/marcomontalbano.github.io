@@ -13,7 +13,7 @@ exports[`Storyshots Header Solid 1`] = `
   }
 >
   <header
-    className="sc-AxgMl cnYJKE"
+    className="sc-AxgMl dRhPbI"
   >
     <div
       className="sc-AxheI nASbp"
@@ -28,7 +28,7 @@ exports[`Storyshots Header Solid 1`] = `
         className="sc-AxirZ Haoyz"
       />
       <div
-        className="sc-AxiKw dymYaC"
+        className="sc-AxiKw blYAUp"
       >
         <a
           href="/"
@@ -37,7 +37,7 @@ exports[`Storyshots Header Solid 1`] = `
         </a>
       </div>
       <div
-        className="sc-AxhUy glVQFe"
+        className="sc-AxhUy gMXSly"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -66,7 +66,7 @@ exports[`Storyshots Header Transparent 1`] = `
   }
 >
   <header
-    className="sc-AxgMl cnYJKE"
+    className="sc-AxgMl dRhPbI"
   >
     <div
       className="sc-AxheI nASbp"
@@ -81,7 +81,7 @@ exports[`Storyshots Header Transparent 1`] = `
         className="sc-AxirZ kmIOQW"
       />
       <div
-        className="sc-AxiKw dymYaC"
+        className="sc-AxiKw blYAUp"
       >
         <a
           href="/"
@@ -90,7 +90,7 @@ exports[`Storyshots Header Transparent 1`] = `
         </a>
       </div>
       <div
-        className="sc-AxhUy glVQFe"
+        className="sc-AxhUy gMXSly"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -249,7 +249,7 @@ exports[`Storyshots TileList Basic 1`] = `
   className="sc-AxjAm knQsXj"
 >
   <div
-    className="sc-fzozJi gFWXuK"
+    className="sc-fzozJi hYJmdT"
   >
     <div
       className="sc-AxmLO edUurR"

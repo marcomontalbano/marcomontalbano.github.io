@@ -15,8 +15,12 @@ const initialGradientEnd = rndGradient()
 
 const Container = styled.header`
     position: relative;
-    height: 70px;
+    height: 60px;
     color: white;
+
+    @media screen and (min-width: 834px) {
+        height: 70px;
+    }
 
     a {
         color: white;
