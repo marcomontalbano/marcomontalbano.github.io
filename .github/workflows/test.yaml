@@ -1,6 +1,14 @@
 name: Test
 
-on: ["push", "pull_request"]
+on:
+  push:
+    tags-ignore:
+      - v*
+    branches-ignore:
+      - production
+  pull_request:
+    branches-ignore:
+      - production
 
 jobs:
   test:

@@ -15,20 +15,22 @@ jobs:
           node-version: 10.x
           registry-url: https://npm.pkg.github.com
           scope: '@marcomontalbano'
+
       - name: Project setup `npm ci`
-        run: npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx lerna exec npm ci --scope @marcomontalbano/component-library
+
       - name: Run `publish` PRERELEASE
         if: 'github.event.release.prerelease'
         run: |
           npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
-          ./node_modules/.bin/lerna publish from-git --dist-tag next --require-scripts --yes
+          npx lerna publish from-git --dist-tag next --require-scripts --yes
+
       - name: Run `publish` PRODUCTION
         if: '!github.event.release.prerelease'
         run: |
           npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
-          ./node_modules/.bin/lerna publish from-git --require-scripts --yes
+          npx lerna publish from-git --require-scripts --yes
+
       - name: Deploy on Netlify
         if: '!github.event.release.prerelease'
         uses: wei/curl@v1

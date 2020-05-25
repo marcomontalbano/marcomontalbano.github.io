@@ -29,11 +29,13 @@ jobs:
 
       - name: Build 🔧
         run: npm run website:build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: ./packages/website/public
+          FOLDER: packages/website/public
           SINGLE_COMMIT: false

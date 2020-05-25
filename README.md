@@ -9,6 +9,9 @@ This project is composed by 3 packages. I'm using [lerna](https://github.com/ler
 * `component-library` is a [Storybook](https://storybook.js.org/) project. All components are available as downloadable [npm package](https://github.com/marcomontalbano/marcomontalbano.github.io/packages/79405).
 * `website` uses components from the *component-library*, consumes data from *dump-github* and builds the website using [Gatsby](https://www.gatsbyjs.org/).
 
+## Environment Variables
+
+You need to set a `GITHUB_TOKEN` environment variable with `repo` scope.
 
 ## Scripts
 

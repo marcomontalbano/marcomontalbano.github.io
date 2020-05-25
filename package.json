@@ -5,13 +5,13 @@
   "description": "My website",
   "scripts": {
     "clean": "rm -rf data/*.json node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo */*/.cache */website/public",
-    "postinstall": "lerna bootstrap --force-local",
+    "postinstall": "lerna exec npm install --parallel",
     "test": "lerna run test",
     "lint": "lerna run lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "lerna:fixDependencies": "node lernaCopy.js",
     "lerna:version": "lerna version",
-    "db:build": "dotenv lerna run build --stream --scope @marcomontalbano/dump-github",
+    "db:build": "lerna run build --stream --scope @marcomontalbano/dump-github",
     "componentLibrary:start": "lerna run start --stream --scope @marcomontalbano/component-library",
     "componentLibrary:watch": "npx chokidar-cli \"packages/component-library/src/**/*.{j,t}s{,x}\" -c \"run-s componentLibrary:build 'lerna:fixDependencies -- false'\"",
     "componentLibrary:build": "lerna run build:dist --stream --scope @marcomontalbano/component-library",
@@ -52,7 +52,5 @@
     "node": ">= 10.16.x <= 12.x",
     "npm": ">= 6.9.x < 7.x"
   },
-  "dependencies": {
-    "dotenv": "~8.2.0"
-  }
+  "dependencies": {}
 }

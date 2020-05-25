@@ -30,4 +30,4 @@ jobs:
         with:
           tag: ${{ steps.tags.outputs.new }}
           changelog: ${{ steps.changelog.outputs.changelog }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
