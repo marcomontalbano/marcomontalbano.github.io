@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 import Hero from '../components/hero'
 import { Markdown } from '@marcomontalbano/component-library'
 
-const SecondPage = (props: any) => {
+const ProjectPage = (props: any) => {
     return (
         <Layout forceSolid={false}>
             <SEO title={props.pageContext.title} />
@@ -18,4 +18,4 @@ const SecondPage = (props: any) => {
     )
 }
 
-export default SecondPage
+export default ProjectPage
