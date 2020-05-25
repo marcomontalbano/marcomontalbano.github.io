@@ -47,7 +47,7 @@ export default styled(TileList)`
 
                 &:hover {
                     img {
-                        transform: none;
+                        transform: scale(1.01);
                     }
                 }
             }

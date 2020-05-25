@@ -88,7 +88,7 @@ export default styled(Tile)`
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1);
+            transform: scale(1.01);
         }
 
         &:hover {
@@ -98,7 +98,7 @@ export default styled(Tile)`
             }
 
             img {
-                transform: scale(1.02);
+                transform: scale(1.03);
             }
         }
     }
