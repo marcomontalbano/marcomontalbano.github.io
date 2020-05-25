@@ -3,32 +3,24 @@
 exports[`Storyshots Header Solid 1`] = `
 <div
   className="sc-AxjAm knQsXj"
-  style={
-    Object {
-      "backgroundImage": "url('https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png')",
-      "backgroundRepeat": "no-repeat",
-      "backgroundSize": "100%",
-      "height": "200vh",
-    }
-  }
 >
   <header
-    className="sc-AxgMl dRhPbI"
+    className="sc-AxirZ gbuvZJ"
+    style={
+      Object {
+        "--gradient-end": "hsl(180, 78%, 68%)",
+        "--gradient-start": "hsl(200, 78%, 68%)",
+      }
+    }
   >
     <div
-      className="sc-AxheI nASbp"
-      style={
-        Object {
-          "--gradient-end": "hsl(180, 78%, 68%)",
-          "--gradient-start": "hsl(200, 78%, 68%)",
-        }
-      }
+      className="sc-AxiKw jlYOTE"
     >
       <div
-        className="sc-AxirZ Haoyz"
+        className="sc-AxhCb brNDCX"
       />
       <div
-        className="sc-AxiKw blYAUp"
+        className="sc-AxhUy dEFdsE"
       >
         <a
           href="/"
@@ -37,7 +29,7 @@ exports[`Storyshots Header Solid 1`] = `
         </a>
       </div>
       <div
-        className="sc-AxhUy gMXSly"
+        className="sc-AxheI huSFDa"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -47,41 +39,37 @@ exports[`Storyshots Header Solid 1`] = `
       </div>
     </div>
     <span
-      className="sc-AxhCb cdvffV"
+      className="sc-AxgMl jeblAu"
     />
   </header>
+  <img
+    alt="Hero"
+    src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+  />
 </div>
 `;
 
 exports[`Storyshots Header Transparent 1`] = `
 <div
   className="sc-AxjAm knQsXj"
-  style={
-    Object {
-      "backgroundImage": "url('https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png')",
-      "backgroundRepeat": "no-repeat",
-      "backgroundSize": "100%",
-      "height": "200vh",
-    }
-  }
 >
   <header
-    className="sc-AxgMl dRhPbI"
+    className="sc-AxirZ hfXkRY"
+    style={
+      Object {
+        "--gradient-end": "hsl(180, 78%, 68%)",
+        "--gradient-start": "hsl(200, 78%, 68%)",
+      }
+    }
   >
     <div
-      className="sc-AxheI nASbp"
-      style={
-        Object {
-          "--gradient-end": "hsl(180, 78%, 68%)",
-          "--gradient-start": "hsl(200, 78%, 68%)",
-        }
-      }
+      className="sc-AxiKw jlYOTE"
     >
       <div
-        className="sc-AxirZ kmIOQW"
+        className="sc-AxhCb eRXIMY"
       />
       <div
-        className="sc-AxiKw blYAUp"
+        className="sc-AxhUy dEFdsE"
       >
         <a
           href="/"
@@ -90,7 +78,7 @@ exports[`Storyshots Header Transparent 1`] = `
         </a>
       </div>
       <div
-        className="sc-AxhUy gMXSly"
+        className="sc-AxheI huSFDa"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -100,9 +88,13 @@ exports[`Storyshots Header Transparent 1`] = `
       </div>
     </div>
     <span
-      className="sc-AxhCb cdvffV"
+      className="sc-AxgMl jeblAu"
     />
   </header>
+  <img
+    alt="Hero"
+    src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+  />
 </div>
 `;
 
@@ -156,7 +148,7 @@ exports[`Storyshots Tile Basic 1`] = `
   }
 >
   <div
-    className="sc-AxmLO edUurR"
+    className="sc-AxmLO cECEZA"
   >
     <div>
       <img
@@ -188,7 +180,7 @@ exports[`Storyshots Tile With Link 1`] = `
   }
 >
   <div
-    className="sc-AxmLO edUurR"
+    className="sc-AxmLO cECEZA"
   >
     <a
       href="https://github.com/marcomontalbano/jquery-jcreate"
@@ -222,7 +214,7 @@ exports[`Storyshots Tile With Long Description 1`] = `
   }
 >
   <div
-    className="sc-AxmLO edUurR"
+    className="sc-AxmLO cECEZA"
   >
     <div>
       <img
@@ -249,10 +241,10 @@ exports[`Storyshots TileList Basic 1`] = `
   className="sc-AxjAm knQsXj"
 >
   <div
-    className="sc-fzozJi hYJmdT"
+    className="sc-fzozJi gtpOJX"
   >
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/jquery-jcreate"
@@ -274,7 +266,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/kata.js"
@@ -296,7 +288,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/numberun"
@@ -318,7 +310,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/an-introduction-to-frontend"
@@ -340,7 +332,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/html-miner"
@@ -362,7 +354,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/speedtest-for-digitalocean"
@@ -384,7 +376,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/github-emoji"
@@ -406,7 +398,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/video-to-markdown"
@@ -428,7 +420,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/wasm-vs-js-benchmark"
@@ -450,7 +442,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-AxmLO edUurR"
+      className="sc-AxmLO cECEZA"
     >
       <a
         href="https://github.com/marcomontalbano/figma-export"
