@@ -3,13 +3,14 @@ import React from 'react'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import SEO from '../components/seo'
+import Hero from '../components/hero'
 import { Markdown } from '@marcomontalbano/component-library'
 
-const SecondPage = (props: any) => {
+const ProjectPage = (props: any) => {
     return (
         <Layout forceSolid={false}>
             <SEO title={props.pageContext.title} />
-            <img style={{ marginTop: '-70px' }} src={props.pageContext.cover} alt={props.pageContext.title} />
+            <Hero cover={props.pageContext.cover} title={props.pageContext.title} />
             <Container style={{ marginTop: '1.45rem' }}>
                 <Markdown markdown={props.pageContext.readme} />
             </Container>
@@ -17,4 +18,4 @@ const SecondPage = (props: any) => {
     )
 }
 
-export default SecondPage
+export default ProjectPage

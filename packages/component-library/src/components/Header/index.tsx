@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
-import styled from 'styled-components'
 
 import useIntersectionObserver from '../../hooks/useIntersectionObserver'
 
+import { Container, FixedContainer } from './Container'
 import Background from './Background'
 import BrandName from './BrandName'
 import IntersectionRoot from './IntersectionRoot'
@@ -12,34 +12,6 @@ const rndGradient = () => Math.floor(Math.random() * 256)
 
 const initialGradientStart = rndGradient()
 const initialGradientEnd = rndGradient()
-
-const Container = styled.header`
-    position: relative;
-    height: 70px;
-    color: white;
-
-    a {
-        color: white;
-        text-decoration: none;
-    }
-`
-
-const FixedContainer = styled.div`
-    position: fixed;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: inherit;
-
-    &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(180deg, black -60%, transparent 105%);
-    }
-`
 
 export type Props = {
     title: JSX.Element
@@ -73,8 +45,8 @@ const Header = ({
     }
 
     return (
-        <Container>
-            <FixedContainer style={gradientProperties}>
+        <Container forceSolid={forceSolid} style={gradientProperties}>
+            <FixedContainer>
                 <Background isSolid={solid} />
                 <BrandName>{title}</BrandName>
                 <Menu>

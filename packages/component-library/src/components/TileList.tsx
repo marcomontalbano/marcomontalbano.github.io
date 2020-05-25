@@ -19,14 +19,38 @@ const TileList = ({ className, tiles }: Props & StyledComponents) => (
 export default styled(TileList)`
     display: flex;
     flex-wrap: wrap;
-    margin: 1px;
 
     > ${Tile} {
         flex: 1 1 512px;
-        margin: 1px;
+        margin: 20px;
 
-        &:nth-child(6n + 1) {
-            flex-basis: 768px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 8px -4px black;
+
+        &:first-child {
+            flex: 100%;
+            margin: 0 -20px 20px;
+            margin: 0 0 20px;
+            border-radius: 0;
+            max-height: 80vh;
+            min-height: 50vh;
+
+            > * {
+                &:after {
+                    display: none;
+                }
+
+                .content {
+                    opacity: 1;
+                    background: rgba(0, 0, 0, 0.4);
+                }
+
+                &:hover {
+                    img {
+                        transform: none;
+                    }
+                }
+            }
         }
     }
 `

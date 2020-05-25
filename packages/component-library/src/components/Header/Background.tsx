@@ -29,7 +29,7 @@ const Background = styled.div`
     width: 100%;
     height: 100%;
     transition: opacity 0.3s;
-    opacity: ${(props: BackgroundProps) => (props.isSolid ? 1 : 0)};
+    opacity: ${(props: BackgroundProps) => (props.isSolid ? 1 : 0.4)};
     &.solid {
         opacity: 1;
     }

@@ -30,7 +30,12 @@ const Layout = ({ children, forceSolid = true }: Props) => {
 
     return (
         <GlobalStyle>
-            <Header forceSolid={forceSolid} title={<Link to="/">{data.site.siteMetadata.title}</Link>} />
+            <Header
+                gradientStart={200}
+                gradientEnd={180}
+                forceSolid={forceSolid}
+                title={<Link to="/">{data.site.siteMetadata.title}</Link>}
+            />
             <main>{children}</main>
         </GlobalStyle>
     )

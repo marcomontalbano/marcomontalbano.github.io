@@ -35,19 +35,21 @@ const cssVariables = {
 }
 
 export default styled(Tile)`
+    overflow: hidden;
     > * {
         position: relative;
         display: block;
         width: 100%;
         height: 100%;
 
-        &:before {
+        &:after {
             content: '';
             background: rgb(0, 0, 0);
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+            background: rgba(0, 0, 0, 0.4);
         }
 
-        &:before,
+        &:after,
         .content {
             opacity: 0;
             transition: 0.3s opacity;
@@ -59,10 +61,11 @@ export default styled(Tile)`
         }
 
         .content {
-            padding: 25px;
+            padding: 1.2em;
             height: auto;
             box-sizing: border-box;
             color: white;
+            z-index: 1;
 
             > h2 {
                 margin: 0;
@@ -79,18 +82,24 @@ export default styled(Tile)`
             }
         }
 
-        &:hover {
-            &:before,
-            .content {
-                opacity: 1;
-            }
-        }
-
         img {
+            transition: 0.2s transform;
             display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transform: scale(1);
+        }
+
+        &:hover {
+            &:after,
+            .content {
+                opacity: 1;
+            }
+
+            img {
+                transform: scale(1.02);
+            }
         }
     }
 `
