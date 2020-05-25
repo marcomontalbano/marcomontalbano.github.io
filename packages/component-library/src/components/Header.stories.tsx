@@ -23,17 +23,9 @@ export default {
     decorators: [
         withKnobs,
         (storyFn: StoryFn) => (
-            <GlobalStyle
-                style={{
-                    height: '200vh',
-                    backgroundImage: `url('${options('', valuesObj, firstTile.src, {
-                        display: 'select',
-                    })}')`,
-                    backgroundSize: '100%',
-                    backgroundRepeat: 'no-repeat',
-                }}
-            >
+            <GlobalStyle>
                 {storyFn() as ReactNode}
+                <img src={options('', valuesObj, firstTile.src, { display: 'select' })} alt="Hero" />
             </GlobalStyle>
         ),
     ],

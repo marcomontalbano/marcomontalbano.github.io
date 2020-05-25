@@ -53,7 +53,7 @@ const IndexPage = () => {
     const projects = useProjects()
 
     return (
-        <Layout>
+        <Layout forceSolid={false}>
             <SEO title="Home" />
             <TileList tiles={projects} />
         </Layout>

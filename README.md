@@ -7,7 +7,7 @@ This project is composed by 3 packages. I'm using [lerna](https://github.com/ler
 
 * `dump-github` fetches the GitHub API v4, manipulate the data and create multiple json files that then are consumed by the `website`.
 * `component-library` is a [Storybook](https://storybook.js.org/) project. All components are available as downloadable [npm package](https://github.com/marcomontalbano/marcomontalbano.github.io/packages/79405).
-* `website` uses components from the *component-library*, consume data from *dump-github* and build the website using [Gatsby](https://www.gatsbyjs.org/).
+* `website` uses components from the *component-library*, consumes data from *dump-github* and builds the website using [Gatsby](https://www.gatsbyjs.org/).
 
 
 ## Scripts
@@ -36,15 +36,6 @@ I created many scripts in the root folder, so that it is easier to execute them 
 
 * `prewebsite:start` - Build *dump-github* and *component-library*.
 * `website:start` - Start *gatsby* at http://localhost:8000/
-
-#### Release Life Cycle
-
-This task are used for the releasing the website.
-
-* `website:update` - Update the `component-library` version to the latest one.
-* `prewebsite:build` - Create the json files.
-* `website:build` - Create a production build of the website using *gatsby*
-* `website:serve` - Serve the production build for testing at http://localhost:9000/
 
 
 ## Release Life Cycle
