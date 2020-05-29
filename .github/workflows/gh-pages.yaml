@@ -45,6 +45,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          BRANCH: gh-pages
+          BRANCH: master
           FOLDER: packages/website/public
           SINGLE_COMMIT: false
