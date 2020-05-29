@@ -11,10 +11,7 @@ jobs:
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          fetch-depth: 0
+        uses: actions/checkout@v1.0.0
 
       - name: Tag 🏷
         id: tags
