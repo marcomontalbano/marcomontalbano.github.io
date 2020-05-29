@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
-import showdown from 'showdown'
+import { converter } from '../showdown'
 
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
@@ -10,14 +10,6 @@ import { StyledComponents } from '../types'
 export type Props = {
     markdown: string
 }
-
-const converter = new showdown.Converter({
-    simplifiedAutoLink: true,
-    strikethrough: true,
-    emoji: true,
-    tables: true,
-    tasklists: true,
-})
 
 const convertMarkdownToHtml = (markdown: string = ''): string => converter.makeHtml(markdown)
 
@@ -49,4 +41,24 @@ const Markdown = ({ className, markdown }: Props & StyledComponents) => {
     )
 }
 
-export default styled(Markdown)``
+export default styled(Markdown)`
+    .showdown-youtube-extension {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: ${((9 / 16) * 100).toFixed(2)}%;
+        position: relative;
+        max-width: 90%;
+        border-radius: 5px;
+        margin: 0 auto;
+
+        iframe,
+        object,
+        embed {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    }
+`
