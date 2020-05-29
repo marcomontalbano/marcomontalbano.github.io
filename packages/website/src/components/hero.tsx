@@ -13,6 +13,7 @@ const Img = styled.img`
     display: block;
     width: 100%;
     object-fit: cover;
+    transform: scale(1.01);
 `
 
 const Hero = ({ cover, title }: Props) => <Img src={cover} alt={title} />
