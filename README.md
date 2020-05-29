@@ -1,4 +1,4 @@
-# portfolio
+# marcomontalbano.github.io
 
 
 ## General Information
@@ -50,7 +50,7 @@ I created many scripts in the root folder, so that it is easier to execute them 
 
 ### Component Library
 
-1. Create a new version from `master` with `npm run lerna:version`
+1. Create a new version from `production` with `npm run lerna:version`
 1. `release.yml` workflow will attach the release notes to a brand new draft release
 1. [ *only pre-release* ] Flag the release with `This is a pre-release`
 1. Manually publish the release from GitHub
