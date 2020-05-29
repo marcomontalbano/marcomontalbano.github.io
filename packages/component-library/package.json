@@ -21,8 +21,10 @@
   "scripts": {
     "test": "react-scripts test --watchAll=false",
     "lint": "tsc -b ./tsconfig.json",
-    "start": "start-storybook -p 9009 -s public",
+    "start": "run-p start:storybook watch:dist",
+    "start:storybook": "start-storybook -p 9009 -s public",
     "build:storybook": "build-storybook -s public",
+    "watch:dist": "tsc -b tsconfig.build.json -w",
     "build:dist": "tsc -b tsconfig.build.json",
     "prepublishOnly": "npm run build:dist"
   },
@@ -61,6 +63,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.0",
     "babel-plugin-macros": "^2.8.0",
+    "npm-run-all": "~4.1.5",
     "react": "^16.13.1",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",

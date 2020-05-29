@@ -5,7 +5,7 @@
   "description": "My website",
   "scripts": {
     "clean": "rm -rf data/*.json node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo */*/.cache */website/public",
-    "postinstall": "lerna exec npm install --parallel",
+    "postinstall": "lerna bootstrap",
     "test": "lerna run test",
     "lint": "lerna run lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
@@ -13,12 +13,11 @@
     "lerna:version": "lerna version",
     "db:build": "lerna run build --stream --scope @marcomontalbano/dump-github",
     "componentLibrary:start": "lerna run start --stream --scope @marcomontalbano/component-library",
-    "componentLibrary:watch": "npx chokidar-cli \"packages/component-library/src/**/*.{j,t}s{,x}\" -c \"run-s componentLibrary:build 'lerna:fixDependencies -- false'\"",
+    "componentLibrary:watch": "npx chokidar-cli \"packages/component-library/dist/**\" -c \"npm run lerna:fixDependencies -- false\"",
     "componentLibrary:build": "lerna run build:dist --stream --scope @marcomontalbano/component-library",
     "prewebsite:start": "run-s db:build componentLibrary:build lerna:fixDependencies",
     "website:start": "lerna run start --stream --scope @marcomontalbano/website",
-    "website:update": "lerna exec \"npm install @marcomontalbano/component-library@latest --save-exact\" --scope @marcomontalbano/website",
-    "prewebsite:build": "run-s db:build",
+    "prewebsite:build": "run-s db:build componentLibrary:build lerna:fixDependencies",
     "website:build": "lerna run build --stream --scope @marcomontalbano/website",
     "website:serve": "lerna run serve --stream --scope @marcomontalbano/website"
   },
@@ -49,8 +48,7 @@
     "prettier": "2.0.5"
   },
   "engines": {
-    "node": ">= 10.16.x <= 12.x",
-    "npm": ">= 6.9.x < 7.x"
+    "node": ">= 12.x <= 14.x"
   },
   "dependencies": {}
 }

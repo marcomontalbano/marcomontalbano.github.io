@@ -32,7 +32,7 @@ I created many scripts in the root folder, so that it is easier to execute them 
 ### Component Library
 
 * `componentLibrary:start` - Start *storybook* at http://localhost:9009/
-* `componentLibrary:watch` - Watch for `.ts` `.tsx` `.js` `.jsx` changes and build the `component-library`
+* `componentLibrary:watch` - Watch for changes and build the `component-library`
 * `componentLibrary:build` - Build the component-library producing a `dist` folder that contains all reusable components.
 
 ### Website
@@ -51,17 +51,12 @@ I created many scripts in the root folder, so that it is easier to execute them 
 ### Component Library
 
 1. Create a new version from `master` with `npm run lerna:version`
-1. `release` workflow will attach the release notes to a brand new draft release
+1. `release.yml` workflow will attach the release notes to a brand new draft release
 1. [ *only pre-release* ] Flag the release with `This is a pre-release`
 1. Manually publish the release from GitHub
-1. `publish` workflow will publish the release to [GitHub registry](https://github.com/marcomontalbano/marcomontalbano.github.io/packages) and start the build on Netlify
+1. `publish.yml` workflow will publish the release to [GitHub registry](https://github.com/marcomontalbano/marcomontalbano.github.io/packages) and start the build on Netlify
 
 ### Website
 
-> Be sure to publish the `component-library` before.
-
-1. Run `npm run website:update` to update the `component-library` to the latest published version
-1. If you want to double-check the website before deploying it, you can use `npm run website:build` and `npm run website:serve`.
-    A production copy of the website will be available at http://localhost:9000/
-1. Commit and push the updated `package.json` and `package-lock.json`
-1. Merge `master` into `production` branch
+1. When you manually publish the release from GitHub, the `gh-pages.yml` workflow will be triggered also. This will deploy the website on [GitHub Pages](https://pages.github.com/)
+1. `gh-pages.yml` is also triggered on scheduled time. In this flow, the last available *tag* will be deployed.

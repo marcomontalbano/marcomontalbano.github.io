@@ -9,29 +9,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
         with:
-          node-version: 10.x
+          persist-credentials: false
+
+      - name: Node 🧰
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
           registry-url: https://npm.pkg.github.com
           scope: '@marcomontalbano'
 
-      - name: Project setup `npm ci`
-        run: npx lerna exec npm ci --scope @marcomontalbano/component-library
+      - name: Install 📦
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Run `publish` PRERELEASE
+      - name: Publish 🚀 PRERELEASE
         if: 'github.event.release.prerelease'
         run: |
-          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
-          npx lerna publish from-git --dist-tag next --require-scripts --yes
+          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}
+          lerna publish from-git --dist-tag next --require-scripts --yes
 
-      - name: Run `publish` PRODUCTION
+      - name: Publish 🚀 PRODUCTION
         if: '!github.event.release.prerelease'
         run: |
-          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
-          npx lerna publish from-git --require-scripts --yes
+          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}
+          lerna publish from-git --require-scripts --yes
 
-      - name: Deploy on Netlify
+      - name: Deploy on Netlify 🚀
         if: '!github.event.release.prerelease'
         uses: wei/curl@v1
         with:

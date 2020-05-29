@@ -17,7 +17,7 @@ const getPackageInfo = (folderName) => {
     const folders = {
         base: folderPath,
         node_modules: path.resolve(folderPath, 'node_modules'),
-        defaultFiles: ['package.json', 'package-lock.json'],
+        defaultFiles: ['package.json'],
         files,
     }
 
@@ -100,4 +100,7 @@ const copyDependency = async (depSource, depDestination, isSetup) => {
 
 const [cmd, script, isSetup = 'true'] = process.argv
 
-copyDependency('component-library', 'website', isSetup === 'true').then(() => spinner.stop())
+copyDependency('component-library', 'website', isSetup === 'true').then(() => {
+    spinner.stop()
+    console.log(chalk.greenBright('Done 🎉'))
+})

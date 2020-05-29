@@ -1,8 +1,10 @@
 name: GitHub Pages
 
 on:
-  push:
-    branches: ["production"]
+  release:
+    types: [published]
+  schedule:
+    - cron:  '0 1 * * *'
 
 jobs:
   github_pages:
@@ -15,17 +17,24 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Node 🔟
+      - name: Checkout Tag 🛎️
+        if: ${{ github.event_name == 'schedule' }}
+        run: |
+          git fetch --tags
+          echo $(git rev-list --tags --max-count=1)
+          git checkout `git rev-list --tags --max-count=1`
+
+      - name: Node 🧰
         uses: actions/setup-node@v1
         with:
-          node-version: 10.x
+          node-version: 12.x
           registry-url: https://npm.pkg.github.com
           scope: '@marcomontalbano'
 
       - name: Install 📦
         run: npm ci
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Build 🔧
         run: npm run website:build
@@ -35,7 +44,7 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           BRANCH: gh-pages
           FOLDER: packages/website/public
           SINGLE_COMMIT: false

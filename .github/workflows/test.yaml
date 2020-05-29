@@ -2,13 +2,11 @@ name: Test
 
 on:
   push:
+    branches:
+      - '**'
+      - '!v**'
     tags-ignore:
-      - v*
-    branches-ignore:
-      - production
-  pull_request:
-    branches-ignore:
-      - production
+      - v**
 
 jobs:
   test:
@@ -16,65 +14,25 @@ jobs:
 
     strategy:
       matrix:
-        node: [10.x, 12.x, 13.x]
+        node: [12.x, 13.x, 14.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node }}
-        registry-url: https://npm.pkg.github.com
-        scope: '@marcomontalbano'
-    - name: Project setup `npm ci`
-      run: npm ci
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Run `test`
-      run: npm test
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
+      - name: Node 🧰
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+          registry-url: https://npm.pkg.github.com
+          scope: '@marcomontalbano'
 
-  # coverage:
-  #   needs: [test]
-  #   runs-on: ubuntu-latest
+      - name: Install 📦
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-  #   steps:
-  #   - uses: actions/checkout@v1
-  #   - uses: actions/setup-node@v1
-  #     with:
-  #       node-version: 10.x
-  #   - name: Project setup `npm ci`
-  #     run: npm ci
-
-  #   - name: Run `coverage`
-  #     run: npm run coverage
-  #   - name: Export `coverage`
-  #     uses: coverallsapp/github-action@master
-  #     with:
-  #       github-token: ${{ secrets.github_token }}
-  #       path-to-lcov: ./coverage/lcov.info # optional (default value)
-  #   - name: Upload `coverage` artifact
-  #     uses: actions/upload-artifact@v1
-  #     with:
-  #       name: coverage
-  #       path: coverage/lcov-report
-
-
-  # stryker:
-  #   needs: [test]
-  #   runs-on: ubuntu-latest
-        
-  #   steps:
-  #   - uses: actions/checkout@v1
-  #   - uses: actions/setup-node@v1
-  #     with:
-  #       node-version: 10.x
-  #   - name: Project setup `npm ci`
-  #     run: npm ci
-
-  #   - name: Run `stryker`
-  #     run: npm run stryker
-  #   - name: Upload `stryker` artifact
-  #     uses: actions/upload-artifact@v1
-  #     with:
-  #       name: stryker
-  #       path: reports/mutation/html
+      - name: Test 🐛
+        run: npm test
