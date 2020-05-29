@@ -30,13 +30,13 @@ jobs:
         if: 'github.event.release.prerelease'
         run: |
           npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}
-          lerna publish from-git --dist-tag next --require-scripts --yes
+          ./node_modules/.bin/lerna publish from-git --dist-tag next --require-scripts --yes
 
       - name: Publish 🚀 PRODUCTION
         if: '!github.event.release.prerelease'
         run: |
           npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}
-          lerna publish from-git --require-scripts --yes
+          ./node_modules/.bin/lerna publish from-git --require-scripts --yes
 
       - name: Deploy on Netlify 🚀
         if: '!github.event.release.prerelease'
