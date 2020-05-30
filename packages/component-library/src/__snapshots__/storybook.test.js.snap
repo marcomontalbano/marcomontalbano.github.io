@@ -2,10 +2,10 @@
 
 exports[`Storyshots Header Solid 1`] = `
 <div
-  className="sc-AxjAm knQsXj"
+  className="sc-AxjAm dJTsBx"
 >
   <header
-    className="sc-AxirZ gbuvZJ"
+    className="sc-AxirZ cCepqy"
     style={
       Object {
         "--gradient-end": "hsl(180, 78%, 68%)",
@@ -20,7 +20,7 @@ exports[`Storyshots Header Solid 1`] = `
         className="sc-AxhCb brNDCX"
       />
       <div
-        className="sc-AxhUy dEFdsE"
+        className="sc-AxhUy kmPdur"
       >
         <a
           href="/"
@@ -29,7 +29,7 @@ exports[`Storyshots Header Solid 1`] = `
         </a>
       </div>
       <div
-        className="sc-AxheI huSFDa"
+        className="sc-AxheI gLzaqt"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -51,10 +51,10 @@ exports[`Storyshots Header Solid 1`] = `
 
 exports[`Storyshots Header Transparent 1`] = `
 <div
-  className="sc-AxjAm knQsXj"
+  className="sc-AxjAm dJTsBx"
 >
   <header
-    className="sc-AxirZ hfXkRY"
+    className="sc-AxirZ RxnEb"
     style={
       Object {
         "--gradient-end": "hsl(180, 78%, 68%)",
@@ -69,7 +69,7 @@ exports[`Storyshots Header Transparent 1`] = `
         className="sc-AxhCb eRXIMY"
       />
       <div
-        className="sc-AxhUy dEFdsE"
+        className="sc-AxhUy kmPdur"
       >
         <a
           href="/"
@@ -78,7 +78,7 @@ exports[`Storyshots Header Transparent 1`] = `
         </a>
       </div>
       <div
-        className="sc-AxheI huSFDa"
+        className="sc-AxheI gLzaqt"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -100,7 +100,7 @@ exports[`Storyshots Header Transparent 1`] = `
 
 exports[`Storyshots Markdown Basic 1`] = `
 <div
-  className="sc-AxjAm knQsXj"
+  className="sc-AxjAm dJTsBx"
   style={
     Object {
       "margin": "15px",
@@ -108,7 +108,7 @@ exports[`Storyshots Markdown Basic 1`] = `
   }
 >
   <div
-    className="sc-Axmtr cInOdb"
+    className="sc-Axmtr kKwfXZ"
     dangerouslySetInnerHTML={
       Object {
         "__html": "",
@@ -120,7 +120,7 @@ exports[`Storyshots Markdown Basic 1`] = `
 
 exports[`Storyshots Markdown Real Data 1`] = `
 <div
-  className="sc-AxjAm knQsXj"
+  className="sc-AxjAm dJTsBx"
   style={
     Object {
       "margin": "15px",
@@ -128,7 +128,7 @@ exports[`Storyshots Markdown Real Data 1`] = `
   }
 >
   <div
-    className="sc-Axmtr cInOdb"
+    className="sc-Axmtr kKwfXZ"
     dangerouslySetInnerHTML={
       Object {
         "__html": "",
@@ -140,7 +140,7 @@ exports[`Storyshots Markdown Real Data 1`] = `
 
 exports[`Storyshots Tile Basic 1`] = `
 <div
-  className="sc-AxjAm knQsXj"
+  className="sc-AxjAm dJTsBx"
   style={
     Object {
       "width": "50%",
@@ -172,7 +172,7 @@ exports[`Storyshots Tile Basic 1`] = `
 
 exports[`Storyshots Tile With Link 1`] = `
 <div
-  className="sc-AxjAm knQsXj"
+  className="sc-AxjAm dJTsBx"
   style={
     Object {
       "width": "50%",
@@ -206,7 +206,7 @@ exports[`Storyshots Tile With Link 1`] = `
 
 exports[`Storyshots Tile With Long Description 1`] = `
 <div
-  className="sc-AxjAm knQsXj"
+  className="sc-AxjAm dJTsBx"
   style={
     Object {
       "width": "50%",
@@ -238,10 +238,10 @@ exports[`Storyshots Tile With Long Description 1`] = `
 
 exports[`Storyshots TileList Basic 1`] = `
 <div
-  className="sc-AxjAm knQsXj"
+  className="sc-AxjAm dJTsBx"
 >
   <div
-    className="sc-fzozJi bQgjLm"
+    className="sc-fzozJi hPksaz"
   >
     <div
       className="sc-AxmLO hIaLwq"

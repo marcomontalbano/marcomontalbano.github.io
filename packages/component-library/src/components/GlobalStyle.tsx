@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const mediaQuery = {
+    medium: '(min-width: 480px)',
+}
+
 export default styled.div`
     --color-text: #223a48;
     --color-link: #559cd0;
@@ -8,11 +12,11 @@ export default styled.div`
     color: var(--color-text);
     line-height: 1.42;
     font-weight: 300;
-    font-size: 112.5%;
+    font-size: 100%;
     box-sizing: border-box;
 
-    @media only screen and (max-width: 480px) {
-        font-size: 100%;
+    @media ${mediaQuery.medium} {
+        font-size: 112.5%;
     }
 
     *,

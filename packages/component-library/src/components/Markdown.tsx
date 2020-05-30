@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { converter } from '../showdown'
+import { mediaQuery } from './GlobalStyle'
 
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
@@ -67,12 +68,12 @@ export default styled(Markdown)`
         flex-wrap: wrap;
 
         img {
-            width: 50%;
+            width: 100%;
             padding: 10px;
             border-radius: 15px;
 
-            @media only screen and (max-width: 480px) {
-                width: 100%;
+            @media ${mediaQuery.medium} {
+                width: 50%;
             }
         }
     }
