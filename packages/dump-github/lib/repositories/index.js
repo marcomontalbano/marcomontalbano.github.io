@@ -42,7 +42,7 @@ const createMarkdown = async (repositoryUrl, markdownUrl) => {
 
     const replacement = (match, url) => {
         const isRelative = !/^http.*/g.test(url)
-        return match.replace(url, isRelative ? `${repositoryUrl}/raw/master/${url.replace(/^[./]+/, '')}` : url)
+        return match.replace(url, isRelative ? `${repositoryUrl}/${url.replace(/^[./]+/, '')}` : url)
     }
 
     const source = markdown.source
@@ -59,8 +59,10 @@ const getH1 = (source = '') => {
 }
 
 const create = async ({ node }) => {
-    const cover = await createFile(`${node.url}/raw/master/cover.png`)
-    const readme = await createMarkdown(node.url, `${node.url}/raw/master/README.md`)
+    const repositoryUrl = `${node.url}/raw/${node.defaultBranchRef.name}`
+
+    const cover = await createFile(`${repositoryUrl}/cover.png`)
+    const readme = await createMarkdown(repositoryUrl, `${repositoryUrl}/README.md`)
 
     return {
         ...node,
@@ -69,6 +71,7 @@ const create = async ({ node }) => {
             visible: cover.isPresent === true && readme.isPresent === true && node.isPrivate === false,
             starCount: node.stargazers.totalCount,
             forkCount: node.forkCount,
+            defaultBranch: node.defaultBranchRef.name,
             repositoryTopics: createTopics(node.repositoryTopics),
             cover,
             readme,

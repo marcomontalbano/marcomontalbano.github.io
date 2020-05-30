@@ -1,11 +1,17 @@
 const nock = require('nock')
 
-const nockNode = (name, { readmeStatusCode = 200, coverStatusCode = 200, isPrivate = true }) => {
+const nockNode = (
+    name,
+    { readmeStatusCode = 200, coverStatusCode = 200, isPrivate = true, defaultBranchName = 'production' }
+) => {
     const node = {
         name,
         isPrivate,
         description: `Description for "${name}".`,
         url: `https://github.com/marcomontalbano/${name}`,
+        defaultBranchRef: {
+            name: defaultBranchName,
+        },
         stargazers: {
             totalCount: 2,
         },
@@ -22,28 +28,29 @@ const nockNode = (name, { readmeStatusCode = 200, coverStatusCode = 200, isPriva
             visible: false,
             starCount: 2,
             forkCount: 0,
+            defaultBranch: defaultBranchName,
             repositoryTopics: ['kata', 'tdd'],
             cover: {
-                originalUrl: `${node.url}/raw/master/cover.png`,
-                url: `${node.url}/raw/master/cover.png`,
+                originalUrl: `${node.url}/raw/${defaultBranchName}/cover.png`,
+                url: `${node.url}/raw/${defaultBranchName}/cover.png`,
                 isPresent: coverStatusCode === 200,
                 headers: coverStatusCode === 200 ? { 'content-type': 'image/gif' } : undefined,
                 source: undefined,
             },
             readme: {
-                originalUrl: `${node.url}/raw/master/README.md`,
-                url: `${node.url}/raw/master/README.md`,
+                originalUrl: `${node.url}/raw/${defaultBranchName}/README.md`,
+                url: `${node.url}/raw/${defaultBranchName}/README.md`,
                 isPresent: readmeStatusCode === 200,
                 headers: readmeStatusCode === 200 ? { 'content-type': 'text/plain' } : undefined,
                 source:
                     readmeStatusCode === 200
-                        ? `# Project Title\nREADME.md source :)\n[Absolute URL](https://example.com)\n![Relative URL](${node.url}/raw/master/images/example.png)`
+                        ? `# Project Title\nREADME.md source :)\n[Absolute URL](https://example.com)\n![Relative URL](${node.url}/raw/${defaultBranchName}/images/example.png)`
                         : undefined,
             },
         },
     }
 
-    nock(`${node.url}/raw/master`)
+    nock(`${node.url}/raw/${defaultBranchName}`)
         .get(/cover\.png/)
         .reply(
             coverStatusCode,
