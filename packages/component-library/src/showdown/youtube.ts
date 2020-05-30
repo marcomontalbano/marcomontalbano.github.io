@@ -8,7 +8,7 @@ export const youtubeExtension = (): ShowdownExtension => {
                 '(?:(?:https?:)?(?:\\/\\/)?)(?:(?:www)?\\.)?youtube\\.(?:.+?)\\/(?:(?:watch\\?v=)|(?:embed\\/))([a-zA-Z0-9_-]{11})'
             const shortYoutubePattern = '(?:(?:https?:)?(?:\\/\\/)?)?youtu\\.be\\/([a-zA-Z0-9_-]{11})'
             return [longYoutubePattern, shortYoutubePattern]
-                .map((pattern) => new RegExp(`<a href="${pattern}.*</a>`, 'i'))
+                .map((pattern) => new RegExp(`<a href="${pattern}.*?</a>`, 'gi'))
                 .reduce((currentHtml, regexp) => {
                     return currentHtml.replace(regexp, (_match, url, _rest) => {
                         return `<div class="showdown-youtube-extension"><iframe src="https://www.youtube.com/embed/${url}" frameborder="0"
