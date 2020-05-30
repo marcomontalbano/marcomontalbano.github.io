@@ -6,6 +6,9 @@
           name
           description
           url
+          defaultBranchRef {
+            name
+          }
           homepageUrl
           createdAt
           updatedAt

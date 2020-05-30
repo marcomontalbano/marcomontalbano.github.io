@@ -20,6 +20,8 @@ module.exports = {
         'operator-linebreak': 'off',
         'implicit-arrow-linebreak': 'off',
         'comma-dangle': 'off',
+        'function-paren-newline': 'off',
+        'object-curly-newline': 'off',
     },
     plugins: ['jest'],
 }
