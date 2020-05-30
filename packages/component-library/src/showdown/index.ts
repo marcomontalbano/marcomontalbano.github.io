@@ -1,5 +1,6 @@
 import showdown from 'showdown'
 import { youtubeExtension } from './youtube'
+import { imagesExtension } from './images'
 
 const converter = new showdown.Converter({
     simplifiedAutoLink: true,
@@ -10,5 +11,6 @@ const converter = new showdown.Converter({
 })
 
 converter.addExtension(youtubeExtension)
+converter.addExtension(imagesExtension)
 
 export { showdown, converter }

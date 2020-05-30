@@ -108,7 +108,7 @@ exports[`Storyshots Markdown Basic 1`] = `
   }
 >
   <div
-    className="sc-Axmtr oEzSP"
+    className="sc-Axmtr cInOdb"
     dangerouslySetInnerHTML={
       Object {
         "__html": "",
@@ -128,7 +128,7 @@ exports[`Storyshots Markdown Real Data 1`] = `
   }
 >
   <div
-    className="sc-Axmtr oEzSP"
+    className="sc-Axmtr cInOdb"
     dangerouslySetInnerHTML={
       Object {
         "__html": "",
