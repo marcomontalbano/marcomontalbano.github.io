@@ -32,8 +32,9 @@ export default styled(TileList)`
             margin: 0 -20px 20px;
             margin: 0 0 20px;
             border-radius: 0;
-            max-height: 80vh;
+
             min-height: 50vh;
+            max-height: 80vh;
 
             > * {
                 &:after {
@@ -45,10 +46,8 @@ export default styled(TileList)`
                     background: rgba(0, 0, 0, 0.4);
                 }
 
-                &:hover {
-                    img {
-                        transform: scale(1.01);
-                    }
+                img {
+                    transform: scale(1);
                 }
             }
         }

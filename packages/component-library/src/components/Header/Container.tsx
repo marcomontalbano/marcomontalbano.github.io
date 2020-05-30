@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { mediaQuery } from '../GlobalStyle'
+
 type ContainerProps = {
     forceSolid: boolean
 }
@@ -14,7 +16,7 @@ export const Container = styled.header`
         margin-top: ${(props: ContainerProps) => (props.forceSolid ? 0 : '-60px')};
     }
 
-    @media screen and (min-width: 834px) {
+    @media ${mediaQuery.medium} {
         height: 70px;
 
         ~ * {
