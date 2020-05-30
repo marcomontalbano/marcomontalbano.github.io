@@ -4,7 +4,7 @@
   "description": "My personal website",
   "author": "Marco Montalbano <me@marcomontalbano.com>",
   "dependencies": {
-    "@marcomontalbano/component-library": "^0.5.0",
+    "@marcomontalbano/component-library": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
@@ -53,5 +53,5 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
-  "version": "0.5.0"
+  "version": "1.0.0"
 }

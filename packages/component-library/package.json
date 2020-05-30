@@ -1,6 +1,6 @@
 {
   "name": "@marcomontalbano/component-library",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "license": "MIT",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
