@@ -61,4 +61,19 @@ export default styled(Markdown)`
             width: 100%;
         }
     }
+
+    .showdown-images-extension {
+        display: flex;
+        flex-wrap: wrap;
+
+        img {
+            width: 50%;
+            padding: 10px;
+            border-radius: 15px;
+
+            @media only screen and (max-width: 480px) {
+                width: 100%;
+            }
+        }
+    }
 `
