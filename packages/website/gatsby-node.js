@@ -40,6 +40,7 @@ exports.createPages = async ({ actions, graphql }) => {
             component: path.resolve(`src/pages/project.tsx`),
             context: {
                 name: node.name,
+                url: node.url,
                 title: node.customFields.title,
                 cover: node.customFields.cover.url,
                 readme: node.customFields.readme.source,
