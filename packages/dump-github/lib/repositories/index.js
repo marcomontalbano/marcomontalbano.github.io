@@ -36,6 +36,10 @@ const createFile = async (originalUrl) => {
 const createMarkdown = async (repositoryUrl, markdownUrl) => {
     const markdown = await createFile(markdownUrl)
 
+    if (!markdown.source) {
+        return markdown
+    }
+
     const replacement = (match, url) => {
         const isRelative = !/^http.*/g.test(url)
         return match.replace(url, isRelative ? `${repositoryUrl}/raw/master/${url.replace(/^[./]+/, '')}` : url)
