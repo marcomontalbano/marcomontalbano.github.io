@@ -17,6 +17,7 @@ exports.createPages = async ({ actions, graphql }) => {
                     name
                     description
                     url
+                    homepageUrl
                     customFields {
                         title
                         cover {
@@ -40,6 +41,7 @@ exports.createPages = async ({ actions, graphql }) => {
             component: path.resolve(`src/pages/project.tsx`),
             context: {
                 name: node.name,
+                homepageUrl: node.homepageUrl,
                 url: node.url,
                 title: node.customFields.title,
                 cover: node.customFields.cover.url,
