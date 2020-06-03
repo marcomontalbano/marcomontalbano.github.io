@@ -8,6 +8,7 @@ const converter = new showdown.Converter({
     emoji: true,
     tables: true,
     tasklists: true,
+    ghCompatibleHeaderId: true,
 })
 
 converter.addExtension(youtubeExtension)
