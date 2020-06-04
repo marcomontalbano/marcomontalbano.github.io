@@ -44,7 +44,15 @@ const nockNode = (
                 headers: readmeStatusCode === 200 ? { 'content-type': 'text/plain' } : undefined,
                 source:
                     readmeStatusCode === 200
-                        ? `# Project Title\nREADME.md source :)\n[Absolute URL](https://example.com)\n![Relative URL](${node.url}/raw/${defaultBranchName}/images/example.png)`
+                        ? `
+# Project Title
+README.md source :)
+[Absolute URL](https://example.com)
+![Image Relative URL 1](${node.url}/raw/${defaultBranchName}/images/example1.png) ![Image Relative URL 2](${node.url}/raw/${defaultBranchName}/images/example2.png)
+[Just Relative URL](${node.url}/blob/${defaultBranchName}/EXAMPLE.md)
+[Relative URL with Hyperlink](${node.url}/blob/${defaultBranchName}/EXAMPLE#link)
+[Just Hyperlink](#link)
+[local-file.js](${node.url}/blob/${defaultBranchName}/local-file.js)`
                         : undefined,
             },
         },
@@ -61,7 +69,15 @@ const nockNode = (
         .reply(
             readmeStatusCode,
             () =>
-                '# Project Title\nREADME.md source :)\n[Absolute URL](https://example.com)\n![Relative URL](images/example.png)',
+                `
+# Project Title
+README.md source :)
+[Absolute URL](https://example.com)
+![Image Relative URL 1](images/example1.png) ![Image Relative URL 2](images/example2.png)
+[Just Relative URL](./EXAMPLE.md)
+[Relative URL with Hyperlink](./EXAMPLE#link)
+[Just Hyperlink](#link)
+[local-file.js](local-file.js)`,
             { 'content-type': 'text/plain' }
         )
 
