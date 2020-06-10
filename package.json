@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "My website",
   "scripts": {
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\"",
     "clean": "rm -rf data/*.json node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo */*/.cache */website/public",
     "postinstall": "lerna bootstrap",
     "test": "lerna run test",
@@ -13,7 +14,7 @@
     "lerna:version": "lerna version",
     "db:build": "lerna run build --stream --scope @marcomontalbano/dump-github",
     "componentLibrary:start": "lerna run start --stream --scope @marcomontalbano/component-library",
-    "componentLibrary:watch": "npx chokidar-cli \"packages/component-library/dist/**\" -c \"npm run lerna:fixDependencies -- false\"",
+    "componentLibrary:watch": "npx chokidar-cli \"packages/component-library/dist/**\" -c \"yarn lerna:fixDependencies -- false\"",
     "componentLibrary:build": "lerna run build:dist --stream --scope @marcomontalbano/component-library",
     "prewebsite:start": "run-s db:build componentLibrary:build lerna:fixDependencies",
     "website:start": "lerna run start --stream --scope @marcomontalbano/website",
@@ -33,7 +34,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm test"
+      "pre-push": "yarn test"
     }
   },
   "devDependencies": {

@@ -22,7 +22,7 @@ jobs:
           scope: '@marcomontalbano'
 
       - name: Install 📦
-        run: npm ci
+        run: yarn
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
 

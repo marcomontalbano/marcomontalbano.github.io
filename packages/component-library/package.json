@@ -27,7 +27,7 @@
     "build:storybook": "build-storybook -s public",
     "watch:dist": "tsc -b tsconfig.build.json -w",
     "build:dist": "tsc -b tsconfig.build.json",
-    "prepublishOnly": "npm run build:dist"
+    "prepublishOnly": "yarn build:dist"
   },
   "eslintConfig": {
     "extends": "react-app"

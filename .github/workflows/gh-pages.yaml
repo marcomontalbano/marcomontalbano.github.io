@@ -32,12 +32,12 @@ jobs:
           scope: '@marcomontalbano'
 
       - name: Install 📦
-        run: npm ci
+        run: yarn
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Build 🔧
-        run: npm run website:build
+        run: yarn website:build
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
