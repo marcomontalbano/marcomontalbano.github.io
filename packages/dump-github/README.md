@@ -5,13 +5,13 @@
 ## Usage
 
 ```sh
-GITHUB_TOKEN=<token> npm run build
+GITHUB_TOKEN=<token> yarn build
 ```
 
 ## Test
 
 ```sh
-npm test
-npm run test --watch
-npm run lint
+yarn test
+yarn test --watch
+yarn lint
 ```
