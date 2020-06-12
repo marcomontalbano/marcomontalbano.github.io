@@ -38,7 +38,7 @@ exports.createPages = async ({ actions, graphql }) => {
     data.allRepositories.nodes.forEach((node) => {
         createPage({
             path: `/project/${node.name}`,
-            component: path.resolve(`src/pages/project.tsx`),
+            component: path.resolve(`src/templates/project.tsx`),
             context: {
                 name: node.name,
                 homepageUrl: node.homepageUrl,
