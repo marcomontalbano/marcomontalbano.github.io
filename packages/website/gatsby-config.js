@@ -5,6 +5,7 @@ module.exports = {
         title: `Marco Montalbano`,
         description: `Hi everyone, my name is Marco Montalbano and I'm a web developer. On this site you can discover more about me, my projects, my work and my curriculum.`,
         author: `@montalbanomarco`,
+        siteUrl: `https://www.marcomontalbano.com`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -49,6 +50,8 @@ module.exports = {
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,
+
+        `gatsby-plugin-sitemap`,
 
         {
             resolve: `gatsby-transformer-json`,
