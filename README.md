@@ -3,6 +3,22 @@
 * Website available at https://www.marcomontalbano.com/.
 * Component Library available at https://component-library.marcomontalbano.com/
 
+## I know, I know
+
+If you look into this repository you will probably notice that it looks a bit over-engeneered. I put in place many different tools because for me this is just an experimental sandbox that outputs my own website.
+
+This is the toolkit:
+
+- [x] TypeScript
+- [x] React
+- [x] Storybook
+- [x] Gatsby
+- [x] Styled Components
+- [x] GitHub Actions
+- [x] GitHub Packages
+- [ ] Algolia
+
+
 ## General Information
 
 :information_source: I'm using [Yarn](https://yarnpkg.com/) for [this reason](https://github.com/storybookjs/storybook/issues/6505).
