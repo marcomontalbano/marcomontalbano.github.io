@@ -1,10 +1,17 @@
-const nock = require('nock')
+import nock from 'nock'
+
+type optionType = {
+    readmeStatusCode?: number
+    coverStatusCode?: number
+    isPrivate?: boolean
+    defaultBranchName?: string
+}
 
 const nockNode = (
-    name,
-    { readmeStatusCode = 200, coverStatusCode = 200, isPrivate = true, defaultBranchName = 'production' }
-) => {
-    const node = {
+    name: string,
+    { readmeStatusCode = 200, coverStatusCode = 200, isPrivate = true, defaultBranchName = 'production' }: optionType
+): [ghRepositoryInput, ghRepositoryOutput] => {
+    const node: ghRepositoryInput = {
         name,
         isPrivate,
         description: `Description for "${name}".`,
@@ -21,7 +28,7 @@ const nockNode = (
         },
     }
 
-    const expectedResult = {
+    const expectedResult: ghRepositoryOutput = {
         ...node,
         customFields: {
             title: readmeStatusCode === 200 ? 'Project Title' : node.name,
@@ -84,7 +91,7 @@ README.md source :)
     return [node, expectedResult]
 }
 
-const nockResponse = (nodes = []) => {
+const nockResponse = (nodes: ghRepositoryInput[] = []): void => {
     nock('https://api.github.com')
         .post('/graphql')
         .reply(200, () => ({
@@ -99,10 +106,12 @@ const nockResponse = (nodes = []) => {
 }
 
 describe('', () => {
-    it('', () => {})
+    it('', () => {
+        return
+    })
 })
 
-module.exports = {
+export default {
     nock,
     nockNode,
     nockResponse,

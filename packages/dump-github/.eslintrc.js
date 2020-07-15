@@ -1,15 +1,21 @@
 module.exports = {
+    root: true,
     env: {
         commonjs: true,
         es6: true,
         node: true,
         'jest/globals': true,
     },
-    extends: ['airbnb-base'],
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+    ],
     globals: {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
     },
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 2018,
     },
@@ -22,6 +28,7 @@ module.exports = {
         'comma-dangle': 'off',
         'function-paren-newline': 'off',
         'object-curly-newline': 'off',
+        'import/prefer-default-export': 'off',
     },
-    plugins: ['jest'],
+    plugins: ['jest', '@typescript-eslint'],
 }

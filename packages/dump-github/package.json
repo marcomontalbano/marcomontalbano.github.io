@@ -22,21 +22,36 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint .",
-    "build": "./bin/dump-github"
+    "lint:ts": "tsc --noEmit",
+    "lint:syntax": "eslint . --ext .js,.ts",
+    "lint": "run-s lint:*",
+    "build:dist": "tsc",
+    "build:dump": "./bin/dump-github",
+    "build": "run-s build:*"
   },
   "bugs": {
     "url": "https://github.com/marcomontalbano/marcomontalbano.github.io/issues"
   },
   "devDependencies": {
-    "eslint": "^7.1.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.13.1",
-    "jest": "^26.0.1",
-    "nock": "^12.0.3"
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "babel-jest": "^26.1.0",
+    "eslint": "^7.4.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "jest": "^26.1.0",
+    "nock": "^13.0.2",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.9.6"
   },
   "dependencies": {
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.20",
+    "@types/node-fetch": "^2.5.7",
+    "@types/showdown": "^1.9.3",
     "node-fetch": "^2.6.0",
     "showdown": "^1.9.1"
   },

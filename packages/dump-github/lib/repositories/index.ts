@@ -1,21 +1,27 @@
-const path = require('path')
-const fetch = require('node-fetch')
-const showdown = require('showdown')
+import path from 'path'
+import fetch from 'node-fetch'
+import showdown from 'showdown'
 
-const utilities = require('../utilities')
+import { ghStoreAsJson } from '../utilities'
 
 const converter = new showdown.Converter()
 
-const createTopics = ({ edges = [] }) => edges.map((edge) => edge.node.topic.name)
+const createTopics = ({ edges = [] }: ghRepositoryTopics): string[] => edges.map((edge) => edge.node.topic.name)
 
-const createFile = async (originalUrl) => {
+const createFile = async (originalUrl: string): Promise<ghFile> => {
     const response = await fetch(originalUrl)
         // eslint-disable-next-line no-console
-        .catch((error) => console.info(`'There has been a problem with your fetch operation: ${error.message}`))
+        .catch((error) => {
+            throw new Error(`'There has been a problem with your fetch operation: ${error.message}`)
+        })
+
+    if (!response) {
+        throw new Error(`'There has been a problem with your fetch operation: ${originalUrl}`)
+    }
 
     const isPresent = response.ok
     const source =
-        isPresent && response.headers.get('content-type').includes('text/plain') ? await response.text() : undefined
+        isPresent && response.headers.get('content-type')?.includes('text/plain') ? await response.text() : undefined
     const headers = isPresent
         ? {
               'content-type': response.headers.get('content-type'),
@@ -33,23 +39,23 @@ const createFile = async (originalUrl) => {
     }
 }
 
-const getRepositoryUrl = (repositoryUrl, defaultBranch, mode) => {
+const getRepositoryUrl = (repositoryUrl: string, defaultBranch: string, mode: ghFileMode) => {
     const repositoryPath = mode ? `/${mode}/${defaultBranch}` : ''
     return `${repositoryUrl}${repositoryPath}`
 }
 
-const urlIsAbsolute = (url) => /^http.*/.test(url)
+const urlIsAbsolute = (url: string) => /^http.*/.test(url)
 
-const urlHasOnlyHyperlink = (url) => /^#.*/.test(url)
+const urlHasOnlyHyperlink = (url: string) => /^#.*/.test(url)
 
-const createMarkdown = async (repositoryUrl, defaultBranch, markdownUrl) => {
+const createMarkdown = async (repositoryUrl: string, defaultBranch: string, markdownUrl: string) => {
     const markdown = await createFile(markdownUrl)
 
     if (!markdown.source) {
         return markdown
     }
 
-    const urlReplacer = (useRaw = false, format) => (match, url) => {
+    const urlReplacer = (useRaw = false, format: string) => (match: string, url: string) => {
         const absoluteUrl = `${getRepositoryUrl(repositoryUrl, defaultBranch, useRaw ? 'raw' : 'blob')}/${url.replace(
             /^[./]+/,
             ''
@@ -76,7 +82,7 @@ const getTitle = (source = '') => {
     return h1
 }
 
-const create = async ({ node }) => {
+const create = async ({ node }: ghNode<ghRepositoryInput>): Promise<ghRepositoryOutput> => {
     const repositoryRawUrl = getRepositoryUrl(node.url, node.defaultBranchRef.name, 'raw')
 
     const cover = await createFile(`${repositoryRawUrl}/cover.png`)
@@ -97,13 +103,9 @@ const create = async ({ node }) => {
     }
 }
 
-const exportAsJson = async (outputPath) =>
-    utilities.ghStoreAsJson(
-        path.resolve(__dirname, 'Repositories.graphql'),
-        (data) => data.viewer.repositories.edges.map(create),
+export const exportAsJson = async (outputPath: string): Promise<void> =>
+    ghStoreAsJson(
+        path.resolve(__dirname, '..', '..', 'Repositories.graphql'),
+        (data: any) => data.viewer.repositories.edges.map(create),
         outputPath
     )
-
-module.exports = {
-    exportAsJson,
-}

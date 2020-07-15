@@ -1,11 +1,13 @@
-const fs = require('fs')
-const path = require('path')
-const fetch = require('node-fetch')
+import fs from 'fs'
+import path from 'path'
+import fetch from 'node-fetch'
 
 const { NODE_ENV, GITHUB_TOKEN } = process.env
 const isProduction = NODE_ENV === 'production'
 
-const ghRunQuery = (query) =>
+type transformer = (data: any) => Promise<ghRepositoryInput>[]
+
+const ghRunQuery = (query: string) =>
     fetch('https://api.github.com/graphql', {
         method: 'POST',
         headers: {
@@ -16,7 +18,7 @@ const ghRunQuery = (query) =>
         body: JSON.stringify({ query }),
     }).then((response) => response.json())
 
-const ghGetData = async (graphqlPath, transformer) => {
+const ghGetData = async (graphqlPath: string, transformer: transformer) => {
     const json = await ghRunQuery(fs.readFileSync(graphqlPath, 'utf8'))
 
     if (json.message) {
@@ -33,7 +35,11 @@ const ghGetData = async (graphqlPath, transformer) => {
     return output
 }
 
-const ghStoreAsJson = async (graphqlPath, transformer, outputPath) => {
+export const ghStoreAsJson = async (
+    graphqlPath: string,
+    transformer: transformer,
+    outputPath: string
+): Promise<void> => {
     const data = await ghGetData(graphqlPath, transformer)
     const resolvedOutputPath = path.resolve(outputPath, `${path.basename(graphqlPath, '.graphql')}.json`)
 
@@ -43,8 +49,4 @@ const ghStoreAsJson = async (graphqlPath, transformer, outputPath) => {
 
     // eslint-disable-next-line no-console
     console.log(`Built database in ${resolvedOutputPath}`)
-}
-
-module.exports = {
-    ghStoreAsJson,
 }
