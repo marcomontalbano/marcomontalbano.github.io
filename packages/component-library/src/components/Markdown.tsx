@@ -26,7 +26,7 @@ const Markdown = ({ className, markdown }: Props & StyledComponents) => {
     useEffect(() => {
         if (containerRef.current) {
             containerRef.current.querySelectorAll('code[class*=language-]').forEach((block) => {
-                hljs.highlightBlock(block)
+                hljs.highlightBlock(block as HTMLElement)
             })
         }
     }, [html, containerRef])
