@@ -28,15 +28,6 @@ exports[`Storyshots Header Solid 1`] = `
           Website Title
         </a>
       </div>
-      <div
-        className="sc-AxheI gLzaqt"
-      >
-        <a
-          href="https://github.com/marcomontalbano"
-        >
-          GitHub
-        </a>
-      </div>
     </div>
     <span
       className="sc-AxgMl jeblAu"
@@ -67,6 +58,46 @@ exports[`Storyshots Header Transparent 1`] = `
     >
       <div
         className="sc-AxhCb eRXIMY"
+      />
+      <div
+        className="sc-AxhUy kmPdur"
+      >
+        <a
+          href="/"
+        >
+          Website Title
+        </a>
+      </div>
+    </div>
+    <span
+      className="sc-AxgMl jeblAu"
+    />
+  </header>
+  <img
+    alt="Hero"
+    src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+  />
+</div>
+`;
+
+exports[`Storyshots Header With Link 1`] = `
+<div
+  className="sc-AxjAm dJTsBx"
+>
+  <header
+    className="sc-AxirZ cCepqy"
+    style={
+      Object {
+        "--gradient-end": "hsl(180, 78%, 68%)",
+        "--gradient-start": "hsl(200, 78%, 68%)",
+      }
+    }
+  >
+    <div
+      className="sc-AxiKw jlYOTE"
+    >
+      <div
+        className="sc-AxhCb brNDCX"
       />
       <div
         className="sc-AxhUy kmPdur"

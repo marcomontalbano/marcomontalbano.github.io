@@ -18,6 +18,7 @@ export type Props = {
     forceSolid?: boolean
     gradientStart?: number
     gradientEnd?: number
+    children?: JSX.Element | JSX.Element[]
 }
 
 const Header = ({
@@ -25,6 +26,7 @@ const Header = ({
     forceSolid = true,
     gradientStart = initialGradientStart,
     gradientEnd = initialGradientEnd,
+    children,
 }: Props) => {
     const [solid, setSolid] = useState(forceSolid)
     const intersectionObserverRef = useRef<HTMLElement>(null)
@@ -49,9 +51,7 @@ const Header = ({
             <FixedContainer>
                 <Background isSolid={solid} />
                 <BrandName>{title}</BrandName>
-                <Menu>
-                    <a href="https://github.com/marcomontalbano">GitHub</a>
-                </Menu>
+                {children && <Menu>{children}</Menu>}
             </FixedContainer>
             <IntersectionRoot ref={intersectionObserverRef} />
         </Container>
