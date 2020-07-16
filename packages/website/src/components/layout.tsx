@@ -35,7 +35,10 @@ const Layout = ({ children, forceSolid = true }: Props) => {
                 gradientEnd={180}
                 forceSolid={forceSolid}
                 title={<Link to="/">{data.site.siteMetadata.title}</Link>}
-            />
+            >
+                <a href="https://github.com/marcomontalbano">GitHub</a>
+                <a href="https://marcomontalbano.github.io/curriculum/curriculum-marco-montalbano.pdf">CV</a>
+            </Header>
             <main>{children}</main>
         </GlobalStyle>
     )

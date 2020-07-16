@@ -47,3 +47,13 @@ export const Transparent = () => (
         forceSolid={false}
     />
 )
+
+export const WithLink = () => (
+    <Header
+        title={<a href="/">{text('title', 'Website Title')}</a>}
+        gradientStart={number('gradientStart', 200)}
+        gradientEnd={number('gradientEnd', 180)}
+    >
+        <a href="https://github.com/marcomontalbano">GitHub</a>
+    </Header>
+)
