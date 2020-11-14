@@ -1,5 +1,17 @@
-window.IntersectionObserver = jest.fn(() => ({
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-    disconnect: jest.fn(),
-}))
+global.IntersectionObserver = class IntersectionObserver {
+    disconnect() {
+        return null
+    }
+
+    observe() {
+        return null
+    }
+
+    unobserve() {
+        return null
+    }
+
+    takeRecords() {
+        return null
+    }
+}
