@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import { Meta } from '@storybook/react/types-6-0'
 import { withKnobs, text, optionsKnob as options } from '@storybook/addon-knobs'
 import { StoryFn } from '@storybook/addons'
 
@@ -25,7 +26,7 @@ export default {
         }),
         (storyFn: StoryFn) => <GlobalStyle style={{ margin: '15px' }}>{storyFn() as ReactNode}</GlobalStyle>,
     ],
-}
+} as Meta
 
 export const Basic = () => <Markdown markdown={text('markdown', tile.readme.source)} />
 

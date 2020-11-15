@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import { Meta } from '@storybook/react/types-6-0'
 import { withKnobs, text } from '@storybook/addon-knobs'
 import { StoryFn } from '@storybook/addons'
 
@@ -17,7 +18,7 @@ export default {
         }),
         (storyFn: StoryFn) => <GlobalStyle style={{ width: '50%' }}>{storyFn() as ReactNode}</GlobalStyle>,
     ],
-}
+} as Meta
 
 export const Basic = () => (
     <Tile

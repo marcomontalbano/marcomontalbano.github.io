@@ -24,7 +24,7 @@
     "lint": "tsc -b ./tsconfig.json",
     "start": "run-p start:storybook watch:dist",
     "start:storybook": "start-storybook -p 9009 -s public",
-    "build:storybook": "build-storybook -s public",
+    "build:storybook": "build-storybook --no-dll -s public",
     "watch:dist": "tsc -b tsconfig.build.json -w",
     "build:dist": "tsc -b tsconfig.build.json",
     "prepublishOnly": "yarn build:dist"
