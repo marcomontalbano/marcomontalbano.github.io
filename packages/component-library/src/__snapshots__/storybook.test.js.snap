@@ -35,7 +35,7 @@ exports[`Storyshots Header Solid 1`] = `
   </header>
   <img
     alt="Hero"
-    src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+    src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
   />
 </div>
 `;
@@ -75,7 +75,7 @@ exports[`Storyshots Header Transparent 1`] = `
   </header>
   <img
     alt="Hero"
-    src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+    src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
   />
 </div>
 `;
@@ -124,7 +124,7 @@ exports[`Storyshots Header With Link 1`] = `
   </header>
   <img
     alt="Hero"
-    src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+    src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
   />
 </div>
 `;
@@ -183,17 +183,17 @@ exports[`Storyshots Tile Basic 1`] = `
   >
     <div>
       <img
-        alt="jCreate"
-        src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+        alt="figma-export"
+        src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
       />
       <div
         className="content"
       >
         <h2>
-          jCreate
+          figma-export
         </h2>
         <p>
-          jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
+          Export tool for Figma. You can easily and automatically export your Figma components and use them directly into your website.
         </p>
       </div>
     </div>
@@ -214,20 +214,20 @@ exports[`Storyshots Tile With Link 1`] = `
     className="sc-fubCfw jPTHVE"
   >
     <a
-      href="https://github.com/marcomontalbano/jquery-jcreate"
+      href="https://github.com/marcomontalbano/figma-export"
     >
       <img
-        alt="jCreate"
-        src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+        alt="figma-export"
+        src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
       />
       <div
         className="content"
       >
         <h2>
-          jCreate
+          figma-export
         </h2>
         <p>
-          jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
+          Export tool for Figma. You can easily and automatically export your Figma components and use them directly into your website.
         </p>
       </div>
     </a>
@@ -249,14 +249,14 @@ exports[`Storyshots Tile With Long Description 1`] = `
   >
     <div>
       <img
-        alt="jCreate"
-        src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+        alt="figma-export"
+        src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
       />
       <div
         className="content"
       >
         <h2>
-          jCreate
+          figma-export
         </h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non posuere justo, a imperdiet leo. Etiam non ipsum a felis lobortis convallis sit amet id odio. Aliquam interdum posuere enim. Donec sollicitudin interdum sodales. Pellentesque eget nibh ac massa tristique eleifend in vitae lorem. Donec semper lectus et fermentum vehicula. Ut elementum fermentum nulla. Ut eget cursus nisi. Aliquam nec faucibus dolor. Pellentesque felis velit, volutpat eget egestas nec, ultricies eget magna. Proin iaculis consequat ante.
@@ -278,174 +278,20 @@ exports[`Storyshots TileList Basic 1`] = `
       className="sc-fubCfw jPTHVE"
     >
       <a
-        href="https://github.com/marcomontalbano/jquery-jcreate"
+        href="https://github.com/marcomontalbano/figma-export"
       >
         <img
-          alt="jCreate"
-          src="https://github.com/marcomontalbano/jquery-jcreate/raw/master/cover.png"
+          alt="figma-export"
+          src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
         />
         <div
           className="content"
         >
           <h2>
-            jCreate
+            figma-export
           </h2>
           <p>
-            jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
-          </p>
-        </div>
-      </a>
-    </div>
-    <div
-      className="sc-fubCfw jPTHVE"
-    >
-      <a
-        href="https://github.com/marcomontalbano/kata.js"
-      >
-        <img
-          alt="Test-Driven Development with Mocha: How to"
-          src="https://github.com/marcomontalbano/kata.js/raw/master/cover.png"
-        />
-        <div
-          className="content"
-        >
-          <h2>
-            Test-Driven Development with Mocha: How to
-          </h2>
-          <p>
-            A collection of katas with JavaScript.
-          </p>
-        </div>
-      </a>
-    </div>
-    <div
-      className="sc-fubCfw jPTHVE"
-    >
-      <a
-        href="https://github.com/marcomontalbano/numberun"
-      >
-        <img
-          alt="NumbeRun"
-          src="https://github.com/marcomontalbano/numberun/raw/master/cover.png"
-        />
-        <div
-          className="content"
-        >
-          <h2>
-            NumbeRun
-          </h2>
-          <p>
-            NumbeRun is a puzzle game I developed in 2007 for my school-leaving examination. The game was developed in Microsoft Visual C# 2005 using the Microsoft XNA library.
-          </p>
-        </div>
-      </a>
-    </div>
-    <div
-      className="sc-fubCfw jPTHVE"
-    >
-      <a
-        href="https://github.com/marcomontalbano/an-introduction-to-frontend"
-      >
-        <img
-          alt="An introduction to Frontend"
-          src="https://github.com/marcomontalbano/an-introduction-to-frontend/raw/master/cover.png"
-        />
-        <div
-          className="content"
-        >
-          <h2>
-            An introduction to Frontend
-          </h2>
-          <p>
-            This is an introduction to Frontend.
-          </p>
-        </div>
-      </a>
-    </div>
-    <div
-      className="sc-fubCfw jPTHVE"
-    >
-      <a
-        href="https://github.com/marcomontalbano/html-miner"
-      >
-        <img
-          alt="HTML Miner"
-          src="https://github.com/marcomontalbano/html-miner/raw/master/cover.png"
-        />
-        <div
-          className="content"
-        >
-          <h2>
-            HTML Miner
-          </h2>
-          <p>
-            A powerful miner that will scrape html pages for you. \` HTML Scraper ´
-          </p>
-        </div>
-      </a>
-    </div>
-    <div
-      className="sc-fubCfw jPTHVE"
-    >
-      <a
-        href="https://github.com/marcomontalbano/speedtest-for-digitalocean"
-      >
-        <img
-          alt="Speed Test for DigitalOcean"
-          src="https://github.com/marcomontalbano/speedtest-for-digitalocean/raw/master/cover.png"
-        />
-        <div
-          className="content"
-        >
-          <h2>
-            Speed Test for DigitalOcean
-          </h2>
-          <p>
-            Run speed tests for all DigitalOcean datacenters faster than ever.
-          </p>
-        </div>
-      </a>
-    </div>
-    <div
-      className="sc-fubCfw jPTHVE"
-    >
-      <a
-        href="https://github.com/marcomontalbano/github-emoji"
-      >
-        <img
-          alt="GitHub Emoji"
-          src="https://github.com/marcomontalbano/github-emoji/raw/master/cover.png"
-        />
-        <div
-          className="content"
-        >
-          <h2>
-            GitHub Emoji
-          </h2>
-          <p>
-            Finally a complete list of GitHub Emojis.
-          </p>
-        </div>
-      </a>
-    </div>
-    <div
-      className="sc-fubCfw jPTHVE"
-    >
-      <a
-        href="https://github.com/marcomontalbano/video-to-markdown"
-      >
-        <img
-          alt="Video to Markdown"
-          src="https://github.com/marcomontalbano/video-to-markdown/raw/master/cover.png"
-        />
-        <div
-          className="content"
-        >
-          <h2>
-            Video to Markdown
-          </h2>
-          <p>
-            How to embed a video in markdown? Here the answer. Add videos to your markdown files easier.
+            Export tool for Figma. You can easily and automatically export your Figma components and use them directly into your website.
           </p>
         </div>
       </a>
@@ -458,7 +304,7 @@ exports[`Storyshots TileList Basic 1`] = `
       >
         <img
           alt="WebAssembly vs Javascript"
-          src="https://github.com/marcomontalbano/wasm-vs-js-benchmark/raw/master/cover.png"
+          src="https://raw.githubusercontent.com/marcomontalbano/wasm-vs-js-benchmark/master/cover.png"
         />
         <div
           className="content"
@@ -476,20 +322,174 @@ exports[`Storyshots TileList Basic 1`] = `
       className="sc-fubCfw jPTHVE"
     >
       <a
-        href="https://github.com/marcomontalbano/figma-export"
+        href="https://github.com/marcomontalbano/video-to-markdown"
       >
         <img
-          alt="figma-export"
-          src="https://github.com/marcomontalbano/figma-export/raw/master/cover.png"
+          alt="Video to Markdown"
+          src="https://raw.githubusercontent.com/marcomontalbano/video-to-markdown/master/cover.png"
         />
         <div
           className="content"
         >
           <h2>
-            figma-export
+            Video to Markdown
           </h2>
           <p>
-            Export tool for Figma. You can easily and automatically export your figma components and use them directly into your website.
+            How to embed a video in markdown? Here the answer. Add videos to your markdown files easier.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-fubCfw jPTHVE"
+    >
+      <a
+        href="https://github.com/marcomontalbano/github-emoji"
+      >
+        <img
+          alt="GitHub Emoji"
+          src="https://raw.githubusercontent.com/marcomontalbano/github-emoji/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            GitHub Emoji
+          </h2>
+          <p>
+            Finally a complete list of GitHub Emoji
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-fubCfw jPTHVE"
+    >
+      <a
+        href="https://github.com/marcomontalbano/speedtest-for-digitalocean"
+      >
+        <img
+          alt="Speed Test for DigitalOcean"
+          src="https://raw.githubusercontent.com/marcomontalbano/speedtest-for-digitalocean/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            Speed Test for DigitalOcean
+          </h2>
+          <p>
+            Run speed tests for all DigitalOcean datacenters faster than ever.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-fubCfw jPTHVE"
+    >
+      <a
+        href="https://github.com/marcomontalbano/html-miner"
+      >
+        <img
+          alt="HTML Miner"
+          src="https://raw.githubusercontent.com/marcomontalbano/html-miner/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            HTML Miner
+          </h2>
+          <p>
+            A powerful miner that will scrape html pages for you. \` HTML Scraper ´
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-fubCfw jPTHVE"
+    >
+      <a
+        href="https://github.com/marcomontalbano/an-introduction-to-frontend"
+      >
+        <img
+          alt="An introduction to Frontend"
+          src="https://raw.githubusercontent.com/marcomontalbano/an-introduction-to-frontend/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            An introduction to Frontend
+          </h2>
+          <p>
+            This is an introduction to Frontend.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-fubCfw jPTHVE"
+    >
+      <a
+        href="https://github.com/marcomontalbano/numberun"
+      >
+        <img
+          alt="NumbeRun"
+          src="https://raw.githubusercontent.com/marcomontalbano/numberun/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            NumbeRun
+          </h2>
+          <p>
+            NumbeRun is a puzzle game I developed in 2007 for my school-leaving examination. The game was developed in Microsoft Visual C# 2005 using the Microsoft XNA library.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-fubCfw jPTHVE"
+    >
+      <a
+        href="https://github.com/marcomontalbano/kata.js"
+      >
+        <img
+          alt="Test-Driven Development with Mocha: How to"
+          src="https://raw.githubusercontent.com/marcomontalbano/kata.js/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            Test-Driven Development with Mocha: How to
+          </h2>
+          <p>
+            A collection of katas with JavaScript.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-fubCfw jPTHVE"
+    >
+      <a
+        href="https://github.com/marcomontalbano/jquery-jcreate"
+      >
+        <img
+          alt="jCreate"
+          src="https://raw.githubusercontent.com/marcomontalbano/jquery-jcreate/master/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            jCreate
+          </h2>
+          <p>
+            jCreate is a new special event for jQuery. Just use .on('create', ..); the callback will be triggered when elements are created on the page.
           </p>
         </div>
       </a>
