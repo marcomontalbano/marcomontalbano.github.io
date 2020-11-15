@@ -1,6 +1,13 @@
 import showdown from 'showdown'
 import { youtubeExtension } from './youtube'
 import { imagesExtension } from './images'
+import { emoji } from './emoji'
+
+// @ts-expect-error - This type is wrong, check here: https://git.io/Jks2A
+showdown.helper.emojis = {
+    ...emoji,
+    ...showdown.helper.emojis,
+}
 
 const converter = new showdown.Converter({
     simplifiedAutoLink: true,
