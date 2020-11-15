@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import { Meta } from '@storybook/react/types-6-0'
 import { withKnobs, number, text, optionsKnob as options } from '@storybook/addon-knobs'
 import { StoryFn } from '@storybook/addons'
 
@@ -29,7 +30,7 @@ export default {
             </GlobalStyle>
         ),
     ],
-}
+} as Meta
 
 export const Solid = () => (
     <Header
