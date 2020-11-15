@@ -98,7 +98,10 @@ const create = async ({ node }: ghNode<ghRepositoryInput>): Promise<ghRepository
             defaultBranch: node.defaultBranchRef.name,
             repositoryTopics: createTopics(node.repositoryTopics),
             cover,
-            readme,
+            readme: {
+                ...readme,
+                // source: ''
+            },
         },
     }
 }
