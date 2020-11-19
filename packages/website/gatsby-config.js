@@ -30,20 +30,6 @@ module.exports = {
                 icon: `src/images/favicon-light.png`,
             },
         },
-        {
-            resolve: `gatsby-plugin-prefetch-google-fonts`,
-            options: {
-                fonts: [
-                    {
-                        family: `Lato`,
-                        variants: [`300`, `700`],
-                    },
-                    {
-                        family: `Spinnaker`,
-                    },
-                ],
-            },
-        },
         `gatsby-plugin-typescript`,
         `gatsby-plugin-typescript-checker`,
         `gatsby-plugin-styled-components`,
