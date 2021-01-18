@@ -3,8 +3,9 @@ name: GitHub Pages
 on:
   release:
     types: [published]
-  schedule:
-    - cron:  '0 1 * * *'
+  workflow_dispatch:
+  # schedule:
+  #   - cron:  '0 1 * * *'
 
 jobs:
   github_pages:
@@ -18,7 +19,7 @@ jobs:
           persist-credentials: false
 
       - name: Checkout Tag 🛎️
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name != 'release' }}
         run: |
           git fetch --tags
           echo $(git rev-list --tags --max-count=1)
