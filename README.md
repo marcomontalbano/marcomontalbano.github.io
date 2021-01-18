@@ -74,7 +74,7 @@ I created many scripts in the root folder, so that it is easier to execute them 
 1. `release.yml` workflow will attach the release notes to a brand new draft release
 1. [ *only pre-release* ] Flag the release with `This is a pre-release`
 1. Manually publish the release from GitHub
-1. `publish.yml` workflow will publish the release to [GitHub registry](https://github.com/marcomontalbano/marcomontalbano.github.io/packages) and start the build on Netlify
+1. `publish.yml` workflow will publish the release to [GitHub registry](https://github.com/marcomontalbano/marcomontalbano.github.io/packages) and start the build on Netlify. :warning: This job can fail if there are no changes to the Component Library.
 
 ### Website
 
