@@ -5,7 +5,13 @@ type UseIntersectionObserver = IntersectionObserverInit & {
     callback: (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => void
 }
 
-export default ({ ref, root, rootMargin, threshold = 0, callback = () => {} }: UseIntersectionObserver) => {
+const useIntersectionObserver = ({
+    ref,
+    root,
+    rootMargin,
+    threshold = 0,
+    callback = () => {},
+}: UseIntersectionObserver) => {
     const observer = useRef<IntersectionObserver>()
 
     useEffect(() => {
@@ -14,7 +20,7 @@ export default ({ ref, root, rootMargin, threshold = 0, callback = () => {} }: U
             rootMargin,
             threshold,
         })
-    }, [])
+    }, [callback, root, rootMargin, threshold])
 
     useEffect(() => {
         const { current: currentObserver } = observer
@@ -31,3 +37,5 @@ export default ({ ref, root, rootMargin, threshold = 0, callback = () => {} }: U
         return () => {}
     }, [ref, observer])
 }
+
+export default useIntersectionObserver

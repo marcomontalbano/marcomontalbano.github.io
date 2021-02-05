@@ -16,7 +16,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowJs": false,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "skipLibCheck": true,
     "rootDir": "./src",
     "outDir": "./dist",
