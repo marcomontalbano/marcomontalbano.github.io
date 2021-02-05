@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { converter } from '../showdown'
 import { mediaQuery } from './GlobalStyle'
