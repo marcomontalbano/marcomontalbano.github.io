@@ -64,9 +64,8 @@ data-styled.g13[id="heroLinks__HeroLinks-srops6-0"]{content:"jTnMVm,"}/*!sc*/
 data-styled.g14[id="sc-keyframes-iwVTEb"]{content:"iwVTEb,"}/*!sc*/
 </style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&amp;family=Spinnaker&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-c55a9bc407051a81612f.js"/><link as="script" rel="preload" href="/framework-8aba4025690a031b46dc.js"/><link as="script" rel="preload" href="/app-f3f768a2d48d17c49b67.js"/><link as="script" rel="preload" href="/styles-7d4153d260c0197f0043.js"/><link as="script" rel="preload" href="/0ede2332-5fcb1ea4504f214d65bb.js"/><link as="script" rel="preload" href="/commons-8966866d22101c9cc099.js"/><link as="script" rel="preload" href="/component---src-templates-project-tsx-e7be04e2779f96bdf304.js"/><link as="fetch" rel="preload" href="/page-data/project/speedtest-for-digitalocean/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3649515864.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="sc-bdfBwQ cIKpxU"><header style="--gradient-start:hsl(200, 78%, 68%);--gradient-end:hsl(180, 78%, 68%)" class="sc-gsTCUz kwUetl"><div class="sc-dlfnbm bcaJjD"><div class="sc-hKgILt jCLwy"></div><div class="sc-eCssSg hmocIu"><a href="/">Marco Montalbano</a></div><div class="sc-gKsewC gnwqMi"><a href="https://github.com/marcomontalbano">GitHub</a><a href="https://marcomontalbano.github.io/curriculum/curriculum-marco-montalbano.pdf">CV</a></div></div><span class="sc-jSgupP ckDfJz"></span></header><main><img src="https://raw.githubusercontent.com/marcomontalbano/speedtest-for-digitalocean/master/cover.png" alt="Speed Test for DigitalOcean" class="hero__Img-sc-174jzg0-0 ejHzGi"/><div style="margin-top:1.45rem" class="container-ivviqv-0 fwpiaJ"><div class="heroLinks__HeroLinks-srops6-0 jTnMVm"><a href="http://speedtest-do.marcomontalbano.com"><img alt="Website" src="https://img.shields.io/badge/-Website-lightgray?color=039be5&amp;logoColor=ffffff&amp;style=flat"/></a><a href="https://github.com/marcomontalbano/speedtest-for-digitalocean"><img alt="GitHub" src="https://img.shields.io/badge/-GitHub-lightgray?color=2b3138&amp;logoColor=949da5&amp;logo=github&amp;style=flat"/></a></div><div class="sc-pFZIQ gbgfMs"><h1 id="speed-test-for-digitalocean">Speed Test for DigitalOcean</h1>
 <p><a href="https://travis-ci.com/marcomontalbano/speedtest-for-digitalocean"><img src="https://travis-ci.com/marcomontalbano/speedtest-for-digitalocean.svg?branch=master" alt="Build Status" /></a>
-<a href="https://beerpay.io/marcomontalbano/speedtest-for-digitalocean"><img src="https://beerpay.io/marcomontalbano/speedtest-for-digitalocean/badge.svg?style=beer" alt="Beerpay" /></a>
-<a href="https://beerpay.io/marcomontalbano/speedtest-for-digitalocean"><img src="https://img.shields.io/badge/make-wish-f95c5c.svg" alt="Beerpay" /></a>
-<a href="https://www.paypal.me/marcomontalbano"><img src="https://img.shields.io/badge/paypal-donate-119fde.svg" alt="PayPal.me" /></a></p>
+<a href="https://www.paypal.me/marcomontalbano"><img src="https://img.shields.io/badge/paypal-donate-119fde.svg" alt="PayPal.me" /></a>
+<a href="https://github.com/sponsors/marcomontalbano"><img src="https://img.shields.io/badge/-Sponsor-fafbfc?logo=GitHub%20Sponsors" alt="Sponsor" /></a></p>
 <p>DigitalOcean provides usefull links to run speed tests for each datacenter, but only one at a time.
 I created this repository to speed up this process.</p>
 <p>Run speed tests for all DigitalOcean datacenters faster than ever.</p>
@@ -74,6 +73,26 @@ I created this repository to speed up this process.</p>
 <p>Just click start!</p>
 <p><img src="https://github.com/marcomontalbano/speedtest-for-digitalocean/raw/master/public/images/speedtest-for-digitalocean-screenshot-without-header.jpg" alt="Speedtest for DigitalOcean - Screenshot" /></p>
 <p>This tool uses the same service used by <strong>speedtest-*.digitalocean.com</strong> so the result should be the same.</p>
+<h2 id="micro-frontend">Micro Frontend</h2>
+<p>Unfortunately, this application is not working anymore from my domain since the speed test service is now validating the domain name.</p>
+<p>Of course, the valid domain is the DigitalOcean domain. Given that, I decided to refactor this application to be <strong>served as a micro-frontend</strong> so that we are able to inject it into their website.</p>
+<h3 id="how-does-it-work">How does it work?</h3>
+<p>When Travis CI builds the website and publishes it to GitHub Pages, two files are generated (<code>main.js</code> and <code>main.css</code>). They are used both to render the website hosted at <a href="http://speedtest-do.marcomontalbano.com/">speedtest-do.marcomontalbano.com</a> and to render the injected application at <a href="http://speedtest-nyc1.digitalocean.com/">speedtest-nyc1.digitalocean.com</a>.</p>
+<p>The <code>bookmark</code> is simply a javascript code that injects both files in the website in a similar way:</p>
+<pre><code class="js language-js">var script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/gh/marcomontalbano/speedtest-for-digitalocean@latest/static/js/main.js';
+
+var style = document.createElement('link');
+style.href = 'https://cdn.jsdelivr.net/gh/marcomontalbano/speedtest-for-digitalocean@latest/static/css/main.css';
+style.rel = 'stylesheet';
+
+document.head.innerHTML = '';
+document.body.innerHTML = '';
+
+document.body.setAttribute('id', 'st4do-root');
+document.head.append(script, style);
+</code></pre>
+<p>You can take a look at the production code being used: <a href="https://github.com/marcomontalbano/speedtest-for-digitalocean/blob/master/bookmark.js"><code>bookmark.js</code></a></p>
 <h2 id="need-an-account-for-digitalocean">Need an account for DigitalOcean?</h2>
 <p>Click <a href="https://m.do.co/c/45b8cffe90f8">here</a> to register a new one!</p>
 <h2 id="privacy">Privacy</h2>
