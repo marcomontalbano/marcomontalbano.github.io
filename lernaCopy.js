@@ -67,14 +67,18 @@ const copyDependency = async (depSource, depDestination, isSetup) => {
     const packageDestination = getPackageInfo(depDestination)
 
     const destinationPath = path.resolve(packageDestination.folders.node_modules, ...packageSource.name.split('/'))
+    console.log(destinationPath)
 
     // remove lerna symlink
-    if (fs.lstatSync(destinationPath).isSymbolicLink()) {
-        fs.removeSync(destinationPath)
+    if (fs.existsSync(destinationPath)) {
+        if (fs.lstatSync(destinationPath).isSymbolicLink()) {
+            fs.removeSync(destinationPath)
+        }
+
+        await removeFiles(destinationPath, packageSource.folders.files)
     }
 
     // copy each "source.files"
-    await removeFiles(destinationPath, packageSource.folders.files)
     await copyFiles(packageSource.folders.files, packageSource.folders.base, destinationPath)
 
     if (isSetup === true) {
