@@ -64,6 +64,7 @@ data-styled.g13[id="heroLinks__HeroLinks-srops6-0"]{content:"jTnMVm,"}/*!sc*/
 data-styled.g14[id="sc-keyframes-iwVTEb"]{content:"iwVTEb,"}/*!sc*/
 </style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&amp;family=Spinnaker&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-c55a9bc407051a81612f.js"/><link as="script" rel="preload" href="/framework-8aba4025690a031b46dc.js"/><link as="script" rel="preload" href="/app-f3f768a2d48d17c49b67.js"/><link as="script" rel="preload" href="/styles-7d4153d260c0197f0043.js"/><link as="script" rel="preload" href="/0ede2332-5fcb1ea4504f214d65bb.js"/><link as="script" rel="preload" href="/commons-8966866d22101c9cc099.js"/><link as="script" rel="preload" href="/component---src-templates-project-tsx-e7be04e2779f96bdf304.js"/><link as="fetch" rel="preload" href="/page-data/project/video-to-markdown/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3649515864.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="sc-bdfBwQ cIKpxU"><header style="--gradient-start:hsl(200, 78%, 68%);--gradient-end:hsl(180, 78%, 68%)" class="sc-gsTCUz kwUetl"><div class="sc-dlfnbm bcaJjD"><div class="sc-hKgILt jCLwy"></div><div class="sc-eCssSg hmocIu"><a href="/">Marco Montalbano</a></div><div class="sc-gKsewC gnwqMi"><a href="https://github.com/marcomontalbano">GitHub</a><a href="https://marcomontalbano.github.io/curriculum/curriculum-marco-montalbano.pdf">CV</a></div></div><span class="sc-jSgupP ckDfJz"></span></header><main><img src="https://raw.githubusercontent.com/marcomontalbano/video-to-markdown/master/cover.png" alt="Video to Markdown" class="hero__Img-sc-174jzg0-0 ejHzGi"/><div style="margin-top:1.45rem" class="container-ivviqv-0 fwpiaJ"><div class="heroLinks__HeroLinks-srops6-0 jTnMVm"><a href="https://video-to-markdown.netlify.app"><img alt="Website" src="https://img.shields.io/badge/-Website-lightgray?color=039be5&amp;logoColor=ffffff&amp;style=flat"/></a><a href="https://github.com/marcomontalbano/video-to-markdown"><img alt="GitHub" src="https://img.shields.io/badge/-GitHub-lightgray?color=2b3138&amp;logoColor=949da5&amp;logo=github&amp;style=flat"/></a></div><div class="sc-pFZIQ gbgfMs"><h1 id="video-to-markdown">Video to Markdown</h1>
 <p><a href="https://travis-ci.org/marcomontalbano/video-to-markdown"><img src="https://travis-ci.org/marcomontalbano/video-to-markdown.svg?branch=master" alt="Build Status" /></a>
+<a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/nfvt85kdqleszdah0hxq"><img src="https://shields.io/badge/-Cloudinary-3448c5" alt="Cloudinary" /></a>
 <a href="https://www.paypal.me/marcomontalbano"><img src="https://img.shields.io/badge/paypal-donate-119fde.svg" alt="PayPal.me" /></a>
 <a href="https://github.com/sponsors/marcomontalbano"><img src="https://img.shields.io/badge/-Sponsor-fafbfc?logo=GitHub%20Sponsors" alt="Sponsor" /></a></p>
 <p><a href="https://app.netlify.com/sites/video-to-markdown/deploys"><img src="https://api.netlify.com/api/v1/badges/545bbce5-8f34-4834-9e16-685a9990c987/deploy-status" alt="Netlify Status" /></a></p>
@@ -102,14 +103,24 @@ data-styled.g14[id="sc-keyframes-iwVTEb"]{content:"iwVTEb,"}/*!sc*/
 <h3 id="requirements">Requirements</h3>
 <ul>
 <li><a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/nfvt85kdqleszdah0hxq">Cloudinary</a> account</li>
-<li><a href="https://nodejs.org/">Node.js</a> 10 or greater</li>
+<li><a href="https://nodejs.org/">Node.js</a> 14 or greater</li>
 </ul>
 <h3 id="setup">Setup</h3>
-<p><code>cd</code> into your local copy of the repository and run <code>npm install</code></p>
-<pre><code>cd video-to-markdown
-npm install
+<p><code>cd</code> into your local copy of the repository and run <code>yarn install</code></p>
+<pre><code class="sh language-sh">cd video-to-markdown
+yarn install
 </code></pre>
-<pre><code>npm start
+<pre><code class="sh language-sh">cp .env.sample .env
+# update the .env with proper values
+</code></pre>
+<ul>
+<li><code>CLOUDINARY_URL</code> ( <strong>required</strong> ) - this is the <code>API Environment variable</code> that you can get from your Cloudinary dashboard inside the <strong>Account Details</strong> section.</li>
+<li><code>GA_TRACKING_ID</code> ( <em>optional</em> ) - this is a Google Analytics Tracking ID. Can be used if you need to track page views and events.</li>
+<li><code>NETLIFY_ACCESS_TOKEN</code> ( <em>optional</em> ) - this a Netlify Access Token. In combination with the <code>SITE_ID</code> can be used to display the <strong>API Usage</strong> in the website.</li>
+<li><code>SITE_ID</code> ( <em>optional</em> ) - this the Netlify Site ID. In combination with the <code>NETLIFY_ACCESS_TOKEN</code> can be used to display the <strong>API Usage</strong> in the website.</li>
+<li><code>USE_HIGH_QUALITY</code> ( <em>optional</em> ) - this is a boolean flag. If <code>true</code>, the generated images will be stored in Contenful with hi-res quality (default to <code>false</code>)</li>
+</ul>
+<pre><code class="sh language-sh">yarn start
 </code></pre>
 <p>This will start the client server on http://localhost:8080, and the netlify-lambda server on http://localhost:8081.</p>
 <p><a href="https://github.com/netlify/netlify-lambda">netlify-lambda</a> isn’t required to deploy Lambda functions to Netlify, but it offers some handy features out of the box that make it quicker to get started, like the local dev server and nice defaults for transpiling and bundling functions in production.</p>

@@ -106,11 +106,15 @@ src-js
 <p><strong><code>./src-js/bootstrap.js</code></strong> is the bootstrap file for the web application that loads the <code>main.js</code> file asynchronously.</p>
 <h3 id="rust">Rust</h3>
 <p>The first step is to <a href="https://doc.rust-lang.org/stable/book/ch01-01-installation.html">install Rust</a>. We’ll download Rust through <code>rustup</code>, a command line tool for managing Rust versions and associated tools.</p>
-<p>Runnig following command we'll install Rust and <a href="https://doc.rust-lang.org/cargo">Cargo</a> automatically.</p>
+<p>Runnig following command we'll install Rust and <a href="https://doc.rust-lang.org/cargo">Cargo</a> automatically.
+You will also need to install <a href="https://rustwasm.github.io/wasm-pack/installer/">wasm-pack</a>.</p>
 <pre><code class="sh language-sh">$ curl https://sh.rustup.rs -sSf | sh
 
 # install `wasm-pack`
-$ cargo install wasm-pack
+$ curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+# update dependencies
+$ cargo update
 </code></pre>
 <p>Now we are able to use the following commands from our project folder.</p>
 <pre><code class="sh language-sh"># test .rs files
