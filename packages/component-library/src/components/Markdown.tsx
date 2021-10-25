@@ -77,4 +77,10 @@ export default styled(Markdown)`
             }
         }
     }
+
+    .hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em;
+    }
 `
