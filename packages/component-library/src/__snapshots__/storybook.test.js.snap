@@ -2,10 +2,10 @@
 
 exports[`Storyshots Header Solid 1`] = `
 <div
-  className="sc-bdnxRM bBlfBP"
+  className="sc-bdvvtL RyGbZ"
 >
   <header
-    className="sc-gtsrHT jsaTwa"
+    className="sc-gsDKAQ chrwiU"
     style={
       Object {
         "--gradient-end": "hsl(180, 78%, 68%)",
@@ -14,13 +14,13 @@ exports[`Storyshots Header Solid 1`] = `
     }
   >
     <div
-      className="sc-dlnjwi FHneQ"
+      className="sc-dkPtRN fHOeYe"
     >
       <div
-        className="sc-hKFxyN jcnhjz"
+        className="sc-hKwDye jQsITu"
       />
       <div
-        className="sc-eCApnc itBkSq"
+        className="sc-eCImPb cVjeLf"
       >
         <a
           href="/"
@@ -30,7 +30,7 @@ exports[`Storyshots Header Solid 1`] = `
       </div>
     </div>
     <span
-      className="sc-jSFjdj gcZhDk"
+      className="sc-jRQBWg IllOn"
     />
   </header>
   <img
@@ -42,10 +42,10 @@ exports[`Storyshots Header Solid 1`] = `
 
 exports[`Storyshots Header Transparent 1`] = `
 <div
-  className="sc-bdnxRM bBlfBP"
+  className="sc-bdvvtL RyGbZ"
 >
   <header
-    className="sc-gtsrHT etBULf"
+    className="sc-gsDKAQ kveolZ"
     style={
       Object {
         "--gradient-end": "hsl(180, 78%, 68%)",
@@ -54,13 +54,13 @@ exports[`Storyshots Header Transparent 1`] = `
     }
   >
     <div
-      className="sc-dlnjwi FHneQ"
+      className="sc-dkPtRN fHOeYe"
     >
       <div
-        className="sc-hKFxyN jcgJbc"
+        className="sc-hKwDye kDGMyJ"
       />
       <div
-        className="sc-eCApnc itBkSq"
+        className="sc-eCImPb cVjeLf"
       >
         <a
           href="/"
@@ -70,7 +70,7 @@ exports[`Storyshots Header Transparent 1`] = `
       </div>
     </div>
     <span
-      className="sc-jSFjdj gcZhDk"
+      className="sc-jRQBWg IllOn"
     />
   </header>
   <img
@@ -82,10 +82,10 @@ exports[`Storyshots Header Transparent 1`] = `
 
 exports[`Storyshots Header With Link 1`] = `
 <div
-  className="sc-bdnxRM bBlfBP"
+  className="sc-bdvvtL RyGbZ"
 >
   <header
-    className="sc-gtsrHT jsaTwa"
+    className="sc-gsDKAQ chrwiU"
     style={
       Object {
         "--gradient-end": "hsl(180, 78%, 68%)",
@@ -94,13 +94,13 @@ exports[`Storyshots Header With Link 1`] = `
     }
   >
     <div
-      className="sc-dlnjwi FHneQ"
+      className="sc-dkPtRN fHOeYe"
     >
       <div
-        className="sc-hKFxyN jcnhjz"
+        className="sc-hKwDye jQsITu"
       />
       <div
-        className="sc-eCApnc itBkSq"
+        className="sc-eCImPb cVjeLf"
       >
         <a
           href="/"
@@ -109,7 +109,7 @@ exports[`Storyshots Header With Link 1`] = `
         </a>
       </div>
       <div
-        className="sc-gKAaRy dUOthJ"
+        className="sc-gKclnd dNCfVw"
       >
         <a
           href="https://github.com/marcomontalbano"
@@ -119,7 +119,7 @@ exports[`Storyshots Header With Link 1`] = `
       </div>
     </div>
     <span
-      className="sc-jSFjdj gcZhDk"
+      className="sc-jRQBWg IllOn"
     />
   </header>
   <img
@@ -131,7 +131,7 @@ exports[`Storyshots Header With Link 1`] = `
 
 exports[`Storyshots Markdown Basic 1`] = `
 <div
-  className="sc-bdnxRM bBlfBP"
+  className="sc-bdvvtL RyGbZ"
   style={
     Object {
       "margin": "15px",
@@ -139,7 +139,7 @@ exports[`Storyshots Markdown Basic 1`] = `
   }
 >
   <div
-    className="sc-iCoGMd fnPOTh"
+    className="sc-iCfMLu kMsYPN"
     dangerouslySetInnerHTML={
       Object {
         "__html": "",
@@ -151,7 +151,7 @@ exports[`Storyshots Markdown Basic 1`] = `
 
 exports[`Storyshots Markdown Real Data 1`] = `
 <div
-  className="sc-bdnxRM bBlfBP"
+  className="sc-bdvvtL RyGbZ"
   style={
     Object {
       "margin": "15px",
@@ -159,7 +159,7 @@ exports[`Storyshots Markdown Real Data 1`] = `
   }
 >
   <div
-    className="sc-iCoGMd fnPOTh"
+    className="sc-iCfMLu kMsYPN"
     dangerouslySetInnerHTML={
       Object {
         "__html": "",
@@ -171,7 +171,7 @@ exports[`Storyshots Markdown Real Data 1`] = `
 
 exports[`Storyshots Tile Basic 1`] = `
 <div
-  className="sc-bdnxRM bBlfBP"
+  className="sc-bdvvtL RyGbZ"
   style={
     Object {
       "width": "50%",
@@ -179,7 +179,7 @@ exports[`Storyshots Tile Basic 1`] = `
   }
 >
   <div
-    className="sc-fujyAs gvuaal"
+    className="sc-furwcr QryT"
   >
     <div>
       <img
@@ -203,7 +203,7 @@ exports[`Storyshots Tile Basic 1`] = `
 
 exports[`Storyshots Tile With Link 1`] = `
 <div
-  className="sc-bdnxRM bBlfBP"
+  className="sc-bdvvtL RyGbZ"
   style={
     Object {
       "width": "50%",
@@ -211,7 +211,7 @@ exports[`Storyshots Tile With Link 1`] = `
   }
 >
   <div
-    className="sc-fujyAs gvuaal"
+    className="sc-furwcr QryT"
   >
     <a
       href="https://github.com/marcomontalbano/figma-export"
@@ -237,7 +237,7 @@ exports[`Storyshots Tile With Link 1`] = `
 
 exports[`Storyshots Tile With Long Description 1`] = `
 <div
-  className="sc-bdnxRM bBlfBP"
+  className="sc-bdvvtL RyGbZ"
   style={
     Object {
       "width": "50%",
@@ -245,7 +245,7 @@ exports[`Storyshots Tile With Long Description 1`] = `
   }
 >
   <div
-    className="sc-fujyAs gvuaal"
+    className="sc-furwcr QryT"
   >
     <div>
       <img
@@ -269,13 +269,13 @@ exports[`Storyshots Tile With Long Description 1`] = `
 
 exports[`Storyshots TileList Basic 1`] = `
 <div
-  className="sc-bdnxRM bBlfBP"
+  className="sc-bdvvtL RyGbZ"
 >
   <div
-    className="sc-pNWdM bkftxK"
+    className="sc-pVTFL fAcExI"
   >
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/figma-export"
@@ -297,7 +297,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/wasm-vs-js-benchmark"
@@ -319,7 +319,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/video-to-markdown"
@@ -341,7 +341,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/github-emoji"
@@ -363,7 +363,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/speedtest-for-digitalocean"
@@ -385,7 +385,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/html-miner"
@@ -407,7 +407,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/an-introduction-to-frontend"
@@ -429,7 +429,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/numberun"
@@ -451,7 +451,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/kata.js"
@@ -473,7 +473,7 @@ exports[`Storyshots TileList Basic 1`] = `
       </a>
     </div>
     <div
-      className="sc-fujyAs gvuaal"
+      className="sc-furwcr QryT"
     >
       <a
         href="https://github.com/marcomontalbano/jquery-jcreate"
