@@ -37,7 +37,7 @@ const Layout = ({ children, forceSolid = true }: Props) => {
                 title={<Link to="/">{data.site.siteMetadata.title}</Link>}
             >
                 <a href="https://github.com/marcomontalbano">GitHub</a>
-                <a href="https://marcomontalbano.github.io/curriculum/curriculum-marco-montalbano.pdf">CV</a>
+                <a href="https://curriculum.marcomontalbano.com">CV</a>
             </Header>
             <main>{children}</main>
         </GlobalStyle>
