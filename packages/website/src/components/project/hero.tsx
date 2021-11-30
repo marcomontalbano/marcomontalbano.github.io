@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 type Props = {
+    className?: string
     cover: string
     title: string
 }
@@ -15,6 +16,6 @@ const Img = styled.img`
     object-fit: cover;
 `
 
-const Hero = ({ cover, title }: Props) => <Img src={cover} alt={title} />
+const Hero: React.FC<Props> = ({ cover, title, className }) => <Img className={className} src={cover} alt={title} />
 
 export default Hero

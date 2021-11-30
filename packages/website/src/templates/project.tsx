@@ -3,8 +3,8 @@ import React from 'react'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import SEO from '../components/seo'
-import Hero from '../components/hero'
-import HeroLinks from '../components/heroLinks'
+import Hero from '../components/project/hero'
+import HeroLinks from '../components/project/heroLinks'
 import { Markdown } from '@marcomontalbano/component-library'
 
 const ProjectPage = (props: any) => {

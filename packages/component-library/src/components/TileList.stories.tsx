@@ -21,3 +21,5 @@ export default {
 } as Meta
 
 export const basic = () => <TileList tiles={tilesWithLink} />
+
+export const withHero = () => <TileList tiles={tilesWithLink} hero />

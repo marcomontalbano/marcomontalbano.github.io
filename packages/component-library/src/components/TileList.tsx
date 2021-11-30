@@ -1,10 +1,15 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { StyledComponents } from '../types'
 import Tile, { Props as TileProps } from './Tile'
 
 export type Props = {
     tiles: TileProps[]
+
+    /**
+     * Show first tile as hero
+     */
+    hero?: boolean
 }
 
 const TileList = ({ className, tiles }: Props & StyledComponents) => (
@@ -26,29 +31,33 @@ export default styled(TileList)`
         border-radius: 5px;
         box-shadow: 1px 1px 8px -4px black;
 
-        &:first-child {
-            flex: 100%;
-            margin: 0 -20px 20px;
-            margin: 0 0 20px;
-            border-radius: 0;
+        ${(props) =>
+            props.hero &&
+            css`
+                &:first-child {
+                    flex: 100%;
+                    margin: 0 -20px 20px;
+                    margin: 0 0 20px;
+                    border-radius: 0;
 
-            min-height: 50vh;
-            max-height: 80vh;
+                    min-height: 50vh;
+                    max-height: 80vh;
 
-            > * {
-                &:after {
-                    display: none;
+                    > * {
+                        &:after {
+                            display: none;
+                        }
+
+                        .content {
+                            opacity: 1;
+                            background: rgba(0, 0, 0, 0.4);
+                        }
+
+                        img {
+                            transform: scale(1);
+                        }
+                    }
                 }
-
-                .content {
-                    opacity: 1;
-                    background: rgba(0, 0, 0, 0.4);
-                }
-
-                img {
-                    transform: scale(1);
-                }
-            }
-        }
+            `}
     }
 `
