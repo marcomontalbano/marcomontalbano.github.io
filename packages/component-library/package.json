@@ -80,5 +80,8 @@
     "highlight.js": "~11.3.1",
     "showdown": "~1.9.1"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "gitHead": "8e4e4c2c40de7287202f1036ffeecf0652614258"
 }

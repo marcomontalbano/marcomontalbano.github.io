@@ -1,6 +1,7 @@
 {
   "name": "@marcomontalbano/website",
   "private": true,
+  "version": "2.1.1",
   "description": "My personal website",
   "author": "Marco Montalbano <me@marcomontalbano.com>",
   "dependencies": {
@@ -53,5 +54,7 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
-  "version": "2.1.1"
+  "engines": {
+    "node": ">=14"
+  }
 }
