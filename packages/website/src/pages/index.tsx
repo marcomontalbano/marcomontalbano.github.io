@@ -55,7 +55,7 @@ const Background = styled.div`
     margin-bottom: -100px;
     z-index: -1;
     height: 40vh;
-    background-image: url('background-2.jpg');
+    background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
     filter: blur(6px);
