@@ -77,7 +77,7 @@ const IndexPage = () => {
 
     return (
         <Layout forceSolid={false}>
-            <SEO title="Home" />
+            <SEO />
             <Background />
             <TileList tiles={projects} />
         </Layout>

@@ -13,10 +13,10 @@ type Props = {
     description?: string
     lang?: string
     meta?: []
-    title: string
+    title?: string
 }
 
-function SEO({ description = ``, lang = `en`, meta = [], title }: Props) {
+function SEO({ description = ``, lang = `en`, meta = [], title = `` }: Props) {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -38,8 +38,8 @@ function SEO({ description = ``, lang = `en`, meta = [], title }: Props) {
             htmlAttributes={{
                 lang,
             }}
-            title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            title={title || site.siteMetadata.title}
+            titleTemplate={title ? `%s - ${site.siteMetadata.title}` : undefined}
             meta={[
                 {
                     name: `description`,
