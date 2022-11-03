@@ -70,7 +70,7 @@ data-styled.g14[id="sc-keyframes-iwVTEb"]{content:"iwVTEb,"}/*!sc*/
 <p>DigitalOcean provides usefull links to run speed tests for each datacenter, but only one at a time.
 I created this repository to speed up this process.</p>
 <p>Run speed tests for all DigitalOcean datacenters faster than ever.</p>
-<p><a href="http://speedtest-do.marcomontalbano.com">http://speedtest-do.marcomontalbano.com</a></p>
+<p><a href="https://speedtest-do.marcomontalbano.com">https://speedtest-do.marcomontalbano.com</a></p>
 <p>Just click start!</p>
 <p><img src="https://github.com/marcomontalbano/speedtest-for-digitalocean/raw/master/public/images/speedtest-for-digitalocean-screenshot-without-header.jpg" alt="Speedtest for DigitalOcean - Screenshot" /></p>
 <p>This tool uses the same service used by <strong>speedtest-*.digitalocean.com</strong> so the result should be the same.</p>
@@ -78,7 +78,7 @@ I created this repository to speed up this process.</p>
 <p>Unfortunately, this application is not working anymore from my domain since the speed test service is now validating the domain name.</p>
 <p>Of course, the valid domain is the DigitalOcean domain. Given that, I decided to refactor this application to be <strong>served as a micro-frontend</strong> so that we are able to inject it into their website.</p>
 <h3 id="how-does-it-work">How does it work?</h3>
-<p>When Travis CI builds the website and publishes it to GitHub Pages, two files are generated (<code>main.js</code> and <code>main.css</code>). They are used both to render the website hosted at <a href="http://speedtest-do.marcomontalbano.com/">speedtest-do.marcomontalbano.com</a> and to render the injected application at <a href="http://speedtest-nyc1.digitalocean.com/">speedtest-nyc1.digitalocean.com</a>.</p>
+<p>When Travis CI builds the website and publishes it to GitHub Pages, two files are generated (<code>main.js</code> and <code>main.css</code>). They are used both to render the website hosted at <a href="https://speedtest-do.marcomontalbano.com/">speedtest-do.marcomontalbano.com</a> and to render the injected application at <a href="https://speedtest-nyc1.digitalocean.com/">speedtest-nyc1.digitalocean.com</a>.</p>
 <p>The <code>bookmark</code> is simply a javascript code that injects both files in the website in a similar way:</p>
 <pre><code class="js language-js">var script = document.createElement('script');
 script.src = 'https://cdn.jsdelivr.net/gh/marcomontalbano/speedtest-for-digitalocean@latest/static/js/main.js';

@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.e0b7897fcd07bea1baea.css" data-identity="gatsby-global-css">pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#282c34;color:#abb2bf}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin:0}[hidden],template{display:none}a{-webkit-text-decoration-skip:objects;background-color:transparent;word-break:break-word}a:active,a:hover{outline-width:0}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}</style><meta name="generator" content="Gatsby 4.0.1"/><title data-react-helmet="true">Figma Plugin - Run GitHub Actions workflows - Marco Montalbano</title><meta data-react-helmet="true" name="description" content="Hi everyone, my name is Marco Montalbano and I&#x27;m a web developer. On this site you can discover more about me, my projects, my work and my cv."/><meta data-react-helmet="true" property="og:title" content="Figma Plugin - Run GitHub Actions workflows"/><meta data-react-helmet="true" property="og:description" content="Hi everyone, my name is Marco Montalbano and I&#x27;m a web developer. On this site you can discover more about me, my projects, my work and my cv."/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="@montalbanomarco"/><meta data-react-helmet="true" name="twitter:title" content="Figma Plugin - Run GitHub Actions workflows"/><meta data-react-helmet="true" name="twitter:description" content="Hi everyone, my name is Marco Montalbano and I&#x27;m a web developer. On this site you can discover more about me, my projects, my work and my cv."/><link rel="icon" href="/favicon-32x32.png?v=ed078339d08674f6553e35dfc7db2f04" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#559CD0"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=ed078339d08674f6553e35dfc7db2f04"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=ed078339d08674f6553e35dfc7db2f04"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=ed078339d08674f6553e35dfc7db2f04"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=ed078339d08674f6553e35dfc7db2f04"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=ed078339d08674f6553e35dfc7db2f04"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=ed078339d08674f6553e35dfc7db2f04"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=ed078339d08674f6553e35dfc7db2f04"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=ed078339d08674f6553e35dfc7db2f04"/><style data-styled="" data-styled-version="5.3.3">.jlUKSK{--color-text:#223a48;--color-link:#559cd0;font-family:'Lato',sans-serif;color:var(--color-text);line-height:1.42;font-weight:300;font-size:100%;box-sizing:border-box;}/*!sc*/
+@media (min-width:480px){.jlUKSK{font-size:112.5%;}}/*!sc*/
+.jlUKSK *,.jlUKSK *:before,.jlUKSK *:after{box-sizing:inherit;}/*!sc*/
+.jlUKSK img{max-width:100%;border-style:none;}/*!sc*/
+.jlUKSK a{color:var(--color-link);}/*!sc*/
+.jlUKSK code{font-family:'SFMono-Regular',Consolas,'Roboto Mono','Droid Sans Mono','Liberation Mono',Menlo,Courier, monospace;font-size:0.85em;border-radius:3px;}/*!sc*/
+.jlUKSK code:not([class*='language-']){background-color:rgba(0,0,0,0.03);padding:0.2em 0.4em;color:#78909c;}/*!sc*/
+.jlUKSK small{font-size:80%;}/*!sc*/
+.jlUKSK blockquote{padding:0.6rem 1rem;margin:0 0 1.45rem;font-size:1em;border-left:5px solid #eee;}/*!sc*/
+.jlUKSK ul li{margin-bottom:calc(1.45rem / 2);}/*!sc*/
+.jlUKSK blockquote *:last-child,.jlUKSK li *:last-child,.jlUKSK p *:last-child{margin-bottom:0;}/*!sc*/
+.jlUKSK table,.jlUKSK p,.jlUKSK hr{margin:0 0 1.45rem 0;padding:0;}/*!sc*/
+.jlUKSK hr{background:hsla(0,0%,0%,0.2);border:none;height:1px;}/*!sc*/
+.jlUKSK table{font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%;}/*!sc*/
+.jlUKSK table thead{text-align:left;}/*!sc*/
+.jlUKSK table td,.jlUKSK table th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:'tnum';-moz-font-feature-settings:'tnum';-ms-font-feature-settings:'tnum';-webkit-font-feature-settings:'tnum';padding-left:0.96667rem;padding-right:0.96667rem;padding-top:0.725rem;padding-bottom:calc(0.725rem - 1px);}/*!sc*/
+.jlUKSK table td:first-child,.jlUKSK table th:first-child{padding-left:0;}/*!sc*/
+.jlUKSK table td:last-child,.jlUKSK table th:last-child{padding-right:0;}/*!sc*/
+.jlUKSK h1{font-size:2em;margin:0.67em 0;}/*!sc*/
+.jlUKSK h2{font-size:1.5em;margin:0.83em 0;margin:1.7em 0 0.83em;}/*!sc*/
+.jlUKSK h3{font-size:1.17em;margin:1em 0;}/*!sc*/
+.jlUKSK h4{font-size:1em;margin:1.33em 0;}/*!sc*/
+.jlUKSK h5{font-size:0.83em;margin:1.67em 0;}/*!sc*/
+.jlUKSK h6{font-size:0.67em;margin:2.33em 0;}/*!sc*/
+data-styled.g1[id="sc-bdvvtL"]{content:"jlUKSK,"}/*!sc*/
+.fMYWUl{position:relative;color:white;height:60px;}/*!sc*/
+.fMYWUl ~ *{margin-top:-60px;}/*!sc*/
+@media (min-width:480px){.fMYWUl{height:70px;}.fMYWUl ~ *{margin-top:-70px;}}/*!sc*/
+.fMYWUl a{color:white;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g2[id="sc-gsDKAQ"]{content:"fMYWUl,"}/*!sc*/
+.dSmfiS{position:fixed;z-index:10;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;height:inherit;}/*!sc*/
+.dSmfiS::after{content:'';position:absolute;width:100%;height:100%;background:linear-gradient(180deg,black -60%,transparent 105%);}/*!sc*/
+data-styled.g3[id="sc-dkPtRN"]{content:"dSmfiS,"}/*!sc*/
+.whQiA{box-shadow:1px 1px 10px -4px black;background:rgb(19,96,138);background:linear-gradient(96deg,var(--gradient-start),var(--gradient-end));background-size:200%;background-position:50% 0;position:absolute;width:100%;height:100%;-webkit-transition:opacity 0.3s;transition:opacity 0.3s;opacity:0.4;}/*!sc*/
+.whQiA.animate{-webkit-animation:iwVTEb 5s ease infinite;animation:iwVTEb 5s ease infinite;-webkit-animation:iwVTEb 5s linear forwards;animation:iwVTEb 5s linear forwards;}/*!sc*/
+.whQiA.solid{opacity:1;}/*!sc*/
+data-styled.g4[id="sc-hKwDye"]{content:"whQiA,"}/*!sc*/
+.hzhbEs{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;z-index:1;font-family:'Spinnaker',sans-serif;font-size:1.2rem;padding-left:15px;}/*!sc*/
+@media (min-width:480px){.hzhbEs{padding-left:25px;font-size:1.5rem;}}/*!sc*/
+data-styled.g5[id="sc-eCImPb"]{content:"hzhbEs,"}/*!sc*/
+.bBoKzz{position:absolute;bottom:0;}/*!sc*/
+data-styled.g6[id="sc-jRQBWg"]{content:"bBoKzz,"}/*!sc*/
+.fyrqwP{z-index:1;}/*!sc*/
+.fyrqwP > a{padding:0 15px;}/*!sc*/
+@media (min-width:480px){.fyrqwP > a{padding:0 25px;}}/*!sc*/
+data-styled.g7[id="sc-gKclnd"]{content:"fyrqwP,"}/*!sc*/
+.biyQxd .showdown-youtube-extension{height:0;overflow:hidden;padding-bottom:56.25%;position:relative;max-width:90%;border-radius:5px;margin:0 auto;}/*!sc*/
+.biyQxd .showdown-youtube-extension iframe,.biyQxd .showdown-youtube-extension object,.biyQxd .showdown-youtube-extension embed{height:100%;left:0;position:absolute;top:0;width:100%;}/*!sc*/
+.biyQxd .showdown-images-extension{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}/*!sc*/
+.biyQxd .showdown-images-extension img{width:100%;padding:10px;border-radius:15px;}/*!sc*/
+@media (min-width:480px){.biyQxd .showdown-images-extension img{width:50%;}}/*!sc*/
+.biyQxd .hljs{display:block;overflow-x:auto;padding:0.5em;}/*!sc*/
+data-styled.g10[id="sc-pVTFL"]{content:"biyQxd,"}/*!sc*/
+.dNSdtv{margin:0 auto;max-width:1200px;padding:0px 1.0875rem 1.45rem;padding-top:0;position:relative;}/*!sc*/
+data-styled.g11[id="container-sc-ivviqv-0"]{content:"dNSdtv,"}/*!sc*/
+.cPOpdj{min-height:50vh;max-height:80vh;display:block;width:100%;object-fit:cover;}/*!sc*/
+data-styled.g12[id="hero__Img-sc-1fzf81d-0"]{content:"cPOpdj,"}/*!sc*/
+.dBQlSR{position:absolute;top:-50px;right:5px;}/*!sc*/
+.dBQlSR > a{display:inline-block;margin:0 4px;}/*!sc*/
+.dBQlSR img{display:block;}/*!sc*/
+@media (min-width:480px){.dBQlSR{top:-60px;right:15px;}}/*!sc*/
+data-styled.g13[id="heroLinks__HeroLinks-sc-hwbxqx-0"]{content:"dBQlSR,"}/*!sc*/
+@-webkit-keyframes iwVTEb{0%{background-size:600%;}100%{background-size:100%;}}/*!sc*/
+@keyframes iwVTEb{0%{background-size:600%;}100%{background-size:100%;}}/*!sc*/
+data-styled.g14[id="sc-keyframes-iwVTEb"]{content:"iwVTEb,"}/*!sc*/
+</style><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&amp;family=Spinnaker&amp;display=swap" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-0a56a2c9701b4fb77aca.js"/><link as="script" rel="preload" href="/framework-34f8e01aba7b36fcae97.js"/><link as="script" rel="preload" href="/app-a39d7992addd9889c0b7.js"/><link as="script" rel="preload" href="/0ede2332-7a084ff9ac5e6da825a2.js"/><link as="script" rel="preload" href="/commons-53fbcba7ad2eaec7a76c.js"/><link as="script" rel="preload" href="/component---src-templates-project-tsx-02f5374a58fe4a66dab6.js"/><link as="fetch" rel="preload" href="/page-data/project/figma-plugin-run-github-actions-workflows/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3649515864.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="sc-bdvvtL jlUKSK"><header style="--gradient-start:hsl(200, 78%, 68%);--gradient-end:hsl(180, 78%, 68%)" class="sc-gsDKAQ fMYWUl"><div class="sc-dkPtRN dSmfiS"><div class="sc-hKwDye whQiA"></div><div class="sc-eCImPb hzhbEs"><a href="/">Marco Montalbano</a></div><div class="sc-gKclnd fyrqwP"><a href="https://github.com/marcomontalbano">GitHub</a><a href="https://cv.marcomontalbano.com">CV</a></div></div><span class="sc-jRQBWg bBoKzz"></span></header><main><img class="hero__Img-sc-1fzf81d-0 cPOpdj" src="https://raw.githubusercontent.com/marcomontalbano/figma-plugin-run-github-actions-workflows/main/cover.png" alt="Figma Plugin - Run GitHub Actions workflows"/><div style="margin-top:1.45rem" class="container-sc-ivviqv-0 dNSdtv"><div class="heroLinks__HeroLinks-sc-hwbxqx-0 dBQlSR"><a href="https://www.figma.com/community/plugin/1096890502176164513"><img alt="Website" src="https://img.shields.io/badge/-Website-lightgray?color=039be5&amp;logoColor=ffffff&amp;style=flat"/></a><a href="https://github.com/marcomontalbano/figma-plugin-run-github-actions-workflows"><img alt="GitHub" src="https://img.shields.io/badge/-GitHub-lightgray?color=2b3138&amp;logoColor=949da5&amp;logo=github&amp;style=flat"/></a></div><div class="sc-pVTFL biyQxd"><h1 id="figma-plugin---run-github-actions-workflows">Figma Plugin - Run GitHub Actions workflows</h1>
+<p>Run <a href="https://github.com/features/actions">GitHub Actions</a> workflows from <a href="https://www.figma.com/">Figma</a> sending the selected page and all selected nodes as <a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onworkflow_dispatchinputs">inputs</a>.</p>
+<p><img src="https://github.com/marcomontalbano/figma-plugin-run-github-actions-workflows/raw/main/cover.gif" alt="Demo" /></p>
+<h2 id="usage">Usage</h2>
+<h3 id="figma">Figma</h3>
+<p>Setup on Figma is straightforward. You just need to setup a new workflow clicking on the <code>+</code> button. You'll need a GitHub <a href="https://github.com/settings/tokens">Access Token</a> to run workflows.</p>
+<p>After that, you can select a <code>page</code> and one or more <code>nodes</code> from that page and click on <code>▶</code>. This will run the selected workflow, passing your selection as workflow' inputs.</p>
+<h3 id="github">GitHub</h3>
+<p>Before running a workflow for the first time, you'll need to properly setup a <a href="https://docs.github.com/en/actions/using-workflows">GitHub Actions workflow</a> 😃.</p>
+<p>The GitHub Actions workflow needs to have a set of inputs (the same that the plugin will send):</p>
+<pre><code class="yaml language-yaml">on: 
+  workflow_dispatch:
+    inputs:
+      fileKey:
+        description: Figma file key
+        type: string
+        required: true
+      page:
+        description: Stringified selected page (id, name)
+        type: string
+        default: '{}'
+        required: true
+      selection:
+        description: Stringified array of the selected nodes (id, name)
+        type: string
+        default: '[]'
+        required: true
+</code></pre>
+<p>Aside from this, you'll just need to configure the workflow as you prefer.</p>
+<p>Checkout a working example <a href="https://github.com/marcomontalbano/figma-plugin-run-github-actions-workflows/blob/main/github/workflows/from-figma.yaml"><code>from-figma.yaml</code></a>.</p>
+<p>As you can see inside the above example, you can also transform/manipulate the received inputs in order to shape them as you want.</p>
+<h2 id="figma-export-pdfs">Figma Export PDFs</h2>
+<p>What do you think about <em>exporting Figma content as PDF to an FTP Server, just clicking a button from Figma</em>? Would it be cool, isn't it?</p>
+<p>Take a look at this <a href="https://github.com/marcomontalbano/figma-export-pdfs-action/blob/main/.github/workflows/from-figma.yaml">workflow</a> and find out how this is totally feasible. Just clone the workflow and setup this Figma plugin 😉</p></div></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/project/figma-plugin-run-github-actions-workflows";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-269c5359860551169dc9.js"],"app":["/app-a39d7992addd9889c0b7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-90857d9880ed80d26a0f.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-0e0ec7c3843e8ef562dd.js"],"component---src-templates-project-tsx":["/component---src-templates-project-tsx-02f5374a58fe4a66dab6.js"]};/*]]>*/</script><script src="/polyfill-269c5359860551169dc9.js" nomodule=""></script><script src="/component---src-templates-project-tsx-02f5374a58fe4a66dab6.js" async=""></script><script src="/commons-53fbcba7ad2eaec7a76c.js" async=""></script><script src="/0ede2332-7a084ff9ac5e6da825a2.js" async=""></script><script src="/app-a39d7992addd9889c0b7.js" async=""></script><script src="/framework-34f8e01aba7b36fcae97.js" async=""></script><script src="/webpack-runtime-0a56a2c9701b4fb77aca.js" async=""></script></body></html>

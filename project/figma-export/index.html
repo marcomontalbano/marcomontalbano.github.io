@@ -166,7 +166,7 @@ yarn add @figma-export/cli @figma-export/output-components-as-svg @figma-export/
 </code></pre>
 <h3 id="use-it-on-the-fly">Use it on the fly</h3>
 <p>Alternatively you can use <code>npx</code> to use it on the fly:</p>
-<pre><code class="sh language-sh">npx @figma-export/cli help
+<pre><code class="sh language-sh">npx @figma-export/cli --help
 </code></pre>
 <h3 id="global-setup">Global Setup</h3>
 <p>You can also install it as a global dependency:</p>
@@ -175,7 +175,7 @@ yarn add @figma-export/cli @figma-export/output-components-as-svg @figma-export/
 # or using `yarn`
 yarn add @figma-export/cli --global
 </code></pre>
-<pre><code class="sh language-sh">figma-export help
+<pre><code class="sh language-sh">figma-export --help
 </code></pre>
 <h3 id="advanced">Advanced</h3>
 <p>Last but not least, you can create a configuration file and use a single command <em>to rule them all</em> 💍</p>
@@ -187,6 +187,7 @@ yarn add @figma-export/cli --global
         ['styles', {
             fileId: 'fzYhvQpqwhZDUImRz431Qo',
             // version: 'xxx123456', // optional - file's version history is only supported on paid Figma plans
+            // onlyFromPages: ['icons'], // optional - Figma page names (all pages when not specified)
             outputters: [
                 require('@figma-export/output-styles-as-sass')({
                     output: './output/styles'
@@ -198,11 +199,22 @@ yarn add @figma-export/cli --global
             fileId: 'fzYhvQpqwhZDUImRz431Qo',
             // version: 'xxx123456', // optional - file's version history is only supported on paid Figma plans
             onlyFromPages: ['icons'],
+            // filterComponent: (component) =&gt; !/^figma/.test(component.name), // optional
             transformers: [
                 require('@figma-export/transform-svg-with-svgo')({
                     plugins: [
-                        { removeViewBox: false },
-                        { removeDimensions: true }
+                        {
+                            name: 'preset-default',
+                            params: {
+                                overrides: {
+                                    removeViewBox: false,
+                                }
+                            }
+                        },
+                        {
+                            name: 'removeDimensions',
+                            active: true
+                        }
                     ]
                 })
             ],
@@ -217,6 +229,9 @@ yarn add @figma-export/cli --global
 
 };
 </code></pre>
+<blockquote>
+  <p>ℹ️ Take a look at <a href="https://github.com/marcomontalbano/figma-export/blob/master/figmaexportrc.example.js">.figmaexportrc.example.js</a> for more details.</p>
+</blockquote>
 <p>now you can install the <code>@figma-export</code> dependencies that you need</p>
 <pre><code class="sh language-sh">npm install --save-dev @figma-export/cli @figma-export/output-styles-as-sass @figma-export/transform-svg-with-svgo @figma-export/output-components-as-svg @figma-export/output-styles-as-sass
 </code></pre>
@@ -242,10 +257,23 @@ For doing so, you just need to install a few new dependencies in your project.</
 <p>and slightly change your <code>package.json</code></p>
 <pre><code class="diff language-diff">{
   "scripts": {
-+   "figma:export": "ts-node ./node_modules/.bin/figma-export use-config .figmaexportrc.ts"
++   "figma:export": "ts-node ./node_modules/@figma-export/cli/bin/run use-config .figmaexportrc.ts"
   }
 }
 </code></pre>
 <p>Take a look at <a href="https://github.com/marcomontalbano/figma-export/blob/master/figmaexportrc.example.ts">.figmaexportrc.example.ts</a> for more details.</p>
+<h4 id="nodejs-esm">Node.js ESM</h4>
+<p>Node.js is now supporting <a href="https://nodejs.org/api/esm.html">ECMAScript modules (ESM)</a>.</p>
+<p>If your package.json contains the <code>"type": "module"</code> field then you'll need to rename your <code>.figmaexportrc.js</code> configuration file:</p>
+<pre><code class="diff language-diff">-  .figmaexportrc.js
++  .figmaexportrc.cjs
+</code></pre>
+<p>and adjust the command you run:</p>
+<pre><code class="sh language-sh">figma-export use-config .figmaexportrc.cjs
+</code></pre>
+<p>If instead you're using the TypeScript setup you'll need to rename the <code>.figmaexportrc.ts</code> configuration file.</p>
+<pre><code class="diff language-diff">-  .figmaexportrc.ts
++  .figmaexportrc.cts
+</code></pre>
 <h2 id="books-more-packages">📚 More Packages</h2>
 <p>For the list of all official packages or if you want to create your own transformer or outputter you can continue reading <a href="https://github.com/marcomontalbano/figma-export/blob/master/packages/cli#readme">CLI Documentation</a>.</p></div></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/project/figma-export";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-269c5359860551169dc9.js"],"app":["/app-a39d7992addd9889c0b7.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-90857d9880ed80d26a0f.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-0e0ec7c3843e8ef562dd.js"],"component---src-templates-project-tsx":["/component---src-templates-project-tsx-02f5374a58fe4a66dab6.js"]};/*]]>*/</script><script src="/polyfill-269c5359860551169dc9.js" nomodule=""></script><script src="/component---src-templates-project-tsx-02f5374a58fe4a66dab6.js" async=""></script><script src="/commons-53fbcba7ad2eaec7a76c.js" async=""></script><script src="/0ede2332-7a084ff9ac5e6da825a2.js" async=""></script><script src="/app-a39d7992addd9889c0b7.js" async=""></script><script src="/framework-34f8e01aba7b36fcae97.js" async=""></script><script src="/webpack-runtime-0a56a2c9701b4fb77aca.js" async=""></script></body></html>
