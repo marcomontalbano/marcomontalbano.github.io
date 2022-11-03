@@ -35,7 +35,7 @@ exports[`Storyshots Header Solid 1`] = `
   </header>
   <img
     alt="Hero"
-    src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
+    src="https://raw.githubusercontent.com/marcomontalbano/figma-plugin-run-github-actions-workflows/main/cover.png"
   />
 </div>
 `;
@@ -75,7 +75,7 @@ exports[`Storyshots Header Transparent 1`] = `
   </header>
   <img
     alt="Hero"
-    src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
+    src="https://raw.githubusercontent.com/marcomontalbano/figma-plugin-run-github-actions-workflows/main/cover.png"
   />
 </div>
 `;
@@ -124,7 +124,7 @@ exports[`Storyshots Header With Link 1`] = `
   </header>
   <img
     alt="Hero"
-    src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
+    src="https://raw.githubusercontent.com/marcomontalbano/figma-plugin-run-github-actions-workflows/main/cover.png"
   />
 </div>
 `;
@@ -183,17 +183,17 @@ exports[`Storyshots Tile Basic 1`] = `
   >
     <div>
       <img
-        alt="figma-export"
-        src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
+        alt="Figma Plugin - Run GitHub Actions workflows"
+        src="https://raw.githubusercontent.com/marcomontalbano/figma-plugin-run-github-actions-workflows/main/cover.png"
       />
       <div
         className="content"
       >
         <h2>
-          figma-export
+          Figma Plugin - Run GitHub Actions workflows
         </h2>
         <p>
-          Export tool for Figma. You can easily and automatically export your Figma components and use them directly into your website.
+          Run GitHub Actions workflows from Figma sending the selected page and all selected nodes as inputs.
         </p>
       </div>
     </div>
@@ -214,20 +214,20 @@ exports[`Storyshots Tile With Link 1`] = `
     className="sc-furwcr QryT"
   >
     <a
-      href="https://github.com/marcomontalbano/figma-export"
+      href="https://github.com/marcomontalbano/figma-plugin-run-github-actions-workflows"
     >
       <img
-        alt="figma-export"
-        src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
+        alt="Figma Plugin - Run GitHub Actions workflows"
+        src="https://raw.githubusercontent.com/marcomontalbano/figma-plugin-run-github-actions-workflows/main/cover.png"
       />
       <div
         className="content"
       >
         <h2>
-          figma-export
+          Figma Plugin - Run GitHub Actions workflows
         </h2>
         <p>
-          Export tool for Figma. You can easily and automatically export your Figma components and use them directly into your website.
+          Run GitHub Actions workflows from Figma sending the selected page and all selected nodes as inputs.
         </p>
       </div>
     </a>
@@ -249,14 +249,14 @@ exports[`Storyshots Tile With Long Description 1`] = `
   >
     <div>
       <img
-        alt="figma-export"
-        src="https://raw.githubusercontent.com/marcomontalbano/figma-export/master/cover.png"
+        alt="Figma Plugin - Run GitHub Actions workflows"
+        src="https://raw.githubusercontent.com/marcomontalbano/figma-plugin-run-github-actions-workflows/main/cover.png"
       />
       <div
         className="content"
       >
         <h2>
-          figma-export
+          Figma Plugin - Run GitHub Actions workflows
         </h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non posuere justo, a imperdiet leo. Etiam non ipsum a felis lobortis convallis sit amet id odio. Aliquam interdum posuere enim. Donec sollicitudin interdum sodales. Pellentesque eget nibh ac massa tristique eleifend in vitae lorem. Donec semper lectus et fermentum vehicula. Ut elementum fermentum nulla. Ut eget cursus nisi. Aliquam nec faucibus dolor. Pellentesque felis velit, volutpat eget egestas nec, ultricies eget magna. Proin iaculis consequat ante.
@@ -274,6 +274,50 @@ exports[`Storyshots TileList Basic 1`] = `
   <div
     className="sc-pVTFL ewaOX"
   >
+    <div
+      className="sc-furwcr QryT"
+    >
+      <a
+        href="https://github.com/marcomontalbano/figma-plugin-run-github-actions-workflows"
+      >
+        <img
+          alt="Figma Plugin - Run GitHub Actions workflows"
+          src="https://raw.githubusercontent.com/marcomontalbano/figma-plugin-run-github-actions-workflows/main/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            Figma Plugin - Run GitHub Actions workflows
+          </h2>
+          <p>
+            Run GitHub Actions workflows from Figma sending the selected page and all selected nodes as inputs.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-furwcr QryT"
+    >
+      <a
+        href="https://github.com/marcomontalbano/contentful-migration-tool"
+      >
+        <img
+          alt="Contentful Migration Tool"
+          src="https://raw.githubusercontent.com/marcomontalbano/contentful-migration-tool/main/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            Contentful Migration Tool
+          </h2>
+          <p>
+            Run Contentful migrations easier.
+          </p>
+        </div>
+      </a>
+    </div>
     <div
       className="sc-furwcr QryT"
     >
@@ -357,7 +401,7 @@ exports[`Storyshots TileList Basic 1`] = `
             GitHub Emoji
           </h2>
           <p>
-            Finally a complete list of GitHub Emoji
+            Finally a complete list of GitHub Emoji. Now you can easily search and use all emojis you want in your .md files, like this 🤠 or this 🏰.
           </p>
         </div>
       </a>
@@ -509,6 +553,50 @@ exports[`Storyshots TileList With Hero 1`] = `
       className="sc-furwcr QryT"
     >
       <a
+        href="https://github.com/marcomontalbano/figma-plugin-run-github-actions-workflows"
+      >
+        <img
+          alt="Figma Plugin - Run GitHub Actions workflows"
+          src="https://raw.githubusercontent.com/marcomontalbano/figma-plugin-run-github-actions-workflows/main/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            Figma Plugin - Run GitHub Actions workflows
+          </h2>
+          <p>
+            Run GitHub Actions workflows from Figma sending the selected page and all selected nodes as inputs.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-furwcr QryT"
+    >
+      <a
+        href="https://github.com/marcomontalbano/contentful-migration-tool"
+      >
+        <img
+          alt="Contentful Migration Tool"
+          src="https://raw.githubusercontent.com/marcomontalbano/contentful-migration-tool/main/cover.png"
+        />
+        <div
+          className="content"
+        >
+          <h2>
+            Contentful Migration Tool
+          </h2>
+          <p>
+            Run Contentful migrations easier.
+          </p>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-furwcr QryT"
+    >
+      <a
         href="https://github.com/marcomontalbano/figma-export"
       >
         <img
@@ -588,7 +676,7 @@ exports[`Storyshots TileList With Hero 1`] = `
             GitHub Emoji
           </h2>
           <p>
-            Finally a complete list of GitHub Emoji
+            Finally a complete list of GitHub Emoji. Now you can easily search and use all emojis you want in your .md files, like this 🤠 or this 🏰.
           </p>
         </div>
       </a>
