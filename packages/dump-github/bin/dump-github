@@ -1,9 +1,0 @@
-#!/usr/bin/env node
-
-/* eslint-disable */
-
-const path = require('path');
-
-require('../dist/dump-github').exportAll(
-    path.resolve(__dirname, '..', '..', '..', 'data')
-);

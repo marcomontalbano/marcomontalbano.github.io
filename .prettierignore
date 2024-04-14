@@ -1,5 +1,0 @@
-dist
-coverage
-storybook-static
-packages/website/.cache
-packages/website/public
