@@ -3,8 +3,11 @@
   "private": true,
   "license": "MIT",
   "description": "My own website.",
+  "type": "module",
   "scripts": {
-    
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "serve": "pnpm dlx serve ./packages/website/dist/"
   },
   "repository": {
     "type": "git",
@@ -16,7 +19,11 @@
   },
   "homepage": "https://marcomontalbano.com",
   "engines": {
-    "node": ">=20"
+    "node": ">=20",
+    "pnpm": ">=9"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {}
 }
