@@ -51,6 +51,9 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
         @apply bg-transparent p-0;
       }
     }
+    video {
+      @apply w-full !max-h-full;
+    }
     ul {
       @apply px-8;
 
