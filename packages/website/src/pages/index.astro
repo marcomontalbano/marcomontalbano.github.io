@@ -1,23 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-
-import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import { Image } from 'astro:assets'
 
 const projects = (await getCollection('projects', ))
   .sort((a, b) => a.data.createdAt > b.data.createdAt ? -1 : 0)
 ---
 
 <Layout title="Marco Montalbano">
-  <main>
-    {projects.map(async project => {
-      const { headings } = await project.render()
-      const title = headings.find(h => h.depth === 1)?.text ?? project.data.name
-      return (
-        <section>
-          <a href={`/project/${project.slug}`}>{title}</a>
-        </section>
-      )
-    })}
+  <main class="grid md:grid-cols-2 xl:grid-cols-3 gap-5 gap-y-10">
+    {
+      projects.map(async project => {
+        const { headings } = await project.render()
+        const title = headings.find(h => h.depth === 1)?.text ?? project.slug
+        return (
+          <section class="grow shrink basis-1/4">
+            <a href={`/project/${project.slug}`}>
+              <Image src={project.data.cover} alt={title} class="rounded-md" width={1920} height={928} loading='eager' />
+              <div class="font-bold mt-4 my-2">{title}</div>
+              <div class="line-clamp-2">{project.data.description}</div>
+            </a>
+          </section>
+        )
+      })
+    }
   </main>
 </Layout>

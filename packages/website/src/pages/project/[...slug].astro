@@ -5,16 +5,25 @@ import Layout from '../../layouts/Layout.astro'
 export async function getStaticPaths() {
   const blogEntries = await getCollection('projects');
   return blogEntries.map(entry => ({
-    params: { name: entry.data.name }, props: { entry },
+    params: { slug: entry.slug }, props: { entry },
   }));
 }
 
 const { entry: project } = Astro.props;
 const { Content, headings } = await project.render();
-const title = headings.find(h => h.depth === 1)?.text ?? project.data.name
+const title = headings.find(h => h.depth === 1)?.text ?? project.slug
 ---
 
-<Layout title={title}>
+<Layout
+  title={title}
+  hero={{
+    title,
+    description: project.data.description,
+    img: project.data.cover,
+    repoUrl: project.data.repoUrl,
+    homepageUrl: project.data.homepageUrl
+  }}
+>
   <main>
     <Content />
   </main>
@@ -22,21 +31,18 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.data.name
 
 <style is:global>
   main {
-    h1 { @apply font-semibold text-3xl mt-8 mb-4; }
+    h1 { @apply font-semibold text-3xl mt-8 mb-4 hidden; }
     h2 { @apply font-semibold text-2xl mt-6 mb-3; }
     h3 { @apply font-semibold text-xl mt-4 mb-2; }
     h4 { @apply font-semibold text-lg mt-4 mb-1; }
     a {
-      @apply inline-block text-brand-light underline;
+      @apply inline-block text-brand-link underline break-all;
     }
     p {
       @apply my-2;
     }
-    img {
-      @apply rounded;
-    }
     code {
-      @apply rounded bg-slate-100 text-slate-500 py-1 px-2;
+      @apply rounded bg-slate-100 text-slate-500 py-1 px-2 break-all;
     }
     pre.astro-code {
       @apply p-4 rounded-md my-2;

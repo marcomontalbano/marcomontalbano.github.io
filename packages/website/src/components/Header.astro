@@ -1,0 +1,51 @@
+---
+import Navigation from './Navigation.astro'
+import HeroButton from './HeroButton.astro'
+
+export interface Props {
+  hero?: {
+    img: string
+    title: string
+    description: string
+    repoUrl: string
+    homepageUrl: string | null
+  }
+}
+
+const { hero } = Astro.props;
+---
+
+{
+  hero == null
+    ? <Navigation />
+    : (
+      <div
+        style={`--hero-image-src: url("${hero.img}");`}
+        class='hero text-white sticky'
+      >
+        <Navigation hero={hero} />
+        <div class={`container h-full flex flex-col justify-center -mt-16`}>
+          <div class="w-4/5 lg:w-3/5">
+            <div class="text-2xl lg:text-6xl mb-8 font-bold">{hero.title}</div>
+            <p class="text-lg lg:text-2xl mb-6 lg:mb-12">{hero.description}</p>
+            <div class="flex gap-5">
+              <HeroButton href={hero.repoUrl}>GitHub</HeroButton>
+              {
+                hero.homepageUrl != null && (
+                  <HeroButton href={hero.homepageUrl}>Website</HeroButton>
+                )
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+}
+<style>
+  .hero {
+    @apply h-[550px] top-[calc(4rem-550px)] lg:h-[750px] lg:top-[calc(4rem-750px)];
+    @apply bg-[linear-gradient(-75deg,transparent_-200%,var(--brand-primary)_65%),var(--hero-image-src)];
+    @apply dark:bg-[linear-gradient(-75deg,transparent_-200%,var(--brand-dark-primary)_65%),var(--hero-image-src)];
+    @apply bg-cover bg-right;
+  }
+</style>
