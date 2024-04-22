@@ -3,6 +3,7 @@ interface Props {
   title: string;
 }
 
+const mainTitle = 'Marco Montalbano'
 const { title } = Astro.props;
 ---
 
@@ -14,38 +15,32 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{`${title != mainTitle ? `${title} - ` : ''}${mainTitle}`}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&amp;family=Spinnaker&amp;display=swap" rel="stylesheet">
   </head>
   <body>
-    <slot />
+    <div class="container">
+      <header class="flex items-center gap-8 h-16">
+        <div class="grow">
+          <a href="/" class="font-title text-3xl p-2">Marco Montalbano</a>
+        </div>
+        <div class="flex text-lg gap-8">
+          <a href="https://github.com/marcomontalbano" class="p-2">GitHub</a>
+          <a href="https://cv.marcomontalbano.com" class="p-2">CV</a>
+        </div>
+      </header>
+      <slot />
+    </div>
   </body>
 </html>
+
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
   html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
+    @apply text-brand-dark mb-8;
   }
   code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+    @apply text-sm;
   }
 </style>

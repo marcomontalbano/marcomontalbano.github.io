@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "pnpm -r dev",
     "build": "pnpm -r build",
-    "serve": "pnpm dlx serve ./packages/website/dist/"
+    "serve": "pnpm dlx serve ./packages/website/dist/",
+    "astro": "pnpm --filter website exec astro"
   },
   "repository": {
     "type": "git",
