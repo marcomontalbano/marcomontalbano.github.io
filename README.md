@@ -1,82 +1,9 @@
-# marcomontalbano.github.io
+# My personal website
 
-* Website available at https://www.marcomontalbano.com/.
-* Component Library available at https://component-library.marcomontalbano.com/
+![Marco Montalbano](./packages/website/src/images/marcomontalbano.webp)
 
-## I know, I know
+Back in 2019, I built the initial release of this website. It was intentionally over-engineered because, at that time, I aimed to enhance my knowledge of TypeScript, React, Storybook, Gatsby, Styled Components, GitHub Actions, and GitHub Packages.
 
-If you look into this repository you will probably notice that it looks a bit over-engeneered. I put in place many different tools because for me this is just an experimental sandbox that outputs my own website.
+As of today (2024), I have mastered all of them (I removed Gatsby from my bag), which is why I have chosen to rebuild this website from scratch using an entirely different stack.
 
-This is the toolkit:
-
-- [x] TypeScript
-- [x] React
-- [x] Storybook
-- [x] Gatsby
-- [x] Styled Components
-- [x] GitHub Actions
-- [x] GitHub Packages
-- [ ] Algolia
-
-
-## General Information
-
-:information_source: I'm using [Yarn](https://yarnpkg.com/) for [this reason](https://github.com/storybookjs/storybook/issues/6505).
-
-This project is composed by 3 packages. I'm using [lerna](https://github.com/lerna/lerna) to manage this monorepo.
-
-* `dump-github` fetches the GitHub API v4, manipulate the data and create multiple json files that then are consumed by the `website`.
-* `component-library` is a [Storybook](https://storybook.js.org/) project. All components are available as downloadable [npm package](https://github.com/marcomontalbano/marcomontalbano.github.io/packages/79405).
-* `website` uses components from the *component-library*, consumes data from *dump-github* and builds the website using [Gatsby](https://www.gatsbyjs.org/).
-
-## Environment Variables
-
-You need to set a `GITHUB_TOKEN` environment variable with `repo` scope.
-
-## Scripts
-
-I created many scripts in the root folder, so that it is easier to execute them without moving back and forth between folders.
-
-### General
-
-* `clean` - Clean all the auto-generated folder and files in all packages
-* `install` - Install root folder dependencies.
-* `postinstall` - Install dependencies from each packages.
-* `test` - Run tests in all packages
-* `lint` - Run lint in all packages
-
-### Dump Github
-
-* `db:build` - Fetch GitHub API and export data into multiple json files inside `./data` folder
-
-### Component Library
-
-* `componentLibrary:start` - Start *storybook* at http://localhost:9009/
-* `componentLibrary:watch` - Watch for changes and build the `component-library`
-* `componentLibrary:build` - Build the component-library producing a `dist` folder that contains all reusable components.
-
-### Website
-
-* `prewebsite:start` - Build *dump-github* and *component-library*.
-* `website:start` - Start *gatsby* at http://localhost:8000/
-
-
-## Release Life Cycle
-
-### General Rules
-
-1. Create a pull request for each development
-1. Add a label to each pull request
-
-### Component Library
-
-1. Create a new version from `production` with `yarn lerna:version`
-1. `release.yml` workflow will attach the release notes to a brand new draft release
-1. [ *only pre-release* ] Flag the release with `This is a pre-release`
-1. Manually publish the release from GitHub
-1. `publish.yml` workflow will publish the release to [GitHub registry](https://github.com/marcomontalbano/marcomontalbano.github.io/packages) and start the build on Netlify. :warning: This job can fail if there are no changes to the Component Library.
-
-### Website
-
-1. When you manually publish the release from GitHub, the `gh-pages.yml` workflow will be triggered also. This will deploy the website on [GitHub Pages](https://pages.github.com/)
-1. `gh-pages.yml` is also triggered on scheduled time. In this flow, the last available *tag* will be deployed.
+This new website is built with [Astro](https://astro.build/) and [Tailwind](https://tailwindcss.com/). They are absolutely fantastic!
