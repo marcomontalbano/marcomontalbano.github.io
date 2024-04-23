@@ -1,6 +1,7 @@
 ---
-import Navigation from './Navigation.astro'
+import { getImage } from "astro:assets"
 import HeroButton from './HeroButton.astro'
+import Navigation from './Navigation.astro'
 
 export interface Props {
   hero?: {
@@ -20,7 +21,7 @@ const { hero } = Astro.props;
     ? <Navigation />
     : (
       <div
-        style={`--hero-image-src: url("${hero.img}");`}
+        style={`--hero-image-src: url("${(await getImage({ src: hero.img, format: 'webp', width: 1920, height: 928 })).src}");`}
         class='hero text-white sticky'
       >
         <Navigation hero={hero} />
