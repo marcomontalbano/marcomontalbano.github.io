@@ -5,6 +5,7 @@ import remarkGemoji from 'remark-gemoji'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://me.mmontalbano.commercelayer.dev',
   integrations: [tailwind()],
   markdown: {
     remarkPlugins: [remarkGemoji],
