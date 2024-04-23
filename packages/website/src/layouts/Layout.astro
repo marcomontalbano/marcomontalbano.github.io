@@ -28,7 +28,7 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
     <meta name="description" content={websiteDescription}>
     <meta property="og:title" content={websiteTitle}>
     <meta property="og:description" content={websiteDescription}>
-    <meta property="og:image" content={`${Astro.site}${websiteImage}`}>
+    <meta property="og:image" content={`${Astro.site}${websiteImage.replace(/^\//, '')}`}>
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     {

@@ -46,6 +46,7 @@ jobs:
       - name: Build 🛠
         run: pnpm build
         env:
+          SITE: https://marcomontalbano.com/
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Setup Pages 🧰
