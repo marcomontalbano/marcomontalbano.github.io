@@ -16,6 +16,7 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
 
 <Layout
   title={title}
+  description={project.data.description}
   hero={{
     title,
     description: project.data.description,
