@@ -1,0 +1,37 @@
+# .github/release.yaml
+
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - dependabot
+  categories:
+    - title: 💥 Breaking Change
+      labels:
+        - breaking-change
+        - PR: Breaking Change :boom:
+    - title: 🚀 Enhancement
+      labels:
+        - enhancement
+        - PR: New Feature :rocket:
+    - title: 🐛 Bug Fix
+      labels:
+        - bug
+        - PR: Bug Fix :bug:
+    - title: 🏠 Internal
+      labels:
+        - PR: Internal :house:
+    - title: 💅 Beauty
+      labels:
+        - PR: Beauty :nail_care:
+    - title: 🆙 Dependencies
+      labels:
+        - PR: Dependencies :up:
+    - title: 📝 Documentation
+      labels:
+        - documentation
+        - PR: Documentation :memo:
+    - title: Other Changes
+      labels:
+        - "*"
