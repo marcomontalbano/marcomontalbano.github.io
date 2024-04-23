@@ -1,28 +1,15 @@
 {
-  "name": "marcomontalbano-github-io",
+  "name": "marcomontalbano-com",
   "private": true,
   "license": "MIT",
-  "description": "My website",
+  "description": "My own website.",
+  "type": "module",
   "scripts": {
-    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\"",
-    "clean": "rm -rf data/*.json node_modules/ */*/node_modules */*/dist */*/tsconfig*.tsbuildinfo */*/.cache */website/public",
-    "postinstall": "lerna bootstrap",
-    "test": "lerna run test",
-    "lint": "lerna run lint",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
-    "lerna:fixDependencies": "node lernaCopy.js",
-    "lerna:version": "lerna version",
-    "db:build": "lerna run build --stream --scope @marcomontalbano/dump-github",
-    "componentLibrary:start": "lerna run start --stream --scope @marcomontalbano/component-library",
-    "componentLibrary:watch": "npx chokidar-cli \"packages/component-library/dist/**\" -c \"yarn lerna:fixDependencies -- false\"",
-    "componentLibrary:build": "lerna run build:dist --stream --scope @marcomontalbano/component-library",
-    "prelint": "run-s db:build componentLibrary:build lerna:fixDependencies",
-    "prewebsite:start": "run-s db:build componentLibrary:build lerna:fixDependencies",
-    "website:start": "lerna run start --stream --scope @marcomontalbano/website",
-    "prewebsite:build": "run-s db:build componentLibrary:build lerna:fixDependencies",
-    "website:build": "lerna run build --stream --scope @marcomontalbano/website",
-    "website:serve": "lerna run serve --stream --scope @marcomontalbano/website",
-    "lerna:ncu": "lerna exec 'npx npm-check-updates -u -x @marcomontalbano/component-library' --stream"
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "preview": "pnpm -r preview",
+    "check": "pnpm -r check",
+    "astro": "pnpm --filter website exec astro"
   },
   "repository": {
     "type": "git",
@@ -32,26 +19,13 @@
   "bugs": {
     "url": "https://github.com/marcomontalbano/marcomontalbano.github.io/issues"
   },
-  "homepage": "https://marcomontalbano.github.io/marcomontalbano.github.io",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
-    }
-  },
-  "devDependencies": {
-    "chalk": "~4.1.2",
-    "fs-extra": "~10.0.0",
-    "husky": "~4.3.8",
-    "lerna": "~4.0.0",
-    "lerna-changelog": "~1.0.1",
-    "lint-staged": "~11.2.4",
-    "npm-run-all": "~4.1.5",
-    "ora": "~5.4.1",
-    "prettier": "2.4.1"
-  },
+  "homepage": "https://marcomontalbano.com",
   "engines": {
-    "node": ">=14"
+    "node": ">=20",
+    "pnpm": ">=9"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {}
 }

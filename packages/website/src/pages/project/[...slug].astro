@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro'
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('project');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry: project } = Astro.props;
+const { Content, headings } = await project.render();
+const title = headings.find(h => h.depth === 1)?.text ?? project.slug
+---
+
+<Layout
+  title={title}
+  description={project.data.description}
+  hero={{
+    title,
+    description: project.data.description,
+    img: project.data.cover,
+    repoUrl: project.data.repoUrl,
+    homepageUrl: project.data.homepageUrl
+  }}
+>
+  <main>
+    <Content />
+  </main>
+</Layout>
+
+<style>
+  main {
+    h1 { @apply hidden font-semibold text-3xl mt-8 mb-4; }
+    h2 { @apply font-semibold text-2xl mt-6 mb-3; }
+    h3 { @apply font-semibold text-xl mt-4 mb-2; }
+    h4 { @apply font-semibold text-lg mt-4 mb-1; }
+    a {
+      @apply inline-block text-brand-link underline break-all;
+    }
+    p {
+      @apply my-2;
+    }
+    code {
+      @apply rounded py-1 px-2 break-all;
+      @apply bg-slate-100 text-slate-500 dark:bg-[#24292e] dark:text-slate-400;
+    }
+    pre.astro-code {
+      @apply p-4 rounded-md my-2;
+
+      code {
+        @apply bg-transparent p-0;
+      }
+    }
+    video {
+      @apply w-full !max-h-full;
+    }
+    ul {
+      @apply px-8;
+
+      li {
+        @apply list-disc my-3;
+      }
+    }
+    ul.contains-task-list {
+      @apply px-0;
+
+      li {
+        @apply list-none flex items-center gap-2;
+
+        input[type="checkbox"] {
+          @apply w-4 h-4 text-blue-600;
+        }
+      }
+    }
+    p:has(> img + img) {
+      @apply flex flex-wrap gap-4;
+    }
+
+    img + img, img:has(+ img) {
+      @apply grow shrink;
+    }
+  }
+</style>

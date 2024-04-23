@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import Card from '../components/Card.astro'
+
+const projects = (await getCollection('project'))
+  .sort((a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf())
+---
+
+<Layout title="Marco Montalbano">
+  <main class="grid md:grid-cols-2 xl:grid-cols-3 gap-5 gap-y-10">
+    {
+      projects.map(async project => {
+        const { headings } = await project.render()
+        return (
+          <Card
+            title={headings.find(h => h.depth === 1)?.text ?? project.slug}
+            description={project.data.description}
+            cover={project.data.cover}
+            href={`/project/${project.slug}`} />
+        )
+      })
+    }
+  </main>
+</Layout>

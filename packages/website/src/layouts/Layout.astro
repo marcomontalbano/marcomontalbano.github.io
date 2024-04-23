@@ -1,0 +1,75 @@
+---
+import { getImage } from 'astro:assets'
+import Header, { type Props as HeaderProps } from '../components/Header.astro'
+import defaultCoverImage from '../images/marcomontalbano.png'
+
+export interface Props {
+  title: string
+  description?: string
+  hero?: HeaderProps['hero']
+}
+
+const mainTitle = 'Marco Montalbano'
+const { title, description, hero } = Astro.props;
+
+const websiteTitle = `${title != mainTitle ? `${title} - ` : ''}${mainTitle}`
+const websiteDescription = description ?? "Hi everyone, my name is Marco Montalbano and I'm a web developer. On this site you can discover more about me, my projects, my work and my cv."
+const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, width: 1920, height: 928 })).src
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{websiteTitle}</title>
+    <meta name="description" content={websiteDescription}>
+    <meta property="og:title" content={websiteTitle}>
+    <meta property="og:description" content={websiteDescription}>
+    <meta property="og:image" content={`${Astro.site}${websiteImage}`}>
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    {
+      hero == null && (
+        <meta name="twitter:title" content="Hi everyone, my name is Marco and I'm a web developer.">
+      )
+    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&amp;family=Spinnaker&amp;display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <Header hero={hero} />
+    <div class="container">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @tailwind base;
+
+  @layer base {
+    :root {
+      --brand-light: #e2e4e8;
+      --brand-primary: #091729;
+      --brand-dark-primary: #1f2428;
+      --brand-link: #559cd0;
+    }
+  }
+  body {
+    @apply mb-14 text-brand-primary dark:text-brand-light bg-white dark:bg-brand-dark-primary;
+  }
+  main {
+    @apply mt-8;
+  }
+  code {
+    @apply text-sm;
+  }
+
+  img {
+    @apply rounded;
+  }
+</style>

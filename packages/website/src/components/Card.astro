@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  href: string
+  title: string
+  description: string
+  cover: string
+}
+
+const { cover, description, href, title } = Astro.props
+---
+
+<section class="grow shrink basis-1/4">
+  <a href={href}>
+    <Image src={cover} alt={title} class="rounded-md" width={1920} height={928} loading='eager' />
+    <div class="font-bold mt-4 my-2">{title}</div>
+    <div class="line-clamp-2">{description}</div>
+  </a>
+</section>
