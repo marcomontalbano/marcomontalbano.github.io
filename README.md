@@ -1,6 +1,6 @@
 # My personal website
 
-![Marco Montalbano](./packages/website/src/images/marcomontalbano.webp)
+![Marco Montalbano](./packages/website/src/images/banner.jpg)
 
 Back in 2019, I built the initial release of this website. It was intentionally over-engineered because, at that time, I aimed to enhance my knowledge of TypeScript, React, Storybook, Gatsby, Styled Components, GitHub Actions, and GitHub Packages.
 
