@@ -1,5 +1,6 @@
 ---
 import { getImage } from 'astro:assets'
+import GoogleAnalytics from '../components/GoogleAnalytics.astro'
 import Header, { type Props as HeaderProps } from '../components/Header.astro'
 import defaultCoverImage from '../images/marcomontalbano.png'
 
@@ -39,6 +40,7 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&amp;family=Spinnaker&amp;display=swap" rel="stylesheet">
+    <GoogleAnalytics />
   </head>
   <body>
     <Header hero={hero} />

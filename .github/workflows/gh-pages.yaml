@@ -47,6 +47,7 @@ jobs:
         run: pnpm build
         env:
           SITE: https://marcomontalbano.com/
+          GA_MEASUREMENT_ID: G-DTPYRGN1DH
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Setup Pages 🧰

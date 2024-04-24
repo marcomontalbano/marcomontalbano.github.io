@@ -1,0 +1,15 @@
+---
+const measurementId = import.meta.env.GA_MEASUREMENT_ID
+---
+
+{
+  measurementId != null && (
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+    <script is:inline define:vars={{ measurementId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', measurementId);
+    </script>
+  )
+}
