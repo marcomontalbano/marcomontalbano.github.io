@@ -9,7 +9,9 @@
     "build": "pnpm -r build",
     "preview": "pnpm -r preview",
     "check": "pnpm -r check",
-    "astro": "pnpm --filter website exec astro"
+    "astro": "pnpm --filter website exec astro",
+    "dep:major": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u",
+    "dep:minor": "pnpm dep:major -t minor"
   },
   "repository": {
     "type": "git",
