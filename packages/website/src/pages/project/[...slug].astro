@@ -84,5 +84,81 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
     img + img, img:has(+ img) {
       @apply grow shrink;
     }
+
+    table {
+      @apply w-full mt-4 mb-6;
+
+      thead th {
+        @apply p-4 text-xs uppercase border-b border-[#404b55] bg-[#24292e] text-gray-400 first-of-type:rounded-ss-md last-of-type:rounded-se-md;
+      }
+
+      tbody td {
+        @apply p-4 text-sm border-b border-[#404b55];
+      }
+    }
+
+    .markdown-alert {
+      @apply border-l-4 py-2 px-4 mb-8 border-[#d0d7de] dark:border-[#444c56];
+
+      p {
+        @apply m-0;
+
+        &.markdown-alert-title {
+          @apply mb-2 font-bold flex items-center;
+
+          .octicon {
+            @apply w-4 h-4 inline-block text-current;
+            margin-right: 0.5rem;
+            overflow: visible !important;
+
+            -webkit-mask: var(--oct-icon) no-repeat;
+            mask: var(--oct-icon) no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            background-color: currentColor;
+            color: inherit;
+            display: inline-block;
+            vertical-align: text-bottom;
+            width: 1em;
+            height: 1em;
+          }
+        }
+      }
+
+      &.markdown-alert-note {
+        @apply border-[#0969da] dark:border-[#478be6];
+        .markdown-alert-title {
+          @apply text-[#0969da] dark:text-[#478be6];
+        }
+      }
+
+      &.markdown-alert-tip {
+        @apply border-[#1a7f37] dark:border-[#57ab5a];
+        .markdown-alert-title {
+          @apply text-[#1a7f37] dark:text-[#57ab5a];
+        }
+      }
+
+      &.markdown-alert-important {
+        @apply border-[#8250df] dark:border-[#986ee2];
+        .markdown-alert-title {
+          @apply text-[#8250df] dark:text-[#986ee2];
+        }
+      }
+
+      &.markdown-alert-warning {
+        @apply border-[#9a6700] dark:border-[#c69026];
+        .markdown-alert-title {
+          @apply text-[#9a6700] dark:text-[#c69026];
+        }
+      }
+
+      &.markdown-alert-caution {
+        @apply border-[#d1242f] dark:border-[#e5534b];
+        .markdown-alert-title {
+          @apply text-[#d1242f] dark:text-[#e5534b];
+        }
+      }
+    }
   }
 </style>

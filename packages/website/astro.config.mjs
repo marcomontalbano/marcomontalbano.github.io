@@ -2,13 +2,14 @@ import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
 import rehypeVideo from 'rehype-video'
 import remarkGemoji from 'remark-gemoji'
+import remarkGithubAlerts from 'remark-github-alerts'
 
 // https://astro.build/config
 export default defineConfig({
   site: process.env.SITE,
   integrations: [tailwind()],
   markdown: {
-    remarkPlugins: [remarkGemoji],
+    remarkPlugins: [remarkGemoji, remarkGithubAlerts],
     rehypePlugins: [[rehypeVideo, { details: false }]]
   },
   image: {
