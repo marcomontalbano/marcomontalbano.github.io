@@ -32,18 +32,21 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
 
 <style>
   main {
-    h1 { @apply hidden font-semibold text-3xl mt-8 mb-4; }
-    h2 { @apply font-semibold text-2xl mt-6 mb-3; }
-    h3 { @apply font-semibold text-xl mt-4 mb-2; }
-    h4 { @apply font-semibold text-lg mt-4 mb-1; }
+    h1 { @apply hidden font-semibold text-3xl mt-10 mb-4; }
+    h2 { @apply font-semibold text-2xl mt-8 mb-3; }
+    h3 { @apply font-semibold text-xl mt-6 mb-2; }
+    h4 { @apply font-semibold text-lg mt-6 mb-1; }
     a {
       @apply inline-block text-brand-link underline break-all;
     }
     p {
-      @apply my-2;
+      @apply my-4;
     }
     hr {
       @apply my-4;
+    }
+    blockquote {
+      @apply px-4 border-l-4 border-[#d0d7de] text-[#636c76] dark:border-l-[#444c56] dark:text-[#717e8b];
     }
     code {
       @apply rounded py-1 px-2 break-all;
@@ -63,11 +66,11 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
       @apply px-8;
 
       li {
-        @apply list-disc my-3;
+        @apply list-disc my-2;
       }
     }
     ul.contains-task-list {
-      @apply px-0;
+      @apply px-2;
 
       li {
         @apply list-none flex items-center gap-2;
