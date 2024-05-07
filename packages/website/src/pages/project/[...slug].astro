@@ -90,6 +90,11 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
 
     table {
       @apply w-full mt-4 mb-6;
+      @apply block overflow-x-auto w-max max-w-full;
+
+      code {
+        @apply break-normal;
+      }
 
       thead th {
         @apply p-4 text-xs uppercase border-b border-[#404b55] bg-[#24292e] text-gray-400 first-of-type:rounded-ss-md last-of-type:rounded-se-md;
