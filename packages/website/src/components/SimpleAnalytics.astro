@@ -4,7 +4,7 @@ const isProd = import.meta.env.PROD
 
 {
   isProd && (
-    <script is:inline async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <script is:inline async defer src="https://scripts.simpleanalyticscdn.com/latest.js" data-collect-dnt="true"></script>
     <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
   )
 }
