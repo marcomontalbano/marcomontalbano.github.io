@@ -12,9 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.6.0",
+    "@astrojs/check": "^0.7.0",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.8.2",
+    "astro": "^4.8.4",
     "classnames": "^2.5.1",
     "rehype-video": "^2.0.2",
     "remark-gemoji": "^8.0.0",
