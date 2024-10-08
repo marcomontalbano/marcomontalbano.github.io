@@ -14,8 +14,8 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.1",
-    "@types/node": "^20.16.10",
-    "astro": "^4.15.11",
+    "@types/node": "^22.7.5",
+    "astro": "^4.15.12",
     "classnames": "^2.5.1",
     "rehype-video": "^2.3.0",
     "remark-gemoji": "^8.0.0",

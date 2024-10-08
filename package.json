@@ -11,6 +11,7 @@
     "preview": "pnpm -r preview",
     "check": "pnpm -r check",
     "astro": "pnpm --filter website exec astro",
+    "ls-engines": "pnpm dlx ls-engines",
     "dep:major": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u",
     "dep:minor": "pnpm dep:major -t minor"
   },
@@ -24,7 +25,7 @@
   },
   "homepage": "https://marcomontalbano.com",
   "engines": {
-    "node": ">=20.3.0",
+    "node": ">=22",
     "pnpm": ">=9"
   },
   "workspaces": [
