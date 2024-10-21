@@ -1,3 +1,9 @@
+/**
+ * Fetches the data from the GitHub API and dumps it into a JSON file.
+ *
+ * @note This script is executed in the `pnpm build:data` script.
+ */
+
 import { ghRunQuery } from './gh'
 import { writeFileSync } from 'fs'
 import { resolve } from 'path'
