@@ -17,7 +17,7 @@ const projects = (await getCollection('project'))
             title={headings.find(h => h.depth === 1)?.text ?? project.slug}
             description={project.data.description}
             cover={project.data.cover}
-            href={`/project/${project.slug}`} />
+            href={`/project/${project.slug}/`} />
         )
       })
     }
