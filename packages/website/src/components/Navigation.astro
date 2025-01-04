@@ -9,20 +9,24 @@ interface Props {
 const { hero } = Astro.props;
 ---
 
-<header class={
-  cn(
-    'top-0 w-full',
-    { 
-      'sticky top-0 text-white backdrop-blur-md': hero != null
-    }
-  )
-}>
+<header
+  class={cn('top-0 w-full', {
+    'sticky top-0 text-white backdrop-blur-md': hero != null,
+  })}
+>
   <div class="container">
     <nav class="flex items-center gap-4 h-20">
       <div class="grow">
-        <a href="/" class="font-title text-xl md:text-3xl">Marco Montalbano</a>
+        <a href="/" class="font-title text-xl md:text-3xl flex items-center gap-3 md:gap-4">
+          <img
+            class="rounded-full w-6 h-6 md:w-8 md:h-8"
+            alt="Marco Montalbano"
+            src="https://avatars.githubusercontent.com/u/1681269"
+          />
+          Marco Montalbano
+        </a>
       </div>
-      <div class="flex md:text-lg gap-6 md:gap-8">
+      <div class="flex md:text-lg gap-6 md:gap-8 items-center">
         <a href="https://github.com/marcomontalbano">GitHub</a>
         <a href="https://cv.marcomontalbano.com">CV</a>
       </div>
