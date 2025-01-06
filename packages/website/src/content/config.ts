@@ -8,6 +8,7 @@ const projectCollection = defineCollection({
     repoUrl: z.string(),
     homepageUrl: z.string().nullable(),
     createdAt: z.date(),
+    updatedAt: z.date(),
     tags: z.string().array(),
   })
 })

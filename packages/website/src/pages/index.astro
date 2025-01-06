@@ -1,24 +1,41 @@
 ---
-import Layout from '../layouts/Layout.astro'
 import { getCollection } from 'astro:content'
+import type { Person, WithContext } from 'schema-dts'
 import Card from '../components/Card.astro'
+import Layout from '../layouts/Layout.astro'
 
-const projects = (await getCollection('project'))
-  .sort((a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf())
+const projects = (await getCollection('project')).sort(
+  (a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf(),
+);
+
+const ldJson: WithContext<Person> = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Marco Montalbano',
+  url: 'https://marcomontalbano.com',
+  image: 'https://avatars.githubusercontent.com/u/1681269',
+  sameAs: ['https://github.com/marcomontalbano', 'https://www.linkedin.com/in/marcomontalbano'],
+  jobTitle: 'Senior Web Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Commerce Layer',
+  },
+};
 ---
 
-<Layout title="Marco Montalbano">
+<Layout title="Marco Montalbano" ldJson={ldJson}>
   <main class="grid md:grid-cols-2 xl:grid-cols-3 gap-5 gap-y-10">
     {
-      projects.map(async project => {
-        const { headings } = await project.render()
+      projects.map(async (project) => {
+        const { headings } = await project.render();
         return (
           <Card
-            title={headings.find(h => h.depth === 1)?.text ?? project.slug}
+            title={headings.find((h) => h.depth === 1)?.text ?? project.slug}
             description={project.data.description}
             cover={project.data.cover}
-            href={`/project/${project.slug}/`} />
-        )
+            href={`/project/${project.slug}/`}
+          />
+        );
       })
     }
   </main>

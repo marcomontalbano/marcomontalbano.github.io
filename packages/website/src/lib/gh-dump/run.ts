@@ -21,6 +21,7 @@ cover: ${repository.customFields.cover.cdn}
 repoUrl: ${repository.url}
 homepageUrl: ${repository.homepageUrl}
 createdAt: ${repository.createdAt.toJSON()}
+updatedAt: ${repository.updatedAt.toJSON()}
 tags: ${JSON.stringify(repository.repositoryTopics)}
 ---
 

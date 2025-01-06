@@ -1,17 +1,19 @@
 ---
 import { getImage } from 'astro:assets';
-import SimpleAnalytics from '../components/SimpleAnalytics.astro';
+import type { WithContext, Person, CreativeWork } from 'schema-dts';
 import Header, { type Props as HeaderProps } from '../components/Header.astro';
+import SimpleAnalytics from '../components/SimpleAnalytics.astro';
 import defaultCoverImage from '../images/marcomontalbano.png';
 
 export interface Props {
   title: string;
   description?: string;
+  ldJson: WithContext<Person | CreativeWork>;
   hero?: HeaderProps['hero'];
 }
 
 const mainTitle = 'Marco Montalbano';
-const { title, description, hero } = Astro.props;
+const { title, description, hero, ldJson } = Astro.props;
 
 const websiteTitle = `${title != mainTitle ? `${title} - ` : ''}${mainTitle}`;
 const websiteDescription =
@@ -42,6 +44,7 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Spinnaker&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json" set:html={JSON.stringify(ldJson)} />
   </head>
   <body>
     <Header hero={hero} />

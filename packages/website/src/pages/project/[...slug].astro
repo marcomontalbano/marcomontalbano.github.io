@@ -1,20 +1,37 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro'
+import Layout from '../../layouts/Layout.astro';
+import type { CreativeWork, WithContext } from 'schema-dts';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('project');
-  return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
 const { entry: project } = Astro.props;
 const { Content, headings } = await project.render();
-const title = headings.find(h => h.depth === 1)?.text ?? project.slug
+const title = headings.find((h) => h.depth === 1)?.text ?? project.slug;
+
+const ldJson: WithContext<CreativeWork> = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: title,
+  description: project.data.description,
+  url: Astro.url.toString(),
+  creator: {
+    '@type': 'Person',
+    name: 'Marco Montalbano',
+  },
+  datePublished: project.data.createdAt.toISOString().split('T')[0],
+  image: project.data.cover,
+};
 ---
 
 <Layout
+  ldJson={ldJson}
   title={title}
   description={project.data.description}
   hero={{
@@ -22,7 +39,7 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
     description: project.data.description,
     img: project.data.cover,
     repoUrl: project.data.repoUrl,
-    homepageUrl: project.data.homepageUrl
+    homepageUrl: project.data.homepageUrl,
   }}
 >
   <main>
@@ -32,10 +49,18 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
 
 <style>
   main {
-    h1 { @apply hidden font-semibold text-3xl mt-10 mb-4; }
-    h2 { @apply font-semibold text-2xl mt-8 mb-3; }
-    h3 { @apply font-semibold text-xl mt-6 mb-2; }
-    h4 { @apply font-semibold text-lg mt-6 mb-1; }
+    h1 {
+      @apply hidden font-semibold text-3xl mt-10 mb-4;
+    }
+    h2 {
+      @apply font-semibold text-2xl mt-8 mb-3;
+    }
+    h3 {
+      @apply font-semibold text-xl mt-6 mb-2;
+    }
+    h4 {
+      @apply font-semibold text-lg mt-6 mb-1;
+    }
     a {
       @apply inline-block text-brand-link underline break-all;
     }
@@ -75,7 +100,7 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
       li {
         @apply list-none flex items-center gap-2;
 
-        input[type="checkbox"] {
+        input[type='checkbox'] {
           @apply w-4 h-4 text-blue-600;
         }
       }
@@ -84,7 +109,8 @@ const title = headings.find(h => h.depth === 1)?.text ?? project.slug
       @apply flex flex-wrap gap-4;
     }
 
-    img + img, img:has(+ img) {
+    img + img,
+    img:has(+ img) {
       @apply grow shrink;
     }
 
