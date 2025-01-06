@@ -20,7 +20,7 @@ const { hero } = Astro.props;
   hero == null ? (
     <Navigation />
   ) : (
-    <div class="hero text-white sticky">
+    <div class="hero text-white sticky z-10">
       <img
         class="image"
         alt={hero.title}
