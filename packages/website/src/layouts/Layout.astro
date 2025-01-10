@@ -44,7 +44,7 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Spinnaker&display=swap"
       rel="stylesheet"
     />
-    <script type="application/ld+json" set:html={JSON.stringify(ldJson)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(ldJson)} />
   </head>
   <body>
     <Header hero={hero} />

@@ -1,20 +1,28 @@
 ---
+import { getImage } from 'astro:assets'
 import { getCollection } from 'astro:content'
 import type { Person, WithContext } from 'schema-dts'
 import Card from '../components/Card.astro'
+import profilePicture from '../images/marco-montalbano.jpg'
 import Layout from '../layouts/Layout.astro'
 
 const projects = (await getCollection('project')).sort(
   (a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf(),
 );
 
+const profilePictureSrc = (await getImage({ src: profilePicture, width: 512, height: 512 })).src
+
 const ldJson: WithContext<Person> = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Marco Montalbano',
-  url: 'https://marcomontalbano.com',
-  image: 'https://avatars.githubusercontent.com/u/1681269',
-  sameAs: ['https://github.com/marcomontalbano', 'https://www.linkedin.com/in/marcomontalbano'],
+  url: import.meta.env.SITE,
+  image: `${import.meta.env.SITE.replace(/\/+$/, '')}${profilePictureSrc}`,
+  sameAs: [
+    'https://github.com/marcomontalbano',
+    'https://www.linkedin.com/in/marcomontalbano',
+    'https://bsky.app/profile/marcomontalbano.com'
+  ],
   jobTitle: 'Senior Web Engineer',
   worksFor: {
     '@type': 'Organization',

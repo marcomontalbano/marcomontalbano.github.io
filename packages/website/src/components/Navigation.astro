@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import cn from 'classnames';
+import profilePicture from '../images/marco-montalbano.jpg';
 import type { Props as LayoutProps } from '../layouts/Layout.astro';
 
 interface Props {
@@ -21,10 +23,12 @@ const TitleElement = hero == null ? 'h1' : 'div';
       <div class="grow">
         <a href="/">
           <TitleElement class="font-title text-xl md:text-3xl flex items-center gap-3 md:gap-4">
-            <img
+            <Image
               class="rounded-full w-6 h-6 md:w-8 md:h-8"
               alt="Marco Montalbano"
-              src="https://avatars.githubusercontent.com/u/1681269"
+              src={profilePicture}
+              width={512}
+              height={512}
             />
             Marco Montalbano
           </TitleElement>

@@ -14,6 +14,8 @@ export default defineConfig({
     rehypePlugins: [[rehypeVideo, { details: false }]]
   },
   image: {
-    domains: ['raw.githubusercontent.com'],
+    domains: [
+      'raw.githubusercontent.com'
+    ],
   }
 })
