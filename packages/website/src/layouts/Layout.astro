@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 import { getImage } from 'astro:assets';
 import type { WithContext, Person, CreativeWork } from 'schema-dts';
 import Header, { type Props as HeaderProps } from '../components/Header.astro';
@@ -54,29 +56,3 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
     <SimpleAnalytics />
   </body>
 </html>
-
-<style is:global>
-  @tailwind base;
-
-  @layer base {
-    :root {
-      --brand-light: #e2e4e8;
-      --brand-primary: #091729;
-      --brand-dark-primary: #1f2428;
-      --brand-link: #559cd0;
-    }
-  }
-  body {
-    @apply mb-14 text-brand-primary dark:text-brand-light bg-white dark:bg-brand-dark-primary;
-  }
-  main {
-    @apply mt-8;
-  }
-  code {
-    @apply text-sm;
-  }
-
-  img {
-    @apply rounded;
-  }
-</style>

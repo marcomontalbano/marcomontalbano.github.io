@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-title:
+    Spinnaker, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans:
+    Lato, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --color-brand-light: #e2e4e8;
+  --color-brand-primary: #091729;
+  --color-brand-dark-primary: #1f2428;
+  --color-brand-link: #559cd0;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (width >=theme(--breakpoint-sm)) {
+    padding-inline: 2rem;
+  }
+
+  @media (width >=theme(--breakpoint-lg)) {
+    padding-inline: 4rem;
+  }
+
+  @media (width >=theme(--breakpoint-xl)) {
+    padding-inline: 5rem;
+  }
+
+  @media (width >=theme(--breakpoint-2xl)) {
+    padding-inline: 6rem;
+  }
+}
+
+body {
+  @apply mb-14 text-brand-primary dark:text-brand-light bg-white dark:bg-brand-dark-primary;
+}
+
+main {
+  @apply mt-8;
+}
+
+code {
+  @apply text-sm;
+}
+
+img {
+  @apply rounded;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}

@@ -1,16 +1,16 @@
 ---
-import { getImage } from 'astro:assets'
-import HeroButton from './HeroButton.astro'
-import Navigation from './Navigation.astro'
+import { getImage } from 'astro:assets';
+import HeroButton from './HeroButton.astro';
+import Navigation from './Navigation.astro';
 
 export interface Props {
   hero?: {
-    img: string
-    title: string
-    description: string
-    repoUrl: string
-    homepageUrl: string | null
-  }
+    img: string;
+    title: string;
+    description: string;
+    repoUrl: string;
+    homepageUrl: string | null;
+  };
 }
 
 const { hero } = Astro.props;
@@ -41,19 +41,21 @@ const { hero } = Astro.props;
   )
 }
 <style>
+  @reference "../styles/global.css";
+
   .hero {
     @apply h-[550px] top-[calc(5rem-550px)] lg:h-[750px] lg:top-[calc(5rem-750px)];
 
     &:after {
       content: '';
       @apply absolute top-0 left-0 w-full h-full -z-10;
-      @apply bg-[linear-gradient(-75deg,transparent_-200%,var(--brand-primary)_65%)];
-      @apply dark:bg-[linear-gradient(-75deg,transparent_-200%,var(--brand-dark-primary)_65%)];
+      @apply bg-[linear-gradient(-75deg,transparent_-200%,var(--color-brand-primary)_65%)];
+      @apply dark:bg-[linear-gradient(-75deg,transparent_-200%,var(--color-brand-dark-primary)_65%)];
       @apply bg-cover bg-right;
     }
 
     img.image {
-      @apply absolute h-full object-cover object-right -z-10;
+      @apply absolute w-full h-full object-cover object-right -z-10;
     }
   }
 </style>
