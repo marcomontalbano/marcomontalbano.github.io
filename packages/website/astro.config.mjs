@@ -1,5 +1,5 @@
 import sitemap from '@astrojs/sitemap'
-import { defineConfig } from 'astro/config'
+import { defineConfig, sharpImageService } from 'astro/config'
 import rehypeVideo from 'rehype-video'
 import remarkGemoji from 'remark-gemoji'
 import remarkGithubAlerts from 'remark-github-alerts'
@@ -16,6 +16,7 @@ export default defineConfig({
   },
 
   image: {
+    service: sharpImageService({ limitInputPixels: false }),
     domains: [
       'raw.githubusercontent.com'
     ],
