@@ -42,15 +42,15 @@ const ldJson: WithContext<CreativeWork> = {
     homepageUrl: project.data.homepageUrl,
   }}
 >
-  <main>
+  <article>
     <Content />
-  </main>
+  </article>
 </Layout>
 
 <style>
   @reference "../../styles/global.css";
 
-  main {
+  article {
     h1 {
       @apply hidden font-semibold text-3xl mt-10 mb-4;
     }
