@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build:data": "npx tsx ./src/lib/gh-dump/run.ts",
-    "build": "npm run build:data && astro check && astro build",
+    "build:data": "pnpm dlx tsx ./src/lib/gh-dump/run.ts",
+    "build": "pnpm build:data && astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro"

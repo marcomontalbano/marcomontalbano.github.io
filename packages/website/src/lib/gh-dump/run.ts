@@ -5,8 +5,8 @@
  */
 
 import { ghRunQuery } from './gh'
-import { writeFileSync } from 'fs'
-import { resolve } from 'path'
+import { writeFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 
 const repositories = (await ghRunQuery())
   .filter(repositories => repositories.customFields.visible)

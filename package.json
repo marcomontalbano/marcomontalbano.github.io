@@ -5,7 +5,7 @@
   "description": "My own website.",
   "type": "module",
   "scripts": {
-    "clean": "pnpx rimraf --glob **/node_modules **/pnpm-lock.yaml",
+    "clean": "pnpm dlx rimraf --glob **/node_modules **/pnpm-lock.yaml",
     "dev": "pnpm -r dev",
     "build:data": "pnpm -r build:data",
     "build": "pnpm -r build",
