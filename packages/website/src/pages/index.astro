@@ -1,6 +1,6 @@
 ---
 import { getImage } from 'astro:assets'
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import type { Person, WithContext } from 'schema-dts'
 import Card from '../components/Card.astro'
 import profilePicture from '../images/marco-montalbano.jpg'
@@ -35,13 +35,13 @@ const ldJson: WithContext<Person> = {
   <main class="grid md:grid-cols-2 xl:grid-cols-3 gap-5 gap-y-10">
     {
       projects.map(async (project) => {
-        const { headings } = await project.render();
+        const { headings } = await render(project);
         return (
           <Card
-            title={headings.find((h) => h.depth === 1)?.text ?? project.slug}
+            title={headings.find((h) => h.depth === 1)?.text ?? project.id}
             description={project.data.description}
             cover={project.data.cover}
-            href={`/project/${project.slug}/`}
+            href={`/project/${project.id}/`}
           />
         );
       })

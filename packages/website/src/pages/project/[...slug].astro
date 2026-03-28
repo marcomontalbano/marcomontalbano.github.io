@@ -2,18 +2,19 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import type { CreativeWork, WithContext } from 'schema-dts';
+import { render } from 'astro:content';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('project');
   return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry: project } = Astro.props;
-const { Content, headings } = await project.render();
-const title = headings.find((h) => h.depth === 1)?.text ?? project.slug;
+const { Content, headings } = await render(project);
+const title = headings.find((h) => h.depth === 1)?.text ?? project.id;
 
 const ldJson: WithContext<CreativeWork> = {
   '@context': 'https://schema.org',

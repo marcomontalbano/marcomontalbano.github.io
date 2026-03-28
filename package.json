@@ -14,7 +14,8 @@
     "astro": "pnpm --filter website exec astro",
     "ls-engines": "pnpm dlx ls-engines",
     "dep:major": "pnpm dlx npm-check-updates --packageFile '**/package.json' -u",
-    "dep:minor": "pnpm dep:major -t minor"
+    "dep:semver": "pnpm dep:major -t semver",
+    "dep:astro": "pnpm --filter website exec pnpm dlx @astrojs/upgrade"
   },
   "repository": {
     "type": "git",
