@@ -98,7 +98,7 @@ export const ghRunQuery = async () => {
                 }).array()
               }).transform(repositoryTopics => repositoryTopics.edges.map(edge => edge.node.topic.name))
             })
-              .passthrough()
+              .loose()
               .transform(async (repository) => {
                 const repositoryUrl = `${repository.url}/raw/${repository.defaultBranchRef.name}`
                 const cover = await fetchFile(`${repositoryUrl}/cover.png`)
