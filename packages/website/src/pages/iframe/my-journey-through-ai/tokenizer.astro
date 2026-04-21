@@ -1,0 +1,85 @@
+---
+import TokenizerComponent from '../../../components/ai/Tokenizer.astro';
+import IFrame from '../../../layouts/IFrame.astro';
+---
+
+<IFrame title="Tokenizer" description="Tokenize text directly in your browser.">
+  <div data-tokenizer-page class="w-full h-full flex flex-col">
+    <div class="w-full h-full flex flex-col">
+      <TokenizerComponent />
+      <div class="flex flex-col">
+        <label
+          id="tokenizerShowIdsControl"
+          hidden
+          class="m-3 flex cursor-pointer select-none items-center gap-2.5 font-sans text-sm text-neutral-600"
+        >
+          <input type="checkbox" class="peer sr-only" />
+          <div
+            class="relative h-5 w-9 rounded-full bg-neutral-300 transition-colors peer-checked:bg-blue-500 after:absolute after:left-0.5 after:top-0.5 after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-transform after:content-[''] peer-checked:after:translate-x-4"
+          >
+          </div>
+          <span>Show Token IDs</span>
+        </label>
+        <input
+          id="tokenizerInputControl"
+          hidden
+          type="text"
+          placeholder="Type a text ..."
+          class="m-3 rounded-lg border border-neutral-300 px-4 py-3 text-base text-gray-500 outline-none transition-colors focus:border-blue-500"
+        />
+      </div>
+    </div>
+  </div>
+</IFrame>
+
+<script>
+  function initTokenizerPage(root: HTMLElement) {
+    if (root.dataset.initialized === 'true') {
+      return;
+    }
+
+    root.dataset.initialized = 'true';
+
+    const tokenizerRoot = root.querySelector<HTMLElement>('[data-tokenizer]');
+    const inputElement = root.querySelector<HTMLInputElement>('#tokenizerInputControl');
+    const checkboxLabelElement = root.querySelector<HTMLLabelElement>('#tokenizerShowIdsControl');
+    const checkboxElement = root.querySelector<HTMLInputElement>('#tokenizerShowIdsControl input[type="checkbox"]');
+
+    if (!tokenizerRoot || !inputElement || !checkboxElement || !checkboxLabelElement) {
+      return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+
+    function isTruthyParam(name: string) {
+      return ['1', 'true', 'yes', 'on'].includes((params.get(name) ?? '').toLowerCase());
+    }
+
+    const initialText = params.get('text') ?? '';
+    const showInputIdsSwitch = params.has('showInputIds');
+    const initialShowIds = isTruthyParam('showIds');
+    const showInputText = isTruthyParam('showInputText');
+
+    const tokenizerRootElement = tokenizerRoot;
+    const inputControl = inputElement;
+    const checkboxControlLabel = checkboxLabelElement;
+    const checkboxControl = checkboxElement;
+
+    inputControl.value = initialText;
+    inputControl.hidden = !showInputText;
+    checkboxControl.checked = initialShowIds;
+    checkboxControlLabel.hidden = !showInputIdsSwitch;
+
+    function syncTokenizer() {
+      tokenizerRootElement.dataset.text = inputControl.value;
+      tokenizerRootElement.dataset.showIds = String(checkboxControl.checked);
+      tokenizerRootElement.dispatchEvent(new CustomEvent('tokenizer:update'));
+    }
+
+    inputControl.addEventListener('input', syncTokenizer);
+    checkboxControl.addEventListener('change', syncTokenizer);
+    syncTokenizer();
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-tokenizer-page]').forEach((root) => initTokenizerPage(root));
+</script>

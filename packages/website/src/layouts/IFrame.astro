@@ -8,19 +8,13 @@ import SimpleAnalytics from '../components/SimpleAnalytics.astro';
 import defaultCoverImage from '../images/marcomontalbano.png';
 
 export interface Props {
-  frontmatter?: Record<string, any>;
   title: string;
   description?: string;
-  ldJson: WithContext<Person | CreativeWork>;
   hero?: HeaderProps['hero'];
 }
 
-// Merge top-level props with frontmatter props
-const { frontmatter, ...rest } = Astro.props;
-const props = { ...frontmatter, ...rest };
-
 const mainTitle = 'Marco Montalbano';
-const { title, description, hero, ldJson } = props;
+const { title, description, hero } = Astro.props;
 
 const websiteTitle = `${title != mainTitle ? `${title} - ` : ''}${mainTitle}`;
 const websiteDescription =
@@ -30,7 +24,7 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full bg-transparent!">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -52,11 +46,9 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Spinnaker&display=swap"
       rel="stylesheet"
     />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(ldJson)} />
   </head>
-  <body>
-    <Header hero={hero} />
-    <div class="container">
+  <body class="h-full bg-transparent!">
+    <div class="container h-full bg-transparent">
       <slot />
     </div>
     <SimpleAnalytics />

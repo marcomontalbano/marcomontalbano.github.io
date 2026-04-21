@@ -1,0 +1,114 @@
+---
+
+---
+
+<div data-tokenizer class="flex grow flex-col items-center justify-center">
+  <div data-tokens class="flex flex-wrap justify-center gap-0 gap-y-1 p-5 leading-[1.8]"></div>
+  <div data-token-ids class="flex flex-wrap justify-center gap-0 gap-y-1 p-5 leading-[1.8]"></div>
+</div>
+
+<script>
+  import { AutoTokenizer } from '@huggingface/transformers';
+
+  const tokenizer = await AutoTokenizer.from_pretrained('Xenova/gpt-4');
+
+  async function getTokens(text: string) {
+    const tokens = await tokenizer.tokenize(text);
+    const inputIds = await tokenizer.encode(text);
+
+    return {
+      tokens,
+      inputIds,
+    }
+  }
+
+  function initTokenizer(root: HTMLElement) {
+    if (root.dataset.initialized === 'true') {
+      return;
+    }
+
+    root.dataset.initialized = 'true';
+
+    const tokensElement = root.querySelector('[data-tokens]') as HTMLDivElement;
+    const tokenIdsElement = root.querySelector('[data-token-ids]') as HTMLDivElement;
+
+    function toggleHighlight(index: number, isHighlight: boolean) {
+      const pair = root.querySelectorAll(`.token[data-token-id="${index}"]`);
+
+      const activeTokenClasses = [
+        '-translate-y-0.5',
+        'brightness-[0.85]',
+        'saturate-125',
+        'border-black/30',
+        'shadow-[0_2px_4px_rgba(0,0,0,0.1)]',
+        'z-10',
+      ];
+
+      pair.forEach((el) => {
+        activeTokenClasses.forEach((className) => {
+          el.classList.toggle(className, isHighlight);
+        });
+      });
+    }
+
+    function createTokenNode(tokenId: number, value: string, index: number) {
+      const tokenElement = document.createElement('div');
+      const palette = tokenPalette[index % tokenPalette.length];
+
+      tokenElement.className = `token cursor-pointer select-none whitespace-pre border border-transparent px-1 py-0.5 transition-all duration-100 ease-linear ${palette}`;
+      tokenElement.dataset.index = String(index);
+      tokenElement.dataset.tokenId = String(tokenId);
+      tokenElement.textContent = value;
+
+      tokenElement.onmouseenter = () => toggleHighlight(tokenId, true);
+      tokenElement.onmouseleave = () => toggleHighlight(tokenId, false);
+
+      return tokenElement;
+    }
+
+    async function renderTokens() {
+      const text = root.dataset.text ?? '';
+      const showIds = root.dataset.showIds === 'true';
+
+      tokensElement.textContent = '';
+      tokenIdsElement.textContent = '';
+      tokenIdsElement.classList.toggle('hidden', !showIds);
+
+      if (!text.trim()) {
+        return;
+      }
+
+      const { tokens, inputIds } = await getTokens(text);
+
+      for (let i = 0; i < tokens.length; i++) {
+        tokensElement.append(createTokenNode(inputIds[i], cleanToken(tokens[i]), i));
+        tokenIdsElement.append(createTokenNode(inputIds[i], String(inputIds[i]), i));
+      }
+    }
+
+    root.addEventListener('tokenizer:update', () => {
+      void renderTokens();
+    });
+
+    void renderTokens();
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-tokenizer]').forEach((root) => initTokenizer(root));
+
+  const tokenPalette = [
+    'bg-cyan-100 text-cyan-800',
+    'bg-sky-100 text-sky-800',
+    'bg-indigo-100 text-indigo-800',
+    'bg-purple-100 text-purple-900',
+    'bg-fuchsia-100 text-fuchsia-900',
+    'bg-rose-100 text-rose-900',
+    'bg-orange-100 text-orange-900',
+    'bg-amber-100 text-amber-900',
+    'bg-emerald-100 text-emerald-900',
+    'bg-teal-100 text-teal-900',
+  ];
+
+  function cleanToken(tokenText: string) {
+    return tokenText.replace(/Ġ/g, ' ');
+  }
+</script>
