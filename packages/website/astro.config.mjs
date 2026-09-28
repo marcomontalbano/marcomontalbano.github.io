@@ -1,3 +1,4 @@
+import { unified } from '@astrojs/markdown-remark'
 import sitemap from '@astrojs/sitemap'
 import { defineConfig, sharpImageService } from 'astro/config'
 import rehypeVideo from 'rehype-video'
@@ -11,8 +12,10 @@ export default defineConfig({
   integrations: [sitemap()],
 
   markdown: {
-    remarkPlugins: [remarkGemoji, remarkGithubAlerts],
-    rehypePlugins: [[rehypeVideo, { details: false }]]
+    processor: unified({
+      remarkPlugins: [remarkGemoji, remarkGithubAlerts],
+      rehypePlugins: [[rehypeVideo, { details: false }]]
+    })
   },
 
   image: {
