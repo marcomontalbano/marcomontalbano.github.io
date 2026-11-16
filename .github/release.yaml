@@ -10,28 +10,28 @@ changelog:
     - title: 💥 Breaking Change
       labels:
         - breaking-change
-        - PR: Breaking Change :boom:
+        - "PR: Breaking Change :boom:"
     - title: 🚀 Enhancement
       labels:
         - enhancement
-        - PR: New Feature :rocket:
+        - "PR: New Feature :rocket:"
     - title: 🐛 Bug Fix
       labels:
         - bug
-        - PR: Bug Fix :bug:
+        - "PR: Bug Fix :bug:"
     - title: 🏠 Internal
       labels:
-        - PR: Internal :house:
+        - "PR: Internal :house:"
     - title: 💅 Beauty
       labels:
-        - PR: Beauty :nail_care:
+        - "PR: Beauty :nail_care:"
     - title: 🆙 Dependencies
       labels:
-        - PR: Dependencies :up:
+        - "PR: Dependencies :up:"
     - title: 📝 Documentation
       labels:
         - documentation
-        - PR: Documentation :memo:
+        - "PR: Documentation :memo:"
     - title: Other Changes
       labels:
         - "*"
