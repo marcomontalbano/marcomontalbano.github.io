@@ -48,6 +48,17 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="color-scheme" content="light dark" />
+    {/* Mirrors the system theme on `data-theme`, which astro-mermaid's `autoTheme` reads to theme diagrams. */}
+    <script is:inline>
+      const colorScheme = matchMedia('(prefers-color-scheme: dark)');
+
+      const syncTheme = () => {
+        document.documentElement.setAttribute('data-theme', colorScheme.matches ? 'dark' : 'light');
+      };
+
+      syncTheme();
+      colorScheme.addEventListener('change', syncTheme);
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Spinnaker&display=swap"
       rel="stylesheet"
