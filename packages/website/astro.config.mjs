@@ -29,6 +29,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
     server: {
       allowedHosts: [
+        ".ts.net",
         ".ngrok.app"
       ]
     }
