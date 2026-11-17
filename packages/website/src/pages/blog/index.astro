@@ -1,0 +1,61 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { Blog, WithContext } from 'schema-dts';
+import Card from '../../components/Card.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf());
+
+const ldJson: WithContext<Blog> = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Blog',
+  url: Astro.url.toString(),
+  author: {
+    '@type': 'Person',
+    name: 'Marco Montalbano',
+  },
+};
+---
+
+<Layout title="Blog" ldJson={ldJson}>
+  <main>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5 gap-y-10">
+      {
+        posts.map(async (post) => {
+          const { headings } = await render(post);
+          return (
+            <Card
+              title={headings.find((h) => h.depth === 1)?.text ?? post.id}
+              description={post.data.description}
+              cover={post.data.cover}
+              href={`/blog/${post.id}/`}
+              publishedAt={post.data.createdAt}
+            />
+          );
+        })
+      }
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const now = new Date();
+
+  const formatRelativeTime = (date: Date) => {
+    const seconds = Math.max(0, Math.floor((now.getTime() - date.getTime()) / 1000));
+    if (seconds < 60) return `${seconds}s ago`;
+
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return `${minutes}m ago`;
+
+    return `${Math.floor(minutes / 60)}h ago`;
+  };
+
+  document.querySelectorAll<HTMLTimeElement>('time[data-relative]').forEach((element) => {
+    const publishedAt = new Date(element.dateTime);
+    if (publishedAt.toDateString() !== now.toDateString()) return;
+
+    element.textContent = formatRelativeTime(publishedAt);
+  });
+</script>

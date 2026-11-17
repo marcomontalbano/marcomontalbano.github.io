@@ -1,0 +1,73 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { BlogPosting, WithContext } from 'schema-dts';
+import Article from '../../components/Article.astro';
+import Layout from '../../layouts/Layout.astro';
+import { formatDate } from '../../lib/format-date';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry: post } = Astro.props;
+const { Content, headings } = await render(post);
+const title = headings.find((h) => h.depth === 1)?.text ?? post.id;
+const wordCount = (post.body ?? '').split(/\s+/).filter(Boolean).length;
+const readingTime = Math.ceil(wordCount / 200);
+
+const ldJson: WithContext<BlogPosting> = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description: post.data.description,
+  url: Astro.url.toString(),
+  image: new URL(post.data.cover.src, Astro.url).href,
+  datePublished: post.data.createdAt.toISOString(),
+  dateModified: post.data.updatedAt.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Marco Montalbano',
+  },
+};
+---
+
+<Layout
+  title={title}
+  description={post.data.description}
+  ldJson={ldJson}
+  hero={{
+    img: post.data.cover,
+    title,
+    description: post.data.description,
+  }}
+>
+  <main>
+    <div class="flex items-center gap-2 text-sm opacity-70 mb-6">
+      <time datetime={post.data.createdAt.toISOString()}>{formatDate(post.data.createdAt)}</time>
+      <span aria-hidden="true">·</span>
+      <span class="inline-flex items-center gap-1">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-4 h-4 shrink-0"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 6v6l4 2"></path>
+        </svg>
+        {readingTime} min read
+      </span>
+    </div>
+    <Article>
+      <Content />
+    </Article>
+  </main>
+</Layout>
