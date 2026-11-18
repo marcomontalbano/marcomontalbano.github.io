@@ -1,10 +1,17 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import type { Blog, WithContext } from 'schema-dts';
 import Card from '../../components/Card.astro';
 import Layout from '../../layouts/Layout.astro';
+import { getBlogPosts } from '../../lib/blog';
 
-const posts = (await getCollection('blog')).sort((a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf());
+/** Builds `/blog/` only when there are posts, so without them `/blog` is a 404. */
+export async function getStaticPaths() {
+  const posts = (await getBlogPosts()).sort((a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf());
+  return posts.length > 0 ? [{ params: { index: undefined }, props: { posts } }] : [];
+}
+
+const { posts } = Astro.props;
 
 const ldJson: WithContext<Blog> = {
   '@context': 'https://schema.org',
@@ -31,6 +38,7 @@ const ldJson: WithContext<Blog> = {
               cover={post.data.cover}
               href={`/blog/${post.id}/`}
               publishedAt={post.data.createdAt}
+              isDraft={post.data.status === 'draft'}
             />
           );
         })

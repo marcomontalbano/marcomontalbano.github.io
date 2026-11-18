@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import cn from 'classnames';
 import profilePicture from '../images/marco-montalbano.jpg';
 import type { Props as LayoutProps } from '../layouts/Layout.astro';
+import { hasBlogPosts } from '../lib/blog';
 
 interface Props {
   /** Set when the page has a hero: the bar turns white and sticks over it. Without one, the site name is the page's h1. */
@@ -11,6 +12,8 @@ interface Props {
 
 const { hero } = Astro.props;
 
+/** Hides the "Blog" link while there is nothing published to read. */
+const isBlogVisible = await hasBlogPosts();
 const isBlogSelected = Astro.url.pathname === '/blog' || Astro.url.pathname.startsWith('/blog/');
 
 const TitleElement = hero == null ? 'h1' : 'div';
@@ -38,13 +41,15 @@ const TitleElement = hero == null ? 'h1' : 'div';
         </a>
       </div>
       <div class="flex md:text-lg gap-3 md:gap-8 items-center">
-        <a
-          href="/blog"
-          aria-current={isBlogSelected ? 'page' : undefined}
-          class={cn({ 'font-semibold underline underline-offset-4': isBlogSelected })}
-        >
-          Blog
-        </a>
+        {isBlogVisible && (
+          <a
+            href="/blog"
+            aria-current={isBlogSelected ? 'page' : undefined}
+            class={cn({ 'font-semibold underline underline-offset-4': isBlogSelected })}
+          >
+            Blog
+          </a>
+        )}
         <a href="https://github.com/marcomontalbano">GitHub</a>
         <a href="https://marcomontalbano.com/cv/cv-marco-montalbano.pdf">CV</a>
       </div>

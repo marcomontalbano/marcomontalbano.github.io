@@ -32,6 +32,8 @@ const blog = defineCollection({
       .regex(/^[a-z0-9]+$/, 'dev.to tags use only lowercase letters and digits.')
       .array()
       .max(4, 'dev.to allows at most 4 tags.'),
+    /** Only `approved` posts reach production; drafts show in dev only. */
+    status: z.enum(['draft', 'approved']).default('draft'),
   })
 })
 

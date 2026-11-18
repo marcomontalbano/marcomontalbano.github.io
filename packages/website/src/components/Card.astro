@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets'
 import { formatDate } from '../lib/format-date'
+import DraftBadge from './DraftBadge.astro'
 
 interface Props {
   href: string
@@ -10,9 +11,11 @@ interface Props {
   cover: ImageMetadata | string
   /** Shows the date under the title. */
   publishedAt?: Date
+  /** Shows a "Draft" badge beside the title. */
+  isDraft?: boolean
 }
 
-const { cover, description, href, publishedAt, title } = Astro.props
+const { cover, description, href, isDraft = false, publishedAt, title } = Astro.props
 
 // `getImage` rather than `<Image>`: `<Image>` can't type a cover that is either a local image or a URL.
 // CSS keeps the 1920:928 shape when a smaller source can't be cropped to it.
@@ -22,7 +25,10 @@ const coverImage = await getImage({ src: cover, width: 1920, height: 928, loadin
 <section class="grow shrink basis-1/4">
   <a href={href}>
     <img src={coverImage.src} {...coverImage.attributes} alt={title} class="w-full aspect-[1920/928] object-cover rounded-md" />
-    <div class="font-bold mt-4 mb-1">{title}</div>
+    <div class="flex items-center gap-2 font-bold mt-4 mb-1">
+      {title}
+      {isDraft && <DraftBadge />}
+    </div>
     {publishedAt && (
       <time class="block text-xs opacity-70 mb-2" datetime={publishedAt.toISOString()} data-relative>
         {formatDate(publishedAt)}

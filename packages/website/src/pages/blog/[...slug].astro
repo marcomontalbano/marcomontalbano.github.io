@@ -1,12 +1,14 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import type { BlogPosting, WithContext } from 'schema-dts';
 import Article from '../../components/Article.astro';
+import DraftBadge from '../../components/DraftBadge.astro';
 import Layout from '../../layouts/Layout.astro';
+import { getBlogPosts } from '../../lib/blog';
 import { formatDate } from '../../lib/format-date';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getBlogPosts();
   return posts.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
@@ -46,10 +48,11 @@ const ldJson: WithContext<BlogPosting> = {
   }}
 >
   <main>
-    <div class="flex items-center gap-2 text-sm opacity-70 mb-6">
-      <time datetime={post.data.createdAt.toISOString()}>{formatDate(post.data.createdAt)}</time>
-      <span aria-hidden="true">·</span>
-      <span class="inline-flex items-center gap-1">
+    <div class="flex items-center gap-2 text-sm mb-6">
+      {post.data.status === 'draft' && <DraftBadge />}
+      <time class="opacity-70" datetime={post.data.createdAt.toISOString()}>{formatDate(post.data.createdAt)}</time>
+      <span aria-hidden="true" class="opacity-70">·</span>
+      <span class="inline-flex items-center gap-1 opacity-70">
         <svg
           viewBox="0 0 24 24"
           fill="none"
