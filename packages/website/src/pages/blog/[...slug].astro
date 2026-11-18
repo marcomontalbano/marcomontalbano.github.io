@@ -48,28 +48,28 @@ const ldJson: WithContext<BlogPosting> = {
   }}
 >
   <main>
-    <div class="flex items-center gap-2 text-sm mb-6">
-      {post.data.status === 'draft' && <DraftBadge />}
-      <time class="opacity-70" datetime={post.data.createdAt.toISOString()}>{formatDate(post.data.createdAt)}</time>
-      <span aria-hidden="true" class="opacity-70">·</span>
-      <span class="inline-flex items-center gap-1 opacity-70">
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="w-4 h-4 shrink-0"
-          aria-hidden="true"
-        >
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 6v6l4 2"></path>
-        </svg>
-        {readingTime} min read
-      </span>
-    </div>
-    <Article>
+    <Article headings={headings}>
+      <div slot="header" class="flex items-center gap-2 text-sm mb-6">
+        {post.data.status === 'draft' && <DraftBadge />}
+        <time class="opacity-70" datetime={post.data.createdAt.toISOString()}>{formatDate(post.data.createdAt)}</time>
+        <span aria-hidden="true" class="opacity-70">·</span>
+        <span class="inline-flex items-center gap-1 opacity-70">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4 shrink-0"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+          {readingTime} min read
+        </span>
+      </div>
       <Content />
     </Article>
   </main>

@@ -43,7 +43,9 @@ const ldJson: WithContext<CreativeWork> = {
     homepageUrl: project.data.homepageUrl,
   }}
 >
-  <Article>
-    <Content />
-  </Article>
+  <main>
+    <Article headings={headings}>
+      <Content />
+    </Article>
+  </main>
 </Layout>

@@ -1,14 +1,44 @@
 ---
-// Rendered Markdown with its shared styles.
+// Rendered Markdown with its shared styles, used by project and blog pages.
+// The `header` slot goes above the Markdown, level with the top of the sidebar.
+
+import type { MarkdownHeading } from 'astro';
+import TableOfContents from './TableOfContents.astro';
+
+interface Props {
+  /** Headings of the rendered Markdown: with 3 or more h2/h3, adds an "On this page" sidebar on wide screens. */
+  headings?: MarkdownHeading[];
+}
+
+const { headings = [] } = Astro.props;
 ---
-<article class="markdown-body">
-  <slot />
-</article>
+<div class="xl:flex xl:gap-12">
+  <div class="min-w-0 xl:flex-1">
+    <slot name="header" />
+    <article class="markdown-body">
+      <slot />
+    </article>
+  </div>
+  <aside
+    aria-label="On this page"
+    data-toc-scroll-host
+    class="sticky top-28 hidden max-h-[calc(100vh-7rem)] w-72 shrink-0 self-start overflow-y-auto pb-8 xl:has-[[data-toc]]:block"
+  >
+    <TableOfContents headings={headings} />
+  </aside>
+</div>
 
 <style is:global>
   @reference "../styles/global.css";
 
   .markdown-body {
+    > :first-child,
+    > h1:first-child + * {
+      @apply mt-0;
+    }
+    :is(h1, h2, h3, h4, h5, h6) {
+      @apply scroll-mt-24;
+    }
     h1 {
       @apply hidden font-semibold text-3xl mt-10 mb-4;
     }
