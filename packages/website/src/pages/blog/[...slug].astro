@@ -6,6 +6,7 @@ import DraftBadge from '../../components/DraftBadge.astro';
 import Layout from '../../layouts/Layout.astro';
 import { getBlogPosts } from '../../lib/blog';
 import { formatDate } from '../../lib/format-date';
+import { getSocialImage } from '../../lib/social-image';
 
 export async function getStaticPaths() {
   const posts = await getBlogPosts();
@@ -27,7 +28,7 @@ const ldJson: WithContext<BlogPosting> = {
   headline: title,
   description: post.data.description,
   url: Astro.url.toString(),
-  image: new URL(post.data.cover.src, Astro.url).href,
+  image: (await getSocialImage(post.data.cover, Astro.url)).url,
   datePublished: post.data.createdAt.toISOString(),
   dateModified: post.data.updatedAt.toISOString(),
   author: {
@@ -41,6 +42,7 @@ const ldJson: WithContext<BlogPosting> = {
   title={title}
   description={post.data.description}
   ldJson={ldJson}
+  article={{ publishedAt: post.data.createdAt, updatedAt: post.data.updatedAt }}
   hero={{
     img: post.data.cover,
     title,

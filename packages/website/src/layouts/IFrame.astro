@@ -1,14 +1,17 @@
 ---
 import '../styles/global.css';
 
-import { getImage } from 'astro:assets';
 import { type Props as HeaderProps } from '../components/Header.astro';
 import SimpleAnalytics from '../components/SimpleAnalytics.astro';
 import defaultCoverImage from '../images/marcomontalbano.png';
+import { getSocialImage } from '../lib/social-image';
 
 export interface Props {
+  /** Page title; " - Marco Montalbano" is appended, except when it is the site name itself. */
   title: string;
+  /** Falls back to the site's own description. */
   description?: string;
+  /** Only its image is used, as the link-preview image. */
   hero?: HeaderProps['hero'];
 }
 
@@ -19,7 +22,7 @@ const websiteTitle = `${title != mainTitle ? `${title} - ` : ''}${mainTitle}`;
 const websiteDescription =
   description ??
   "Hi everyone, my name is Marco Montalbano and I'm a web developer. On this site you can discover more about me, my projects, my work and my cv.";
-const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, width: 1920, height: 928 })).src;
+const socialImage = await getSocialImage(hero?.img ?? defaultCoverImage, Astro.url);
 ---
 
 <!doctype html>
@@ -34,10 +37,18 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
     <meta name="description" content={websiteDescription} />
     <meta property="og:title" content={websiteTitle} />
     <meta property="og:description" content={websiteDescription} />
-    <meta property="og:image" content={`${Astro.site}${websiteImage.replace(/^\//, '')}`} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:image" content={socialImage.url} />
+    {
+      socialImage.size != null && (
+        <>
+          <meta property="og:image:width" content={String(socialImage.size.width)} />
+          <meta property="og:image:height" content={String(socialImage.size.height)} />
+        </>
+      )
+    }
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    {hero == null && <meta name="twitter:title" content="Hi everyone, my name is Marco and I'm a web developer." />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="color-scheme" content="light dark" />

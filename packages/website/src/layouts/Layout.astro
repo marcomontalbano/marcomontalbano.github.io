@@ -1,18 +1,25 @@
 ---
 import '../styles/global.css';
 
-import { getImage } from 'astro:assets';
 import type { WithContext, Person, CreativeWork } from 'schema-dts';
 import Header, { type Props as HeaderProps } from '../components/Header.astro';
 import SimpleAnalytics from '../components/SimpleAnalytics.astro';
 import defaultCoverImage from '../images/marcomontalbano.png';
+import { getSocialImage } from '../lib/social-image';
 
 export interface Props {
+  /** Frontmatter of a Markdown page using this layout; props passed directly take precedence. */
   frontmatter?: Record<string, any>;
+  /** Page title; " - Marco Montalbano" is appended, except when it is the site name itself. */
   title: string;
+  /** Falls back to the site's own description. */
   description?: string;
+  /** Structured data for search engines. */
   ldJson: WithContext<Person | CreativeWork>;
+  /** Full-width cover with the page's title; its image is also the link-preview image. */
   hero?: HeaderProps['hero'];
+  /** Marks the page as an article in link previews, with its dates. */
+  article?: { publishedAt: Date; updatedAt: Date };
 }
 
 // Merge top-level props with frontmatter props
@@ -20,13 +27,14 @@ const { frontmatter, ...rest } = Astro.props;
 const props = { ...frontmatter, ...rest };
 
 const mainTitle = 'Marco Montalbano';
-const { title, description, hero, ldJson } = props;
+const { title, description, hero, ldJson, article } = props;
 
 const websiteTitle = `${title != mainTitle ? `${title} - ` : ''}${mainTitle}`;
 const websiteDescription =
   description ??
   "Hi everyone, my name is Marco Montalbano and I'm a web developer. On this site you can discover more about me, my projects, my work and my cv.";
-const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, width: 1920, height: 928 })).src;
+const socialImage = await getSocialImage(hero?.img ?? defaultCoverImage, Astro.url);
+const isHomePage = Astro.url.pathname === '/';
 ---
 
 <!doctype html>
@@ -41,10 +49,29 @@ const websiteImage = (await getImage({ src: hero?.img ?? defaultCoverImage, widt
     <meta name="description" content={websiteDescription} />
     <meta property="og:title" content={websiteTitle} />
     <meta property="og:description" content={websiteDescription} />
-    <meta property="og:image" content={`${Astro.site}${websiteImage.replace(/^\//, '')}`} />
-    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:image" content={socialImage.url} />
+    {
+      socialImage.size != null && (
+        <>
+          <meta property="og:image:width" content={String(socialImage.size.width)} />
+          <meta property="og:image:height" content={String(socialImage.size.height)} />
+        </>
+      )
+    }
+    {
+      article != null ? (
+        <>
+          <meta property="og:type" content="article" />
+          <meta property="article:published_time" content={article.publishedAt.toISOString()} />
+          <meta property="article:modified_time" content={article.updatedAt.toISOString()} />
+        </>
+      ) : (
+        <meta property="og:type" content="website" />
+      )
+    }
     <meta name="twitter:card" content="summary_large_image" />
-    {hero == null && <meta name="twitter:title" content="Hi everyone, my name is Marco and I'm a web developer." />}
+    {isHomePage && <meta name="twitter:title" content="Hi everyone, my name is Marco and I'm a web developer." />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="color-scheme" content="light dark" />
