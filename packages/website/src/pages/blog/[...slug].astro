@@ -1,0 +1,78 @@
+---
+import { render } from 'astro:content';
+import type { BlogPosting, WithContext } from 'schema-dts';
+import Article from '../../components/Article.astro';
+import DraftBadge from '../../components/DraftBadge.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getBlogPosts } from '../../lib/blog';
+import { formatDate } from '../../lib/format-date';
+import { getSocialImage } from '../../lib/social-image';
+
+export async function getStaticPaths() {
+  const posts = await getBlogPosts();
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry: post } = Astro.props;
+const { Content, headings } = await render(post);
+const title = headings.find((h) => h.depth === 1)?.text ?? post.id;
+const wordCount = (post.body ?? '').split(/\s+/).filter(Boolean).length;
+const readingTime = Math.ceil(wordCount / 200);
+
+const ldJson: WithContext<BlogPosting> = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description: post.data.description,
+  url: Astro.url.toString(),
+  image: (await getSocialImage(post.data.cover, Astro.url)).url,
+  datePublished: post.data.createdAt.toISOString(),
+  dateModified: post.data.updatedAt.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Marco Montalbano',
+  },
+};
+---
+
+<Layout
+  title={title}
+  description={post.data.description}
+  ldJson={ldJson}
+  article={{ publishedAt: post.data.createdAt, updatedAt: post.data.updatedAt }}
+  hero={{
+    img: post.data.cover,
+    title,
+    description: post.data.description,
+  }}
+>
+  <main>
+    <Article headings={headings}>
+      <div slot="header" class="flex items-center gap-2 text-sm mb-6">
+        {post.data.status === 'draft' && <DraftBadge />}
+        <time class="opacity-70" datetime={post.data.createdAt.toISOString()}>{formatDate(post.data.createdAt)}</time>
+        <span aria-hidden="true" class="opacity-70">·</span>
+        <span class="inline-flex items-center gap-1 opacity-70">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4 shrink-0"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+          {readingTime} min read
+        </span>
+      </div>
+      <Content />
+    </Article>
+  </main>
+</Layout>

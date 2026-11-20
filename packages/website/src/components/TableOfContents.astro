@@ -1,0 +1,61 @@
+---
+// "On this page" nav for an article: h2/h3 links along a straight rail, with an
+// active marker that slides along it as the reader scrolls (see `toc.client.ts`).
+
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  /** All headings of the article: only h2/h3 are listed, and nothing renders with fewer than `MIN_HEADINGS`. */
+  headings: MarkdownHeading[];
+}
+
+/** Below this many headings the article is short enough to read without a nav. */
+const MIN_HEADINGS = 3;
+
+/** Emoji and spacing at the start of a heading, e.g. "✨ " in "✨ In Short". */
+const leadingEmoji = /^[\p{Extended_Pictographic}\u{FE0F}\u{200D}\s]+/u;
+
+const tocHeadings = Astro.props.headings
+  .filter(({ depth, slug }) => depth >= 2 && depth <= 3 && slug !== '')
+  .map((heading) => ({ ...heading, text: heading.text.replace(leadingEmoji, '') }));
+---
+
+{
+  tocHeadings.length >= MIN_HEADINGS && (
+    <div data-toc>
+      <h2 class="mb-3 text-sm font-semibold">On this page</h2>
+      <nav aria-label="Table of contents" class="relative border-s-2 border-gray-200 dark:border-gray-700">
+        <div
+          data-toc-marker
+          aria-hidden="true"
+          class="absolute -start-0.5 top-0 w-0.5 rounded-full bg-brand-link opacity-0 duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] data-[ready=true]:opacity-100 data-[ready=true]:transition-[translate,height,opacity] motion-reduce:data-[ready=true]:transition-opacity"
+        />
+        <ul class="m-0 flex list-none flex-col p-0">
+          {tocHeadings.map((heading) => (
+            <li>
+              <a
+                href={`#${heading.slug}`}
+                data-toc-link
+                data-slug={heading.slug}
+                class:list={[
+                  'grid grid-cols-1 py-1.5 text-sm leading-5 text-brand-primary/60 no-underline transition-colors duration-150 hover:text-brand-primary aria-[current=true]:font-bold aria-[current=true]:text-brand-primary dark:text-brand-light/60 dark:hover:text-brand-light dark:aria-[current=true]:text-brand-light',
+                  heading.depth === 3 ? 'ps-9' : 'ps-5',
+                ]}
+              >
+                <span class="col-start-1 row-start-1 [overflow-wrap:anywhere]">{heading.text}</span>
+                {/* Reserves the bold width so the active link doesn't reflow. */}
+                <span aria-hidden="true" class="invisible col-start-1 row-start-1 font-bold [overflow-wrap:anywhere]">
+                  {heading.text}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  )
+}
+
+<script>
+  import './toc.client';
+</script>

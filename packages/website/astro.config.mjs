@@ -5,11 +5,20 @@ import rehypeVideo from 'rehype-video'
 import remarkGemoji from 'remark-gemoji'
 import remarkGithubAlerts from 'remark-github-alerts'
 import tailwindcss from '@tailwindcss/vite';
+import mermaid from 'astro-mermaid'
 
 // https://astro.build/config
 export default defineConfig({
   site: process.env.SITE,
-  integrations: [sitemap()],
+  integrations: [
+    mermaid({
+      autoTheme: true,
+      mermaidConfig: {
+        htmlLabels: false,
+      }
+    }),
+    sitemap(),
+  ],
 
   markdown: {
     processor: unified({
@@ -29,6 +38,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
     server: {
       allowedHosts: [
+        ".ts.net",
         ".ngrok.app"
       ]
     }

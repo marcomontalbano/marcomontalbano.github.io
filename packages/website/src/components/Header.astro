@@ -4,12 +4,16 @@ import HeroButton from './HeroButton.astro';
 import Navigation from './Navigation.astro';
 
 export interface Props {
+  /** Full-width cover with the page's title and description; without it, only the navigation bar renders. */
   hero?: {
-    img: string;
+    /** Local image or URL, cropped to 1920×928. */
+    img: ImageMetadata | string;
     title: string;
     description: string;
-    repoUrl: string;
-    homepageUrl: string | null;
+    /** Adds a "GitHub" button. */
+    repoUrl?: string;
+    /** Adds a "Website" button. */
+    homepageUrl?: string | null;
   };
 }
 
@@ -31,10 +35,12 @@ const { hero } = Astro.props;
         <div class="w-4/5 lg:w-3/5">
           <div class="text-2xl lg:text-6xl mb-8 font-bold">{hero.title}</div>
           <p class="text-lg lg:text-2xl mb-6 lg:mb-12">{hero.description}</p>
-          <div class="flex gap-5">
-            <HeroButton href={hero.repoUrl}>GitHub</HeroButton>
-            {hero.homepageUrl != null && <HeroButton href={hero.homepageUrl}>Website</HeroButton>}
-          </div>
+          {(hero.repoUrl != null || hero.homepageUrl != null) && (
+            <div class="flex gap-5">
+              {hero.repoUrl != null && <HeroButton href={hero.repoUrl}>GitHub</HeroButton>}
+              {hero.homepageUrl != null && <HeroButton href={hero.homepageUrl}>Website</HeroButton>}
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -44,11 +50,11 @@ const { hero } = Astro.props;
   @reference "../styles/global.css";
 
   .hero {
-    @apply h-[550px] top-[calc(5rem-550px)] lg:h-[750px] lg:top-[calc(5rem-750px)];
+    @apply overflow-clip h-[550px] top-[calc(5rem-550px)] lg:h-[750px] lg:top-[calc(5rem-750px)];
 
     &:after {
       content: '';
-      @apply absolute top-0 left-0 w-full h-full -z-10;
+      @apply absolute -inset-px -z-10;
       @apply bg-[linear-gradient(-75deg,transparent_-200%,var(--color-brand-primary)_65%)];
       @apply dark:bg-[linear-gradient(-75deg,transparent_-200%,var(--color-brand-dark-primary)_65%)];
       @apply bg-cover bg-right;

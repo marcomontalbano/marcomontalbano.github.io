@@ -1,0 +1,25 @@
+---
+import type { WebPage, WithContext } from 'schema-dts';
+import Layout from '../layouts/Layout.astro';
+import { hasBlogPosts } from '../lib/blog';
+
+const isBlogVisible = await hasBlogPosts();
+
+const ldJson: WithContext<WebPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Page not found',
+};
+---
+
+<Layout title="Page not found" description="The page you are looking for doesn't exist." ldJson={ldJson}>
+  <main class="flex flex-col items-center text-center py-24">
+    <p class="font-title text-8xl md:text-9xl opacity-20">404</p>
+    <h2 class="mt-6 text-2xl md:text-3xl font-bold">This page doesn't exist</h2>
+    <p class="mt-4 max-w-md opacity-70">It may have moved, or the link you followed is wrong.</p>
+    <div class="mt-10 flex gap-6">
+      <a href="/" class="text-brand-link underline underline-offset-4">Go to the home page</a>
+      {isBlogVisible && <a href="/blog/" class="text-brand-link underline underline-offset-4">Read the blog</a>}
+    </div>
+  </main>
+</Layout>
