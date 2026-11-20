@@ -30,7 +30,8 @@ Posts live in `packages/website/src/content/blog/`, one Markdown file each, with
 
 - `description` names the tools or topic plainly; search results show it under the title.
 - `createdAt` and `updatedAt` are Italian local time with the offset that applies on that date, not today's: `+01:00` (CET) from the last Sunday of October, `+02:00` (CEST) from the last Sunday of March. A time without an offset reads as UTC. Check each with `TZ=Europe/Rome date -j -f '%Y-%m-%d %H:%M' '<date> <time>' +%z`.
-- `createdAt` matches the file's date; `updatedAt` moves when the content changes meaningfully.
+- `createdAt` matches the file's date.
+- `updatedAt` is the date of the last meaningful change to the content: new or rewritten sections, corrected facts, changed steps or commands. Typos and formatting don't count. Read the post's history with `git log --follow -p -- <post>`, plus `git diff -- <post>` for uncommitted edits; when a meaningful change is newer than `updatedAt`, propose that change's date.
 - `status` stays `draft` until the review passes. `approved` is what publishes the post in production.
 
 ### Cover
