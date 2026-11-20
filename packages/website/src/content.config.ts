@@ -19,10 +19,15 @@ const blog = defineCollection({
   loader: glob({
     base: "./src/content/blog",
     pattern: '**/[^_]*.{md,mdx}',
-    /** Drops the `YYYY-MM-DD-` prefix that orders the files, so it stays out of the URL. */
-    generateId: ({ entry }) => entry.replace(/\.mdx?$/, '').replace(/^\d{4}-\d{2}-\d{2}-/, ''),
+    /**
+     * The post's URL is its `slug`, so the file can be renamed with the title without breaking links.
+     * Runs before the schema: a post missing `slug` falls back to its file path, which the schema error then names.
+     */
+    generateId: ({ entry, data }) => (typeof data.slug === 'string' ? data.slug : entry),
   }),
   schema: ({ image }) => z.object({
+    /** URL segment, permanent once published, e.g. `code-from-anywhere-with-tailscale`. */
+    slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'A slug uses lowercase words joined by hyphens.'),
     description: z.string(),
     cover: image(),
     createdAt: z.date(),

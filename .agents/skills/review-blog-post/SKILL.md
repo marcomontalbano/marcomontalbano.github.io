@@ -17,9 +17,14 @@ Posts live in `packages/website/src/content/blog/`, one Markdown file each, with
 
 ### File name
 
-- Named `YYYY-MM-DD-slug.md`. The date is the day the draft started; it only orders the files, and the site drops it from the URL.
-- The slug is 3–5 kebab-case words about the topic: the title's key phrase plus the main keyword someone would search for. Matching the title word for word is not a goal.
-- Once a post has been published, its slug is permanent: renaming it changes the URL and breaks every link to it. Before then, rename freely.
+- Named `YYYY-MM-DD-<title>.md`: the date the draft started, then the title in kebab-case, so the post is easy to find in a long list. The date only orders the files.
+- The file follows the title: when the title changes, rename the file (and its cover). The URL comes from `slug`, so renaming breaks nothing.
+
+### Slug
+
+- The required `slug` frontmatter field is the post's URL, `/blog/<slug>/`.
+- 3–5 kebab-case words about the topic: the title's key phrase plus the main keyword someone would search for.
+- Permanent once the post is published: changing it breaks every link to the post. Before then, change it freely.
 
 ### Frontmatter
 
@@ -29,7 +34,7 @@ Posts live in `packages/website/src/content/blog/`, one Markdown file each, with
 
 ### Cover
 
-- A local file in `covers/`, named like the post (`covers/YYYY-MM-DD-slug.jpg`).
+- A local file in `covers/`, named like the post (`covers/YYYY-MM-DD-<title>.jpg`).
 - Larger is better: the site crops link previews to 1200×630 and shows the hero at up to 1920×928, and it never enlarges an image.
 
 ### Tags
