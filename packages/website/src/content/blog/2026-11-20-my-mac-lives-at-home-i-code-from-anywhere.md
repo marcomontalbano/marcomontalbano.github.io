@@ -14,7 +14,7 @@ I'm used to working on a single Mac at my desk, but sometimes I get an idea in t
 
 The Mac never leaves home. It's the only machine with my whole environment on it, and every other screen just connects to it.
 
-Today I use [Tailscale](https://tailscale.com) to reach the Mac, macOS Remote Login for SSH, [Herdr TUI](https://herdr.dev/tui/) to keep the sessions alive, [tailserve](https://github.com/marcomontalbano/tailserve) to reach my dev servers, and [Moshi](https://getmoshi.app/) on my phone and tablet.
+Today I use [Tailscale](https://tailscale.com) to reach the Mac, macOS Remote Login for SSH, [Herdr TUI](https://herdr.dev/tui/) to keep the sessions alive, [tailserve](https://marcomontalbano.com/project/tailserve/) to reach my dev servers, and [Moshi](https://getmoshi.app/) on my phone and tablet.
 
 I'll go through the whole setup from zero, mistakes included.
 
