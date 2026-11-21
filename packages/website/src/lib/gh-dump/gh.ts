@@ -192,6 +192,7 @@ const fetchMarkdown = async (repositoryUrl: string, defaultBranch: string, markd
     .replace(/!\[[^\]]+\]\(([^)]+)\)/g, urlReplacer(true, 'md')) // markdown images
     .replace(/\[[^\]]+\]\(([^)]+)\)/g, urlReplacer(false, 'md')) // markdown links
     .replace(/src="([\S]+)"/g, urlReplacer(true, 'html')) // html images
+    .replace(/srcset="([\S]+)"/g, urlReplacer(true, 'html')) // html images
 
   return { ...markdown, source }
 }
